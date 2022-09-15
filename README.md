@@ -1,4 +1,4 @@
-# {{Project Name}} in DFP
+# Green Gender Tracker in DFP
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and uses [Craco](https://www.npmjs.com/package/@craco/craco) to add a configuration layer for CRA. For this porject, we use [Typescript](https://www.typescriptlang.org/), a strongly typed programming language that builds on JavaScript. Typescript helps in better documentation of the code and communication between developers.
 
@@ -12,7 +12,7 @@ Run the terminal or command prompt and then run the following
 
 ```
 git clone {{git repo link}}
-cd {{folder-name}}
+cd green-gender-tracker
 npm install
 ```
 ### Local Development
