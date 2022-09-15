@@ -11,7 +11,7 @@ To install the project, sinply clone the the repo and them run `npm install` in 
 Run the terminal or command prompt and then run the following
 
 ```
-git clone {{git repo link}}
+git clone https://github.com/UNDP-Data/green-gender-tracker.git
 cd green-gender-tracker
 npm install
 ```
