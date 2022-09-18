@@ -11,20 +11,22 @@ import './style/radioStyle.css';
 import './style/selectStyle.css';
 import './style/inputStyle.css';
 import './style/modalStyle.css';
+import './style/tableStyle.css';
 import { GenderResponse } from './GenderResponse';
+import { TaskForce } from './TaskForce';
 
 const App = () => (
   <>
     <div className='container'>
       <Tabs
-        defaultActiveKey='1'
+        defaultActiveKey='2'
         className='undp-tabs'
       >
-        <Tabs.TabPane className='undp-tab-content' tab='COVID-19 Global Gender Response Tracker' key='1'>
+        <Tabs.TabPane className='undp-tab-content' tab='Gender Sensitive Policy' key='1'>
           <GenderResponse />
         </Tabs.TabPane>
-        <Tabs.TabPane className='undp-tab-content' tab='Country Profiles' key='2'>
-          Content of Tab Pane 2
+        <Tabs.TabPane className='undp-tab-content' tab='COVID-19 Task Force' key='2'>
+          <TaskForce />
         </Tabs.TabPane>
         <Tabs.TabPane className='undp-tab-content' tab='Policy and Task Force Details' key='3'>
           Content of Tab Pane 3

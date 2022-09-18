@@ -2,25 +2,32 @@ import { Select } from 'antd';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { csv } from 'd3-request';
-import { PolicyDataType } from '../Types';
-import { PolicyDashboard } from './PolicyDashboard';
+import { TFDataType } from '../Types';
+import { TaskForceDashboard } from './TaskForceDashboard';
 
 const SelectionEl = styled.div`
   width: calc(50% - 1rem);
 `;
 
-export const GenderResponse = () => {
+export const TaskForce = () => {
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [selectedIncomeGroup, setSelectedIncomeGroup] = useState('All');
-  const [policyData, setPolicyData] = useState<PolicyDataType[] | null>(null);
+  const [tfData, setTFData] = useState<TFDataType[] | null>(null);
   useEffect(() => {
-    csv('./data/policies.csv', (d: PolicyDataType[]) => {
-      setPolicyData(d);
+    csv('./data/TaskForce.csv', (data: any) => {
+      const dataFormated = data.map((d: any) => ({
+        ...d,
+        '#Men': d['#Men'] !== undefined ? +d['#Men'] : undefined,
+        '#Women': d['#Women'] !== undefined ? +d['#Women'] : undefined,
+        Total: d.Total !== undefined ? +d.Total : undefined,
+        '%Women': d['%Women'] !== undefined ? +d['%Women'] : undefined,
+      }));
+      setTFData(dataFormated);
     });
   }, []);
   return (
     <>
-      <h3 className='bold'>Policy Tracker</h3>
+      <h3 className='bold'>COVID-19 Task Forces</h3>
       <div className='flex-div flex-space-between margin-top-07 margin-bottom-07'>
         <SelectionEl>
           <p className='label'>Filter by Regions</p>
@@ -59,11 +66,11 @@ export const GenderResponse = () => {
         </SelectionEl>
       </div>
       {
-        policyData
+        tfData
           ? (
-            <PolicyDashboard
+            <TaskForceDashboard
               selectedRegion={selectedRegion}
-              allPolicies={policyData}
+              allTFs={tfData}
             />
           )
           : <div className='loader' />

@@ -153,7 +153,6 @@ h5 {
 h6 {
   font-size: 1rem;
   font-weight: 700;
-  letter-spacing: .03rem;
   line-height: 1.15;
   text-transform: uppercase;
 }
@@ -344,6 +343,29 @@ a:focus-visible {
 
 .margin-bottom-10 {
   margin-bottom: var(--spacing-10);
+}
+
+.tooltip {
+  padding: 2rem;
+  background-color: var(--gray-200);
+  font-size: 0.875rem;
+  color: var(--black);
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.no-shrink {
+  flex-shrink: 0;
+}
+
+.grow {
+  flex-grow: 1;
 }
 
 .undp-scrollbar {
