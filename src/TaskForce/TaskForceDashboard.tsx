@@ -9,6 +9,7 @@ import { TFTable } from './TFTable';
 interface Props {
   allTFs: TFDataType[];
   selectedRegion: string;
+  selectedIncomeGroup: string;
 }
 
 interface WidthProps {
@@ -20,9 +21,10 @@ const StatCardsDiv = styled.div<WidthProps>`
 `;
 
 export const TaskForceDashboard = (props: Props) => {
-  const { selectedRegion, allTFs } = props;
+  const { selectedRegion, allTFs, selectedIncomeGroup } = props;
 
-  const allTFsByRegion = selectedRegion !== 'All' ? allTFs.filter((d) => d['SDG Region'] === selectedRegion) : allTFs;
+  const allTFsbyIncomeGroup = selectedIncomeGroup === 'All' ? allTFs : allTFs.filter((d) => d.incomeGroup === selectedIncomeGroup);
+  const allTFsByRegion = selectedRegion !== 'All' ? allTFsbyIncomeGroup.filter((d) => d['SDG Region'] === selectedRegion) : allTFsbyIncomeGroup;
   const tfsByRegionWomenMajority = allTFsByRegion.filter((d) => d['Composition Classification'] === 'Majority Women' || d['Composition Classification'] === 'Gender Parity');
   const tfsByRegionWomenLeader = allTFsByRegion.filter((d) => d['Leader Gender'] === 'Woman' || d['Leader Gender'] === 'Man and Woman (co-chairs)');
 
@@ -48,6 +50,7 @@ export const TaskForceDashboard = (props: Props) => {
       countryCode: d['Country Code'],
       region: d['SDG Region'],
       noOfTF: countryTFList.length,
+      incomeGroup: d.incomeGroup,
       noOfTFWithMajorityWomenOfGenderParity: countryTFsByRegionWomenMajority.length,
       percentOfTFWithMajorityWomenOfGenderParity: (countryTFsByRegionWomenMajority.length * 100) / countryTFList.length,
       noOfTFWithWomenLeader: countryTFsByRegionWomenLeader.length,
@@ -162,17 +165,20 @@ export const TaskForceDashboard = (props: Props) => {
       <MapViz
         data={countryData}
         selectedRegion={selectedRegion}
+        selectedIncomeGroup={selectedIncomeGroup}
       />
       <div className='margin-top-02'>
         <CountryTable
           data={countryData}
           selectedRegion={selectedRegion}
+          selectedIncomeGroup={selectedIncomeGroup}
         />
       </div>
       <div className='margin-top-11'>
         <TFTable
           data={allTFsByRegion}
           selectedRegion={selectedRegion}
+          selectedIncomeGroup={selectedIncomeGroup}
         />
       </div>
     </div>

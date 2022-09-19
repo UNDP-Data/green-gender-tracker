@@ -1,0 +1,1682 @@
+[
+    {
+      "Alpha-3 code-1": "GRC",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "BRN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "BGD",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "CYM",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "LBR",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "NRU",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "SWZ",
+      "LDC": false,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "DOM",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "NAM",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "AUS",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "DEU",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "POL",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "FRA",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "ALB",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "LSO",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "COK",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "KHM",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "UKR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "DZA",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "USA",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "BFA",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "GIB",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "ZMB",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "BTN",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "FJI",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "RWA",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "VGB",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "BLR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "ETH",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "GHA",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "VNM",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "MLT",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "BHS",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "MNE",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "BOL",
+      "LDC": false,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "CUB",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "GUM",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "CHE",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "MCO",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "FIN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "AND",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "ZWE",
+      "LDC": false,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "GUF",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "CUW",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "SVN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "SOM",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "BGR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "GIN",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "BMU",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "JEY",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "CIV",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "REU",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "IRN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "COM",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "IND",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "MRT",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "MDG",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "GRD",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "GNB",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "GEO",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "MDV",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "ABW",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "GUY",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "ARG",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "PSE",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "GAB",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "NIC",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "MKD",
+      "LDC": false,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "ARE",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "BWA",
+      "LDC": false,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "LBY",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "WSM",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "OMN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "MWI",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "SRB",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "SSD",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "FRO",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "MHL",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "JOR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "VUT",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "BHR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "TJK",
+      "LDC": false,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "TUV",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "HRV",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "WLF",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "TTO",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "IDN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "ERI",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "PRT",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "KNA",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "MTQ",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "SAU",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "ARM",
+      "LDC": false,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "NOR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "DMA",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "TUR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "MAF",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "SDN",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "PAN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "ESP",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "AGO",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "BRA",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "TLS",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "PER",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "VCT",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "BIH",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "PAK",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "SXM",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "MYT",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "ISR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "SYR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "AZE",
+      "LDC": false,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "ITA",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "CAF",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "KOR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "KWT",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "LIE",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "TKM",
+      "LDC": false,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "STP",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "SGP",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "IRL",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "RUS",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "CZE",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "TCA",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "AIA",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "CPV",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "LUX",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "CMR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "SPM",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "GBR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "CRI",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "EST",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "PRY",
+      "LDC": false,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "PLW",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "URY",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "IMN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "JAM",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "MNG",
+      "LDC": false,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "NZL",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "SUR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "NIU",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "VIR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "KGZ",
+      "LDC": false,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "NCL",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "FLK",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "PRI",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "NGA",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "MLI",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "CYP",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "TON",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "GGY",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "UZB",
+      "LDC": false,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "AUT",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "BRB",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "SLE",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "ZAF",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "CHL",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "FSM",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "PNG",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "COD",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "SVK",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "MSR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "NLD",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "EGY",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "GMB",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "CHN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "GRL",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "ANT",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "SJM",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "TWN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "WBG",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "GTM",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "ECU",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "GLP",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "MUS",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "COL",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "QAT",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "IRQ",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "LBN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "MYS",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "VAT",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "TKL",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "MEX",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "HTI",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "ROU",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "TUN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "SMR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "KEN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "MMR",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "CAN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "BEL",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "BES",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "JPN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "HUN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "MNP",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "BLZ",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "HND",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "YEM",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "VEN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "MOZ",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "LKA",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "SLB",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "TZA",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "LCA",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "GNQ",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "TCD",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "LAO",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "NPL",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "SLV",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "SEN",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "THA",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "LTU",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "PYF",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "BLM",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "MAR",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "TGO",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "AFG",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "ASM",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "DJI",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "ATG",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "SWE",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "KAZ",
+      "LDC": false,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Upper middle income"
+    },
+    {
+      "Alpha-3 code-1": "PHL",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "LVA",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "ISL",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "BDI",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "COG",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "BEN",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "DNK",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "SYC",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "High income"
+    },
+    {
+      "Alpha-3 code-1": "NER",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "MDA",
+      "LDC": false,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "KIR",
+      "LDC": true,
+      "LLDC": false,
+      "SIDS": true,
+      "Income group": "Lower middle income"
+    },
+    {
+      "Alpha-3 code-1": "UGA",
+      "LDC": true,
+      "LLDC": true,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "HKG",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "XKX",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "PRK",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": "Low income"
+    },
+    {
+      "Alpha-3 code-1": "MAC",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "SHN",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    },
+    {
+      "Alpha-3 code-1": "ESH",
+      "LDC": false,
+      "LLDC": false,
+      "SIDS": false,
+      "Income group": ""
+    }
+  ]

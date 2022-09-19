@@ -21,7 +21,7 @@ const App = () => (
   <>
     <div className='container'>
       <Tabs
-        defaultActiveKey='3'
+        defaultActiveKey='1'
         className='undp-tabs'
       >
         <Tabs.TabPane className='undp-tab-content' tab='Gender Sensitive Policy' key='1'>

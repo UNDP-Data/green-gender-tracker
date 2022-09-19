@@ -6,6 +6,7 @@ import { CountryTFSummaryDataType } from '../Types';
 interface Props {
   data: CountryTFSummaryDataType[];
   selectedRegion: string;
+  selectedIncomeGroup: string;
 }
 
 interface CellProps {
@@ -22,9 +23,11 @@ export const CountryTable = (props: Props) => {
   const {
     data,
     selectedRegion,
+    selectedIncomeGroup,
   } = props;
   const [sort, setSort] = useState(1);
-  const dataFilteredByRegion = selectedRegion === 'All' ? data : data.filter((d) => d.region === selectedRegion);
+  const dataFilteredByIncomeGroup = selectedIncomeGroup === 'All' ? data : data.filter((d) => d.incomeGroup === selectedIncomeGroup);
+  const dataFilteredByRegion = selectedRegion === 'All' ? dataFilteredByIncomeGroup : dataFilteredByIncomeGroup.filter((d) => d.region === selectedRegion);
   let sortKey = 'countryName';
   switch (sort) {
     case 1:

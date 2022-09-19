@@ -13,12 +13,17 @@ export interface PolicyDataType {
   'Directly supports unpaid care': 'YES' | 'NO';
 }
 
+export interface PolicyDataWithIncome extends PolicyDataType {
+  countryIncomeGroup: string;
+}
+
 export interface TFDataType {
   'Country Code': string;
   Country: string;
   'SDG Region': string;
   'Sub-region': string;
   'UNDP Region': string;
+  incomeGroup: string;
   'Task Force Name': string;
   'Description of Task Force': string;
   Type: 'Expert' | 'Decision-Making';
@@ -39,6 +44,7 @@ export interface CountrySummaryDataType {
   countryName: string;
   countryCode: string;
   region: string;
+  incomeGroup: string;
   noOfPolicies: number;
   noOfGenderPolicies: number;
   noOfPoliciesAddressingVAWG: number;
@@ -51,6 +57,7 @@ export interface CountryTFSummaryDataType {
   countryCode: string;
   region: string;
   noOfTF: number;
+  incomeGroup: string;
   noOfTFWithWomenLeader: number;
   percentOfTFWithWomenLeader: number;
   noOfTFWithMajorityWomenOfGenderParity: number;

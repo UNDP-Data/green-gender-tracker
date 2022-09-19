@@ -8,6 +8,7 @@ import { TFDataType } from '../Types';
 interface Props {
   data: TFDataType[];
   selectedRegion: string;
+  selectedIncomeGroup: string;
 }
 
 const SelectionEl = styled.div`
@@ -28,6 +29,7 @@ export const TFTable = (props: Props) => {
   const {
     data,
     selectedRegion,
+    selectedIncomeGroup,
   } = props;
 
   const [selectedType, setSelectedType] = useState('All');
@@ -40,7 +42,7 @@ export const TFTable = (props: Props) => {
 
   useEffect(() => {
     setSelectedCountry([]);
-  }, [selectedRegion]);
+  }, [selectedRegion, selectedIncomeGroup]);
 
   useEffect(() => {
     const sortedData = sortBy(data, 'Country');

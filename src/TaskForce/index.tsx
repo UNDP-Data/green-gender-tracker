@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { csv } from 'd3-request';
 import { TFDataType } from '../Types';
 import { TaskForceDashboard } from './TaskForceDashboard';
+import CountryTaxonomy from '../Data/countryTaxonomy.json';
 
 const SelectionEl = styled.div`
   width: calc(50% - 1rem);
@@ -15,11 +16,12 @@ export const TaskForce = () => {
   const [tfData, setTFData] = useState<TFDataType[] | null>(null);
   useEffect(() => {
     csv('./data/TaskForce.csv', (data: any) => {
-      const dataFormated = data.map((d: any) => ({
+      const dataFormated: TFDataType[] = data.map((d: any) => ({
         ...d,
         '#Men': d['#Men'] !== undefined ? +d['#Men'] : undefined,
         '#Women': d['#Women'] !== undefined ? +d['#Women'] : undefined,
         Total: d.Total !== undefined ? +d.Total : undefined,
+        incomeGroup: CountryTaxonomy.findIndex((el1) => el1['Alpha-3 code-1'] === d['Country Code']) === -1 ? '' : CountryTaxonomy[CountryTaxonomy.findIndex((el1) => el1['Alpha-3 code-1'] === d['Country Code'])]['Income group'],
         '%Women': d['%Women'] !== undefined ? +d['%Women'] : undefined,
         'Leader Gender': d['Leader Gender'] ? d['Leader Gender'] : '',
         'Woman Leader': d['Woman Leader'] ? d['Woman Leader'] : '',
@@ -62,10 +64,10 @@ export const TaskForce = () => {
             allowClear
           >
             <Select.Option className='undp-select-option' value='All'>All income groups</Select.Option>
-            <Select.Option className='undp-select-option' value='Africa'>High income</Select.Option>
-            <Select.Option className='undp-select-option' value='Americas'>Upper middle income</Select.Option>
-            <Select.Option className='undp-select-option' value='Asia'>Lower middle income</Select.Option>
-            <Select.Option className='undp-select-option' value='Europe'>Low income</Select.Option>
+            <Select.Option className='undp-select-option' value='High income'>High income</Select.Option>
+            <Select.Option className='undp-select-option' value='Upper middle income'>Upper middle income</Select.Option>
+            <Select.Option className='undp-select-option' value='Lower middle income'>Lower middle income</Select.Option>
+            <Select.Option className='undp-select-option' value='Low income'>Low income</Select.Option>
           </Select>
         </SelectionEl>
       </div>
@@ -75,6 +77,7 @@ export const TaskForce = () => {
             <TaskForceDashboard
               selectedRegion={selectedRegion}
               allTFs={tfData}
+              selectedIncomeGroup={selectedIncomeGroup}
             />
           )
           : <div className='loader' />

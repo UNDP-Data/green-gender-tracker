@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 import uniqBy from 'lodash.uniqby';
 import { MapViz } from './MapViz';
-import { CountrySummaryDataType, PolicyDataType } from '../Types';
+import { CountrySummaryDataType, PolicyDataWithIncome } from '../Types';
 import { CountryTable } from './CountryTable';
 import { GenderResponseTable } from './GenderResponseTable';
+import CountryTaxonomy from '../Data/countryTaxonomy.json';
 
 interface Props {
-  allPolicies: PolicyDataType[];
+  allPolicies: PolicyDataWithIncome[];
   selectedRegion: string;
+  selectedIncomeGroup: string;
 }
 
 interface WidthProps {
@@ -19,10 +21,10 @@ const StatCardsDiv = styled.div<WidthProps>`
 `;
 
 export const PolicyDashboard = (props: Props) => {
-  const { selectedRegion, allPolicies } = props;
+  const { selectedRegion, allPolicies, selectedIncomeGroup } = props;
   const genderRelatedPolicies = allPolicies.filter((d) => d['Addresses VAWG'] === 'YES' || d['Directly supports unpaid care'] === 'YES' || d["Targets Women's Economic Security"] === 'YES');
-
-  const allPoliciesByRegion = selectedRegion !== 'All' ? allPolicies.filter((d) => d.Region === selectedRegion) : allPolicies;
+  const allPoliciesByIncomeGroup = selectedIncomeGroup !== 'All' ? allPolicies.filter((d) => d.countryIncomeGroup === selectedIncomeGroup) : allPolicies;
+  const allPoliciesByRegion = selectedRegion !== 'All' ? allPoliciesByIncomeGroup.filter((d) => d.Region === selectedRegion) : allPoliciesByIncomeGroup;
   const genderRelatedPoliciesByRegion = selectedRegion !== 'All' ? genderRelatedPolicies.filter((d) => d.Region === selectedRegion) : genderRelatedPolicies;
 
   const allCountriesLength = uniqBy(allPoliciesByRegion, 'Country Code').length;
@@ -34,6 +36,7 @@ export const PolicyDashboard = (props: Props) => {
       countryName: d['Country Name'],
       countryCode: d['Country Code'],
       region: d.Region,
+      incomeGroup: CountryTaxonomy[CountryTaxonomy.findIndex((el) => el['Alpha-3 code-1'] === d['Country Code'])]['Income group'],
       noOfPolicies: countryPoliciesList.length,
       noOfGenderPolicies: countryPoliciesList.filter((el) => el['Addresses VAWG'] === 'YES' || el['Directly supports unpaid care'] === 'YES' || el["Targets Women's Economic Security"] === 'YES').length,
       noOfPoliciesAddressingVAWG: countryPoliciesList.filter((el) => el['Addresses VAWG'] === 'YES').length,
@@ -80,17 +83,20 @@ export const PolicyDashboard = (props: Props) => {
       <MapViz
         data={countryData}
         selectedRegion={selectedRegion}
+        selectedIncomeGroup={selectedIncomeGroup}
       />
       <div className='margin-top-02'>
         <CountryTable
           data={countryData}
           selectedRegion={selectedRegion}
+          selectedIncomeGroup={selectedIncomeGroup}
         />
       </div>
       <div className='margin-top-11'>
         <GenderResponseTable
           data={allPoliciesByRegion}
           selectedRegion={selectedRegion}
+          selectedIncomeGroup={selectedIncomeGroup}
         />
       </div>
     </div>

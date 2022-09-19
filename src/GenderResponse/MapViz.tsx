@@ -14,6 +14,7 @@ import { Tooltip } from './Tooltip';
 interface Props {
   data: CountrySummaryDataType[];
   selectedRegion: string;
+  selectedIncomeGroup: string;
 }
 
 interface HoverDataType {
@@ -49,6 +50,7 @@ export const MapViz = (props: Props) => {
   const {
     data,
     selectedRegion,
+    selectedIncomeGroup,
   } = props;
   const svgHeight = 678;
   const svgWidth = window.innerWidth > 960 ? 1280 : 960;
@@ -164,13 +166,14 @@ export const MapViz = (props: Props) => {
               const index = (World as any).features.findIndex((el: any) => d.countryCode === el.properties.ISO3);
               const color = d[variable] > 0 ? calculation === 'abs' ? absColorScale(d[variable]) : percentColorScale((d[variable] * 100) / d.noOfPolicies) : '#FFBCB7';
               const regionOpacity = selectedRegion === 'All' || selectedRegion === d.region;
+              const incomeOpacity = selectedIncomeGroup === 'All' || selectedIncomeGroup === d.incomeGroup;
               return (
                 <g
                   key={i}
                   opacity={
                     selectedColor
-                      ? selectedColor === color && regionOpacity ? 1 : 0.1
-                      : regionOpacity ? 1 : 0.1
+                      ? selectedColor === color && regionOpacity && incomeOpacity ? 1 : 0.1
+                      : regionOpacity && incomeOpacity ? 1 : 0.1
                   }
                   onMouseEnter={(event) => {
                     setHoverData({

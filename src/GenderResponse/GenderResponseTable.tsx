@@ -8,6 +8,7 @@ import { PolicyDataType } from '../Types';
 interface Props {
   data: PolicyDataType[];
   selectedRegion: string;
+  selectedIncomeGroup: string;
 }
 
 const SelectionEl = styled.div`
@@ -28,6 +29,7 @@ export const GenderResponseTable = (props: Props) => {
   const {
     data,
     selectedRegion,
+    selectedIncomeGroup,
   } = props;
 
   const [selectedType, setSelectedType] = useState('All');
@@ -38,7 +40,7 @@ export const GenderResponseTable = (props: Props) => {
 
   useEffect(() => {
     setSelectedCountry([]);
-  }, [selectedRegion]);
+  }, [selectedRegion, selectedIncomeGroup]);
 
   useEffect(() => {
     const sortedData = sortBy(data, 'Country');

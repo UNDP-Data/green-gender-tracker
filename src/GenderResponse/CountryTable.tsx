@@ -6,6 +6,7 @@ import { CountrySummaryDataType } from '../Types';
 interface Props {
   data: CountrySummaryDataType[];
   selectedRegion: string;
+  selectedIncomeGroup: string;
 }
 
 interface SVGBarProps {
@@ -63,9 +64,11 @@ export const CountryTable = (props: Props) => {
   const {
     data,
     selectedRegion,
+    selectedIncomeGroup,
   } = props;
   const [sort, setSort] = useState(1);
-  const dataFilteredByRegion = selectedRegion === 'All' ? data : data.filter((d) => d.region === selectedRegion);
+  const dataFilterByIncome = selectedIncomeGroup === 'All' ? data : data.filter((d) => d.incomeGroup === selectedIncomeGroup);
+  const dataFilteredByRegion = selectedRegion === 'All' ? dataFilterByIncome : dataFilterByIncome.filter((d) => d.region === selectedRegion);
   let sortKey = 'countryName';
   switch (sort) {
     case 1:

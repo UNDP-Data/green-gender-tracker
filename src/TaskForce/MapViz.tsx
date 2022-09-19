@@ -14,6 +14,7 @@ import { Tooltip } from './Tooltip';
 interface Props {
   data: CountryTFSummaryDataType[];
   selectedRegion: string;
+  selectedIncomeGroup: string;
 }
 
 interface HoverDataType {
@@ -51,6 +52,7 @@ export const MapViz = (props: Props) => {
   const {
     data,
     selectedRegion,
+    selectedIncomeGroup,
   } = props;
   const svgHeight = 678;
   const svgWidth = window.innerWidth > 960 ? 1280 : 960;
@@ -169,13 +171,14 @@ export const MapViz = (props: Props) => {
               const variableName = calculation === 'abs' ? variable : percentVariable[variable] as 'noOfTFWithWomenLeader' | 'percentOfTFWithWomenLeader' | 'noOfTFWithMajorityWomenOfGenderParity' | 'percentOfTFWithMajorityWomenOfGenderParity' | 'noOfTFMembersWomen' | 'percentOfTFMembersWomen';
               const color = d[variableName] > 0 ? colorScale(d[variableName]) : d[variableName] === -1 ? '#D4D6D8' : '#FFBCB7';
               const regionOpacity = selectedRegion === 'All' || selectedRegion === d.region;
+              const incomeOpacity = selectedIncomeGroup === 'All' || selectedIncomeGroup === d.incomeGroup;
               return (
                 <g
                   key={i}
                   opacity={
                     selectedColor
-                      ? selectedColor === color && regionOpacity ? 1 : 0.1
-                      : regionOpacity ? 1 : 0.1
+                      ? selectedColor === color && regionOpacity && incomeOpacity ? 1 : 0.1
+                      : regionOpacity && incomeOpacity ? 1 : 0.1
                   }
                   onMouseEnter={(event) => {
                     setHoverData({
