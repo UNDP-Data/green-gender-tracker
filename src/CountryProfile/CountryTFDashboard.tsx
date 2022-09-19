@@ -16,6 +16,16 @@ const StatCardsDiv = styled.div<WidthProps>`
   width: ${(props) => props.width};
 `;
 
+const InfoBoxEl = styled.div`
+  width: 100%;
+  background-color: var(--light-red);
+  padding: var(--spacing-07);
+  text-transform: uppercase;
+  margin-top: var(--spacing-07);
+  text-align: center;
+  font-weight: bold;
+`;
+
 export const CountryTFDashboard = (props: Props) => {
   const { selectedCountry, allTFs } = props;
 
@@ -59,7 +69,7 @@ export const CountryTFDashboard = (props: Props) => {
   const tfMemberWomenPublicHealth = sumBy(allTFsByCountry.filter((d) => d['Sector 2'] === 'Public Health'), (d) => (d['#Women'] ? d['#Women'] : 0));
 
   return (
-    <div className='margin-top-09'>
+    <div className='margin-top-09' style={{ width: '100%' }}>
       <h5 className='bold margin-bottom-05'>
         Task Force details for
         {' '}
@@ -142,7 +152,7 @@ export const CountryTFDashboard = (props: Props) => {
                 />
               </div>
             </div>
-          ) : <StatCardsDiv className='stat-card' width='100%'><p>No task force data available</p></StatCardsDiv>
+          ) : <InfoBoxEl>No task force data available</InfoBoxEl>
       }
     </div>
   );
