@@ -97,7 +97,7 @@ export const CountryTable = (props: Props) => {
         Number of measures by country
         {selectedRegion === 'All' ? null : ` in ${selectedRegion}`}
       </h5>
-      <div style={{ height: '40rem' }} className='undp-scrollbar'>
+      <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
         <div className='undp-table-head undp-table-head-sticky'>
           <CellEl width='20%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(1); }}>
             Countries (

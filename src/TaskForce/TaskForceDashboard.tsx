@@ -4,6 +4,7 @@ import uniqBy from 'lodash.uniqby';
 import { TFDataType, CountryTFSummaryDataType } from '../Types';
 import { MapViz } from './MapViz';
 import { CountryTable } from './CountryTable';
+import { TFTable } from './TFTable';
 
 interface Props {
   allTFs: TFDataType[];
@@ -23,7 +24,7 @@ export const TaskForceDashboard = (props: Props) => {
 
   const allTFsByRegion = selectedRegion !== 'All' ? allTFs.filter((d) => d['SDG Region'] === selectedRegion) : allTFs;
   const tfsByRegionWomenMajority = allTFsByRegion.filter((d) => d['Composition Classification'] === 'Majority Women' || d['Composition Classification'] === 'Gender Parity');
-  const tfsByRegionWomenLeader = allTFsByRegion.filter((d) => d['Leader Gender'] === 'Woman' || d['Leader Gender'] === 'Man & Woman (co-chairs)');
+  const tfsByRegionWomenLeader = allTFsByRegion.filter((d) => d['Leader Gender'] === 'Woman' || d['Leader Gender'] === 'Man and Woman (co-chairs)');
 
   const tfMemberTotal = sumBy(allTFsByRegion, (d) => {
     const men = d['#Men'] ? d['#Men'] : 0;
@@ -35,7 +36,7 @@ export const TaskForceDashboard = (props: Props) => {
   const countryData: CountryTFSummaryDataType[] = uniqBy(allTFs, 'Country Code').map((d) => {
     const countryTFList = allTFs.filter((el) => el['Country Code'] === d['Country Code']);
     const countryTFsByRegionWomenMajority = countryTFList.filter((el) => el['Composition Classification'] === 'Majority Women' || el['Composition Classification'] === 'Gender Parity');
-    const countryTFsByRegionWomenLeader = countryTFList.filter((el) => el['Leader Gender'] === 'Woman' || el['Leader Gender'] === 'Man & Woman (co-chairs)');
+    const countryTFsByRegionWomenLeader = countryTFList.filter((el) => el['Leader Gender'] === 'Woman' || el['Leader Gender'] === 'Man and Woman (co-chairs)');
 
     const countryTFMemberTotal = sumBy(countryTFList, (el) => {
       const men = el['#Men'] ? el['#Men'] : 0;
@@ -165,6 +166,12 @@ export const TaskForceDashboard = (props: Props) => {
       <div className='margin-top-02'>
         <CountryTable
           data={countryData}
+          selectedRegion={selectedRegion}
+        />
+      </div>
+      <div className='margin-top-11'>
+        <TFTable
+          data={allTFsByRegion}
           selectedRegion={selectedRegion}
         />
       </div>

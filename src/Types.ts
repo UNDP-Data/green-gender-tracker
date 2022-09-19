@@ -20,6 +20,7 @@ export interface TFDataType {
   'Sub-region': string;
   'UNDP Region': string;
   'Task Force Name': string;
+  'Description of Task Force': string;
   Type: 'Expert' | 'Decision-Making';
   Sector: 'Public Health' | 'Multi-Sectoral' | 'Economic' | 'Enforcement' | 'Education' | 'Others';
   'Sector 2': 'Public Health' | 'Multi-Sectoral' | 'Others';
@@ -27,10 +28,10 @@ export interface TFDataType {
   '#Women'?: number;
   Total?: number;
   '%Women'?: number;
-  'Leader Gender'?: 'Man' | 'Woman' | 'Man & Woman (co-chairs)' ;
-  'Woman Leader'?: 'Yes' | 'No' | 'Co-Chair' | 'Missing' ;
-  'Composition Data': 'Yes' | 'No';
-  'Composition Classification'?: 'Gender Parity' | 'Majority Men' | 'Majority Women';
+  'Leader Gender': 'Man' | 'Woman' | 'Man and Woman (co-chairs)' | '' ;
+  'Woman Leader': 'Yes' | 'No' | 'Co-Chair' | 'Missing' | '' ;
+  'Composition Data': 'Yes' | 'No' | '';
+  'Composition Classification': 'Gender Parity' | 'Majority Men' | 'Majority Women' | '';
   Sources?: string;
 }
 
@@ -57,4 +58,9 @@ export interface CountryTFSummaryDataType {
   noOfTFMembers: number;
   noOfTFMembersWomen: number;
   percentOfTFMembersWomen: number;
+}
+
+export interface CountryDataType {
+  code: string;
+  name: string;
 }

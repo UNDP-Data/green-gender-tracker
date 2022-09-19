@@ -57,9 +57,9 @@ export const CountryTable = (props: Props) => {
     <>
       <h5 className='bold margin-bottom-05'>
         Task force by country
-        {selectedRegion === 'All' ? null : ` in ${selectedRegion}`}
+        {selectedRegion === 'All' ? null : ` for ${selectedRegion}`}
       </h5>
-      <div style={{ height: '40rem' }} className='undp-scrollbar'>
+      <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
         <div style={{ width: '100%' }}>
           <div className='undp-table-head-small undp-table-head-sticky'>
             <CellEl width='20%' className='undp-table-head-cell undp-sticky-head-column' cursor='pointer' onClick={() => { setSort(1); }}>

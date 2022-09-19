@@ -12,14 +12,16 @@ import './style/selectStyle.css';
 import './style/inputStyle.css';
 import './style/modalStyle.css';
 import './style/tableStyle.css';
+import './style/chipStyle.css';
 import { GenderResponse } from './GenderResponse';
 import { TaskForce } from './TaskForce';
+import { CountryProfile } from './CountryProfile';
 
 const App = () => (
   <>
     <div className='container'>
       <Tabs
-        defaultActiveKey='2'
+        defaultActiveKey='3'
         className='undp-tabs'
       >
         <Tabs.TabPane className='undp-tab-content' tab='Gender Sensitive Policy' key='1'>
@@ -28,8 +30,8 @@ const App = () => (
         <Tabs.TabPane className='undp-tab-content' tab='COVID-19 Task Force' key='2'>
           <TaskForce />
         </Tabs.TabPane>
-        <Tabs.TabPane className='undp-tab-content' tab='Policy and Task Force Details' key='3'>
-          Content of Tab Pane 3
+        <Tabs.TabPane className='undp-tab-content' tab='Country Profile' key='3'>
+          <CountryProfile />
         </Tabs.TabPane>
       </Tabs>
     </div>

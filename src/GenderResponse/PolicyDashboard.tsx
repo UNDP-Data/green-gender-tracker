@@ -3,6 +3,7 @@ import uniqBy from 'lodash.uniqby';
 import { MapViz } from './MapViz';
 import { CountrySummaryDataType, PolicyDataType } from '../Types';
 import { CountryTable } from './CountryTable';
+import { GenderResponseTable } from './GenderResponseTable';
 
 interface Props {
   allPolicies: PolicyDataType[];
@@ -83,6 +84,12 @@ export const PolicyDashboard = (props: Props) => {
       <div className='margin-top-02'>
         <CountryTable
           data={countryData}
+          selectedRegion={selectedRegion}
+        />
+      </div>
+      <div className='margin-top-11'>
+        <GenderResponseTable
+          data={allPoliciesByRegion}
           selectedRegion={selectedRegion}
         />
       </div>

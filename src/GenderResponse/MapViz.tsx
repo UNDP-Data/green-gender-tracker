@@ -29,7 +29,7 @@ const G = styled.g`
 const LegendEl = styled.div`
   padding: 1rem 1rem 0 1rem;
   background-color:rgba(255,255,255,0.7);
-  width: 20rem;
+  width: 25rem;
   margin-left: 1rem;
   margin-top: -2rem;
   position: relative;
@@ -114,7 +114,7 @@ export const MapViz = (props: Props) => {
               return (
                 <g
                   key={i}
-                  opacity={!selectedColor ? 1 : 0.3}
+                  opacity={selectedRegion !== 'All' ? 0.1 : !selectedColor ? 1 : selectedColor === '#D4D6D8' ? 1 : 0.1}
                 >
                   {
                     d.geometry.type === 'MultiPolygon' ? d.geometry.coordinates.map((el:any, j: any) => {
@@ -169,7 +169,7 @@ export const MapViz = (props: Props) => {
                   key={i}
                   opacity={
                     selectedColor
-                      ? selectedColor === color ? 1 : 0.1
+                      ? selectedColor === color && regionOpacity ? 1 : 0.1
                       : regionOpacity ? 1 : 0.1
                   }
                   onMouseEnter={(event) => {
@@ -289,7 +289,7 @@ export const MapViz = (props: Props) => {
         </g>
       </svg>
       <LegendEl>
-        <h6 className='margin-bottom-02'>
+        <p className='margin-bottom-03 small-font'>
           {
             variable === 'noOfGenderPolicies'
               ? 'Gender related policy'
@@ -299,7 +299,7 @@ export const MapViz = (props: Props) => {
                   ? 'Policies supporting unpaid care'
                   : "Policies targetting women's economic security"
           }
-        </h6>
+        </p>
         <svg width='100%' viewBox={`0 0 ${335} ${30}`}>
           <g transform={`translate(${76},0)`}>
             {

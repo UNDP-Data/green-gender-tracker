@@ -21,6 +21,10 @@ export const TaskForce = () => {
         '#Women': d['#Women'] !== undefined ? +d['#Women'] : undefined,
         Total: d.Total !== undefined ? +d.Total : undefined,
         '%Women': d['%Women'] !== undefined ? +d['%Women'] : undefined,
+        'Leader Gender': d['Leader Gender'] ? d['Leader Gender'] : '',
+        'Woman Leader': d['Woman Leader'] ? d['Woman Leader'] : '',
+        'Composition Data': d['Composition Data'] ? d['Composition Data'] : '',
+        'Composition Classification': d['Composition Classification'] ? d['Composition Classification'] : '',
       }));
       setTFData(dataFormated);
     });
