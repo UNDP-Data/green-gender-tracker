@@ -33,7 +33,7 @@ export const Tooltip = (props: Props) => {
   } = props;
   return (
     <TooltipEl className='tooltip' x={xPos} y={yPos} verticalAlignment={yPos > window.innerHeight / 2 ? 'top' : 'bottom'} horizontalAlignment={xPos > window.innerWidth / 2 ? 'left' : 'right'}>
-      <h4 className='margin-bottom-07'>{data.countryName}</h4>
+      <h4 className='margin-bottom-07 undp-typography'>{data.countryName}</h4>
       <div className='flex-div flex-space-between margin-bottom-05'>
         <div>
           # Task force
@@ -46,48 +46,49 @@ export const Tooltip = (props: Props) => {
         <div>
           # task force with women leader or co-chair
         </div>
-        <div className='bold'>
-          {data.noOfTFWithWomenLeader}
-          {' '}
-          (
-          {data.percentOfTFWithWomenLeader.toFixed(1)}
-          %)
-        </div>
+        {
+          data.noOfTFWithWomenLeader !== -1
+            ? (
+              <div className='bold'>
+                {data.noOfTFWithWomenLeader}
+                {' '}
+                (
+                {data.percentOfTFWithWomenLeader.toFixed(1)}
+                %)
+              </div>
+            )
+            : <div className='bold'>NA</div>
+        }
       </div>
       <div className='flex-div flex-space-between margin-bottom-05'>
         <div>
           # task force with gender parity or women majority
         </div>
-        <div className='bold'>
-          {data.noOfTFWithMajorityWomenOfGenderParity}
-          {' '}
-          (
-          {data.percentOfTFWithMajorityWomenOfGenderParity.toFixed(1)}
-          %)
-        </div>
-      </div>
-      <hr />
-      <div className='flex-div flex-space-between margin-bottom-05 margin-top-05'>
-        <div>
-          # members in task force
-        </div>
-        <div className='bold'>
-          {data.noOfTFMembers ? data.noOfTFMembers : 'NA'}
-        </div>
-      </div>
-      <div className='flex-div flex-space-between'>
-        <div>
-          # women members in task force
-        </div>
         {
-          data.noOfTFMembers
+          data.noOfTFWithMajorityWomenOfGenderParity !== -1
             ? (
               <div className='bold'>
-                {data.noOfTFMembersWomen}
+                {data.noOfTFWithMajorityWomenOfGenderParity}
                 {' '}
                 (
-                {data.percentOfTFMembersWomen.toFixed(1)}
+                {data.percentOfTFWithMajorityWomenOfGenderParity.toFixed(1)}
                 %)
+              </div>
+            )
+            : <div className='bold'>NA</div>
+        }
+      </div>
+      <hr />
+      <div className='flex-div flex-space-between'>
+        <div>
+          Share of women members in task force
+        </div>
+        {
+          data.percentOfTFMembersWomen !== -1
+            ? (
+              <div className='bold'>
+                {data.percentOfTFMembersWomen.toFixed(1)}
+                %
               </div>
             )
             : <div className='bold'>NA</div>

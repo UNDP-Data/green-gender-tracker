@@ -5,21 +5,8 @@
   border-bottom: 2px solid var(--gray-200);
 }
 
-.undp-tabs .ant-tabs-nav-list {
-  font-size: 1rem;
-  color: var(--black);
-  font-weight: 700;    
-  border-bottom: 2px solid rgba(0,0,0,0);
-  cursor: pointer;
-  display: inline-block;
-  letter-spacing: .03em;
-  margin-bottom: -0.125rem;
-  margin-right: 1.5rem;
-  margin-top: 0.75rem;
-  text-transform: uppercase;
-}
-
 .undp-tabs .ant-tabs-tab {
+  font-family: var(--fontFamily);
   font-size: 1rem;
   color: var(--black);
   font-weight: 700;
@@ -27,8 +14,8 @@
   text-transform: uppercase;
 }
 
-.undp-tabs .ant-tabs-nav-list{
-  transform: translate(2px, 0px) !important;
+.undp-tabs .ant-tabs-nav::before {
+  border-bottom: 1px solid var(--gray-200);
 }
 
 .undp-tabs .ant-tabs-tab .ant-tabs-tab-btn {
@@ -51,6 +38,7 @@
   color: var(--black);
   padding-bottom: 0.5rem;
   padding-left: 0;
+  font-weight: 700;
   border-bottom: 2px solid var(--dark-red);
 }
 
@@ -71,4 +59,8 @@
 .undp-tabs .ant-tabs-content-holder {
   padding: 2.5rem 1rem 1.25rem 1rem;
   font-size: 1.25rem;
+}
+
+.ant-tabs-dropdown {
+  font-family: var(--fontFamily);
 }

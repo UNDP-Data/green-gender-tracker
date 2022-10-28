@@ -17,7 +17,7 @@ interface TooltipElProps {
 const TooltipEl = styled.div<TooltipElProps>`
   display: block;
   position: fixed;
-  z-index: 10;
+  z-index: 1000;
   word-wrap: break-word;
   top: ${(props) => (props.verticalAlignment === 'bottom' ? props.y - 40 : props.y + 40)}px;
   left: ${(props) => (props.horizontalAlignment === 'left' ? props.x - 20 : props.x + 20)}px;
@@ -33,10 +33,10 @@ export const Tooltip = (props: Props) => {
   } = props;
   return (
     <TooltipEl className='tooltip' x={xPos} y={yPos} verticalAlignment={yPos > window.innerHeight / 2 ? 'top' : 'bottom'} horizontalAlignment={xPos > window.innerWidth / 2 ? 'left' : 'right'}>
-      <h4 className='margin-bottom-07'>{data.countryName}</h4>
+      <h4 className='margin-bottom-07 undp-typography'>{data.countryName}</h4>
       <div className='flex-div flex-space-between margin-bottom-05'>
         <div>
-          All Policies
+          No. of policies
         </div>
         <div className='bold'>
           {data.noOfPolicies}
@@ -44,7 +44,7 @@ export const Tooltip = (props: Props) => {
       </div>
       <div className='flex-div flex-space-between margin-bottom-05'>
         <div>
-          Gender Related Policies
+          No. of gender-sensitive policies
         </div>
         <div className='bold'>
           {data.noOfGenderPolicies}
@@ -52,7 +52,7 @@ export const Tooltip = (props: Props) => {
       </div>
       <div className='flex-div flex-space-between margin-bottom-05'>
         <div>
-          Policies adressing voilence againg women
+          No. of policies addressing violence against women
         </div>
         <div className='bold'>
           {data.noOfPoliciesAddressingVAWG}
@@ -60,7 +60,7 @@ export const Tooltip = (props: Props) => {
       </div>
       <div className='flex-div flex-space-between margin-bottom-05'>
         <div>
-          Policies supporting unpaid care
+          No. of policies supporting unpaid care
         </div>
         <div className='bold'>
           {data.noOfPoliciesSupportingUnpaidCare}
@@ -68,7 +68,7 @@ export const Tooltip = (props: Props) => {
       </div>
       <div className='flex-div flex-space-between'>
         <div>
-          Policies targeting economic security
+          No. of policies targeting economic security
         </div>
         <div className='bold'>
           {data.noOfPoliciesTargetingWomenEcoSecuirty}

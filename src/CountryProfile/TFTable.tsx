@@ -24,7 +24,7 @@ export const TFTable = (props: Props) => {
 
   return (
     <>
-      <h5 className='bold margin-bottom-05'>
+      <h5 className='bold margin-bottom-05 undp-typography'>
         All task Force Details for
         {' '}
         {selectedCountry.name}
@@ -51,30 +51,21 @@ export const TFTable = (props: Props) => {
                       <div className='undp-chip undp-chip-blue undp-chip-small'>
                         {d.Type}
                       </div>
-                      <div className='undp-chip undp-chip-blue undp-chip-small'>
+                      <div className='undp-chip undp-chip-green undp-chip-small'>
                         {d.Sector}
                       </div>
                       {
                         d['Woman Leader'] === 'Yes' || d['Woman Leader'] === 'Co-Chair'
                           ? (
-                            <div className='undp-chip undp-chip-blue undp-chip-small undp-chip-green'>
+                            <div className='undp-chip undp-chip-small'>
                               {d['Woman Leader'] === 'Yes' ? 'Women leadership' : 'Women Co-Chair'}
                             </div>
-                          ) : d['Woman Leader'] === 'No'
-                            ? (
-                              <div className='undp-chip undp-chip-blue undp-chip-small undp-chip-yellow'>
-                                Men leadership
-                              </div>
-                            ) : null
+                          ) : null
                       }
                       {
                         d['Composition Classification'] === 'Majority Women' || d['Composition Classification'] === 'Gender Parity'
                           ? (
-                            <div className='undp-chip undp-chip-blue undp-chip-small undp-chip-green'>
-                              {d['Composition Classification']}
-                            </div>
-                          ) : d['Composition Classification'] === 'Majority Men' ? (
-                            <div className='undp-chip undp-chip-blue undp-chip-small undp-chip-yellow'>
+                            <div className='undp-chip undp-chip-small'>
                               {d['Composition Classification']}
                             </div>
                           ) : null

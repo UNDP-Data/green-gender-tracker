@@ -1,86 +1,130 @@
-import { Select } from 'antd';
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import { useEffect, useReducer, useState } from 'react';
 import { csv } from 'd3-request';
-import { TFDataType } from '../Types';
-import { TaskForceDashboard } from './TaskForceDashboard';
+import uniqBy from 'lodash.uniqby';
+import sumBy from 'lodash.sumby';
+import { VizArea } from './VisualizationArea';
+import Reducer from './Context/Reducer';
+import Context from './Context/Context';
+import { CountryTFSummaryDataType, TFDataType } from '../Types';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 
-const SelectionEl = styled.div`
-  width: calc(50% - 1rem);
-`;
+import '../style/segmentedStyle.css';
 
 export const TaskForce = () => {
-  const [selectedRegion, setSelectedRegion] = useState('All');
-  const [selectedIncomeGroup, setSelectedIncomeGroup] = useState('All');
   const [tfData, setTFData] = useState<TFDataType[] | null>(null);
+  const [tfCountryData, setTFCountryData] = useState<CountryTFSummaryDataType[] | null>(null);
+  const initialState = {
+    selectedRegion: 'All',
+    selectedIncomeGroup: 'All',
+    selectedFragilityGroup: 'All',
+    selectedHDI: 'All',
+    selectedDevelopmentGroup: 'All',
+  };
+  const [state, dispatch] = useReducer(Reducer, initialState);
+
+  const updateSelectedRegion = (selectedRegion: string) => {
+    dispatch({
+      type: 'UPDATE_SELECTED_REGION',
+      payload: selectedRegion,
+    });
+  };
+  const updateSelectedIncomeGroup = (selectedIncomeGroup: string) => {
+    dispatch({
+      type: 'UPDATE_SELECTED_INCOME_GROUP',
+      payload: selectedIncomeGroup,
+    });
+  };
+  const updateSelectedFragilityGroup = (selectedFragilityGroup: string) => {
+    dispatch({
+      type: 'UPDATE_SELECTED_FRAGILITY_GROUP',
+      payload: selectedFragilityGroup,
+    });
+  };
+  const updateSelectedHDI = (selectedHDI: string) => {
+    dispatch({
+      type: 'UPDATE_SELECTED_HDI',
+      payload: selectedHDI,
+    });
+  };
+  const updateSelectedDevelopmentGroup = (selectedDevelopemntGroup: string) => {
+    dispatch({
+      type: 'UPDATE_SELECTED_DEVELOPMENT_GROUP',
+      payload: selectedDevelopemntGroup,
+    });
+  };
+
   useEffect(() => {
     csv('./data/TaskForce.csv', (data: any) => {
-      const dataFormated: TFDataType[] = data.map((d: any) => ({
-        ...d,
-        '#Men': d['#Men'] !== undefined ? +d['#Men'] : undefined,
-        '#Women': d['#Women'] !== undefined ? +d['#Women'] : undefined,
-        Total: d.Total !== undefined ? +d.Total : undefined,
-        incomeGroup: CountryTaxonomy.findIndex((el1) => el1['Alpha-3 code-1'] === d['Country Code']) === -1 ? '' : CountryTaxonomy[CountryTaxonomy.findIndex((el1) => el1['Alpha-3 code-1'] === d['Country Code'])]['Income group'],
-        '%Women': d['%Women'] !== undefined ? +d['%Women'] : undefined,
-        'Leader Gender': d['Leader Gender'] ? d['Leader Gender'] : '',
-        'Woman Leader': d['Woman Leader'] ? d['Woman Leader'] : '',
-        'Composition Data': d['Composition Data'] ? d['Composition Data'] : '',
-        'Composition Classification': d['Composition Classification'] ? d['Composition Classification'] : '',
-      }));
+      const dataFormated: TFDataType[] = data.map((d: any) => {
+        const countryTaxonomyIndx = CountryTaxonomy.findIndex((el1) => el1['Country Code'] === d['Country Code']);
+        return {
+          ...d,
+          '#Men': d['#Men'] !== undefined ? +d['#Men'] : undefined,
+          '#Women': d['#Women'] !== undefined ? +d['#Women'] : undefined,
+          Total: d.Total !== undefined ? +d.Total : undefined,
+          incomeGroup: CountryTaxonomy[countryTaxonomyIndx]['Income Group'],
+          fragility: CountryTaxonomy[countryTaxonomyIndx]['Fragility Level'],
+          hdiGroup: CountryTaxonomy[countryTaxonomyIndx]['HDI code'],
+          ldc: CountryTaxonomy[countryTaxonomyIndx]['Least Developed Countries (LDC)'] === 'LDC',
+          sids: CountryTaxonomy[countryTaxonomyIndx]['Small Island Developing States (SIDS)'] === 'SIDS',
+          '%Women': d['%Women'] !== '' ? +d['%Women'] : undefined,
+          'Leader Gender': d['Leader Gender'] !== '' ? d['Leader Gender'] : 'NA',
+          'Woman Leader': d['Woman Leader'],
+          'Composition Data': d['Composition Data'],
+          genderParity: d['%Women'] !== undefined ? !!(+d['%Women'] > 47 && +d['%Women'] < 53) : undefined,
+          'Composition Classification': d['Composition Classification'] !== '' ? d['Composition Classification'] : 'NA',
+        };
+      });
+      const countryData: CountryTFSummaryDataType[] = uniqBy(dataFormated, 'Country Code').map((d) => {
+        const countryTFList = dataFormated.filter((el) => el['Country Code'] === d['Country Code']);
+        const countryTFsByRegionWomenMajority = countryTFList.filter((el) => el['Composition Classification'] === 'Majority Women' || el['Composition Classification'] === 'Gender Parity');
+        const countryTFsByRegionWomenLeader = countryTFList.filter((el) => el['Leader Gender'] === 'Woman' || el['Leader Gender'] === 'Man and Woman (co-chairs)');
+        const womenPercentAvg = countryTFList.filter((el) => el['%Women'] !== undefined).length > 0 ? sumBy(countryTFList.filter((el) => el['%Women'] !== undefined), (el) => (el['%Women'] ? el['%Women'] : 0)) / countryTFList.filter((el) => el['%Women'] !== undefined).length : -1;
+        return {
+          countryName: d.Country,
+          countryCode: d['Country Code'],
+          region: d['SDG Region'],
+          incomeGroup: CountryTaxonomy[CountryTaxonomy.findIndex((el) => el['Country Code'] === d['Country Code'])]['Income Group'],
+          fragility: CountryTaxonomy[CountryTaxonomy.findIndex((el) => el['Country Code'] === d['Country Code'])]['Fragility Level'],
+          hdiGroup: CountryTaxonomy[CountryTaxonomy.findIndex((el) => el['Country Code'] === d['Country Code'])]['HDI code'],
+          ldc: CountryTaxonomy[CountryTaxonomy.findIndex((el) => el['Country Code'] === d['Country Code'])]['Least Developed Countries (LDC)'] === 'LDC',
+          sids: CountryTaxonomy[CountryTaxonomy.findIndex((el) => el['Country Code'] === d['Country Code'])]['Small Island Developing States (SIDS)'] === 'SIDS',
+          noOfTF: countryTFList.length,
+          noOfTFWithMajorityWomenOfGenderParity: countryTFList.filter((el) => el['Composition Classification'] !== 'NA').length > 0 ? countryTFsByRegionWomenMajority.length : -1,
+          percentOfTFWithMajorityWomenOfGenderParity: countryTFList.filter((el) => el['Composition Classification'] !== 'NA').length > 0 ? (countryTFsByRegionWomenMajority.length * 100) / countryTFList.filter((el) => el['Composition Classification'] !== 'NA').length : -1,
+          noOfTFWithWomenLeader: countryTFList.filter((el) => el['Leader Gender'] !== 'NA').length > 0 ? countryTFsByRegionWomenLeader.length : -1,
+          percentOfTFWithWomenLeader: countryTFList.filter((el) => el['Leader Gender'] !== 'NA').length > 0 ? (countryTFsByRegionWomenLeader.length * 100) / countryTFList.filter((el) => el['Leader Gender'] !== 'NA').length : -1,
+          percentOfTFMembersWomen: womenPercentAvg,
+          percentOfTFMembersWomenNA: !(countryTFList.filter((el) => el['%Women']).length > 0),
+        };
+      });
       setTFData(dataFormated);
+      setTFCountryData(countryData);
     });
   }, []);
   return (
     <>
-      <h3 className='bold'>COVID-19 Task Forces</h3>
-      <div className='flex-div flex-space-between margin-top-07 margin-bottom-07'>
-        <SelectionEl>
-          <p className='label'>Filter by Regions</p>
-          <Select
-            className='undp-select'
-            value={selectedRegion}
-            placeholder='All Regions Selected'
-            onChange={(e) => { setSelectedRegion(e || 'All'); }}
-            allowClear
-            clearIcon={<div className='clearIcon' />}
-          >
-            <Select.Option className='undp-select-option' value='All'>All Regions</Select.Option>
-            <Select.Option className='undp-select-option' value='Africa'>Africa</Select.Option>
-            <Select.Option className='undp-select-option' value='Americas'>Americas</Select.Option>
-            <Select.Option className='undp-select-option' value='Asia'>Asia</Select.Option>
-            <Select.Option className='undp-select-option' value='Europe'>Europe</Select.Option>
-            <Select.Option className='undp-select-option' value='Oceania'>Oceania</Select.Option>
-          </Select>
-        </SelectionEl>
-        <SelectionEl>
-          <p className='label'>Filter by Income Groups</p>
-          <Select
-            className='undp-select'
-            value={selectedIncomeGroup}
-            placeholder='All Regions Selected'
-            onChange={(e) => { setSelectedIncomeGroup(e || 'All'); }}
-            clearIcon={<div className='clearIcon' />}
-            allowClear
-          >
-            <Select.Option className='undp-select-option' value='All'>All income groups</Select.Option>
-            <Select.Option className='undp-select-option' value='High income'>High income</Select.Option>
-            <Select.Option className='undp-select-option' value='Upper middle income'>Upper middle income</Select.Option>
-            <Select.Option className='undp-select-option' value='Lower middle income'>Lower middle income</Select.Option>
-            <Select.Option className='undp-select-option' value='Low income'>Low income</Select.Option>
-          </Select>
-        </SelectionEl>
-      </div>
+      <h3 className='bold undp-typography'>COVID-19 Task Forces</h3>
       {
-        tfData
+        tfData && tfCountryData
           ? (
-            <TaskForceDashboard
-              selectedRegion={selectedRegion}
-              allTFs={tfData}
-              selectedIncomeGroup={selectedIncomeGroup}
-            />
+            <Context.Provider
+              value={{
+                ...state,
+                updateSelectedRegion,
+                updateSelectedIncomeGroup,
+                updateSelectedFragilityGroup,
+                updateSelectedHDI,
+                updateSelectedDevelopmentGroup,
+              }}
+            >
+              <VizArea
+                tfData={tfData}
+                tfCountryData={tfCountryData}
+              />
+            </Context.Provider>
           )
-          : <div className='loader' />
+          : <div className='undp-loader' />
       }
     </>
   );

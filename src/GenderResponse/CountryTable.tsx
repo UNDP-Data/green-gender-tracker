@@ -1,16 +1,19 @@
 import sortBy from 'lodash.sortby';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import styled from 'styled-components';
-import { CountrySummaryDataType } from '../Types';
+import { CountrySummaryDataType, CtxDataType } from '../Types';
+import { GetFilteredCountrySummaryData } from '../utils/getFilteredData';
+
+import '../style/chipStyle.css';
+import Context from './Context/Context';
 
 interface Props {
   data: CountrySummaryDataType[];
-  selectedRegion: string;
-  selectedIncomeGroup: string;
 }
 
 interface SVGBarProps {
   value: number;
+  bgBar?: boolean;
 }
 
 interface CellProps {
@@ -24,19 +27,23 @@ const CellEl = styled.div<CellProps>`
 `;
 
 const SVGBar = (props: SVGBarProps) => {
-  const { value } = props;
+  const { value, bgBar } = props;
   const maxWidth = 168.8;
   const barHeight = 30;
   const maxValue = 80;
   return (
     <svg width='100%' height='100%' viewBox={`0 0 ${maxWidth} ${barHeight}`}>
-      <rect
-        x={0}
-        y={0}
-        height={barHeight}
-        width={maxWidth}
-        fill='#F7F7F7'
-      />
+      {
+        bgBar ? (
+          <rect
+            x={0}
+            y={0}
+            height={barHeight}
+            width={maxWidth}
+            fill='#F7F7F7'
+          />
+        ) : null
+      }
       <rect
         x={0}
         y={0}
@@ -63,12 +70,21 @@ const SVGBar = (props: SVGBarProps) => {
 export const CountryTable = (props: Props) => {
   const {
     data,
+  } = props;
+  const {
     selectedRegion,
     selectedIncomeGroup,
-  } = props;
+    selectedFragilityGroup,
+    selectedHDI,
+    selectedDevelopmentGroup,
+    updateSelectedRegion,
+    updateSelectedIncomeGroup,
+    updateSelectedFragilityGroup,
+    updateSelectedHDI,
+    updateSelectedDevelopmentGroup,
+  } = useContext(Context) as CtxDataType;
   const [sort, setSort] = useState(1);
-  const dataFilterByIncome = selectedIncomeGroup === 'All' ? data : data.filter((d) => d.incomeGroup === selectedIncomeGroup);
-  const dataFilteredByRegion = selectedRegion === 'All' ? dataFilterByIncome : dataFilterByIncome.filter((d) => d.region === selectedRegion);
+  const filteredData = GetFilteredCountrySummaryData(data, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup);
   let sortKey = 'countryName';
   switch (sort) {
     case 1:
@@ -81,7 +97,7 @@ export const CountryTable = (props: Props) => {
       sortKey = 'noOfGenderPolicies';
       break;
     case 4:
-      sortKey = 'noOfGenderPolicies';
+      sortKey = 'noOfPoliciesAddressingVAWG';
       break;
     case 5:
       sortKey = 'noOfPoliciesSupportingUnpaidCare';
@@ -93,13 +109,51 @@ export const CountryTable = (props: Props) => {
       sortKey = 'countryName';
       break;
   }
-  const dataSorted = sortKey === 'countryName' ? sortBy(dataFilteredByRegion, sortKey) : sortBy(dataFilteredByRegion, sortKey).reverse();
+  const dataSorted = sortKey === 'countryName' ? sortBy(filteredData, sortKey) : sortBy(filteredData, sortKey).reverse();
   return (
     <>
-      <h5 className='bold margin-bottom-05'>
-        Number of measures by country
-        {selectedRegion === 'All' ? null : ` in ${selectedRegion}`}
+      <h5 className='bold margin-bottom-05 undp-typography'>
+        Number of measures by country/territory
       </h5>
+      {
+        selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' ? null
+          : (
+            <div className='flex-div flex-wrap margin-bottom-07 margin-top-00 flex-vert-align-center' style={{ gap: 'var(--spacing-05)' }}>
+              <>
+                <p className='undp-typography margin-bottom-00 bold'>Filters:</p>
+                {
+                selectedRegion === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedRegion}</div>
+              }
+                {
+                selectedIncomeGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedIncomeGroup}</div>
+              }
+                {
+                selectedFragilityGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedFragilityGroup}</div>
+              }
+                {
+                selectedHDI === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedHDI}</div>
+              }
+                {
+                selectedDevelopmentGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedDevelopmentGroup}</div>
+              }
+                <button
+                  className='undp-chip undp-chip-blue undp-chip-small'
+                  type='button'
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => {
+                    updateSelectedRegion('All');
+                    updateSelectedIncomeGroup('All');
+                    updateSelectedFragilityGroup('All');
+                    updateSelectedHDI('All');
+                    updateSelectedDevelopmentGroup('All');
+                  }}
+                >
+                  Reset Filters
+                </button>
+              </>
+            </div>
+          )
+      }
       <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
         <div className='undp-table-head undp-table-head-sticky'>
           <CellEl width='20%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(1); }}>
@@ -120,7 +174,7 @@ export const CountryTable = (props: Props) => {
             {sort === 3 ? '↓' : null}
           </CellEl>
           <CellEl width='16%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(4); }}>
-            Voilence against women
+            Violence against women
             {' '}
             {sort === 4 ? '↓' : null}
           </CellEl>
@@ -137,24 +191,24 @@ export const CountryTable = (props: Props) => {
         </div>
         {
           dataSorted.map((d, i) => (
-            <div key={i} className='undp-table-row flex-vert-align-center'>
+            <div key={i} className='undp-table-row'>
               <CellEl width='20%' className='undp-table-row-cell'>
                 {d.countryName}
               </CellEl>
-              <CellEl width='16%' className='undp-table-row-cell'>
+              <CellEl width='16%' style={{ backgroundColor: 'var(--light-azure)' }} className='undp-table-row-cell'>
                 <SVGBar value={d.noOfPolicies} />
               </CellEl>
-              <CellEl width='16%' className='undp-table-row-cell'>
+              <CellEl width='16%' style={{ backgroundColor: 'var(--light-green)' }} className='undp-table-row-cell'>
                 <SVGBar value={d.noOfGenderPolicies} />
               </CellEl>
               <CellEl width='16%' className='undp-table-row-cell'>
-                <SVGBar value={d.noOfPoliciesAddressingVAWG} />
+                <SVGBar bgBar value={d.noOfPoliciesAddressingVAWG} />
               </CellEl>
               <CellEl width='16%' className='undp-table-row-cell'>
-                <SVGBar value={d.noOfPoliciesSupportingUnpaidCare} />
+                <SVGBar bgBar value={d.noOfPoliciesSupportingUnpaidCare} />
               </CellEl>
               <CellEl width='16%' className='undp-table-row-cell'>
-                <SVGBar value={d.noOfPoliciesTargetingWomenEcoSecuirty} />
+                <SVGBar bgBar value={d.noOfPoliciesTargetingWomenEcoSecuirty} />
               </CellEl>
             </div>
           ))

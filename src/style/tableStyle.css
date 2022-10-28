@@ -22,6 +22,10 @@
   top: 0;
 }
 
+.undp-sticky-cell-column {
+  position: sticky;
+  left: 0;
+}
 
 .undp-table-head-cell {
   padding: .75rem 2.5rem .75rem .75rem;

@@ -7,6 +7,7 @@ import uniqBy from 'lodash.uniqby';
 import { CountryDataType, PolicyDataType, TFDataType } from '../Types';
 import { CountryPolicyDashboard } from './CountryPolicyDashboard';
 import { CountryTFDashboard } from './CountryTFDashboard';
+import CountryTaxonomy from '../Data/countryTaxonomy.json';
 
 const SelectionEl = styled.div`
   width: 100%;
@@ -23,17 +24,26 @@ export const CountryProfile = () => {
       .defer(csv, './data/TaskForce.csv')
       .await((err: any, pData: PolicyDataType[], tData: any) => {
         if (err) throw err;
-        const dataFormated = tData.map((d: any) => ({
-          ...d,
-          '#Men': d['#Men'] !== undefined ? +d['#Men'] : undefined,
-          '#Women': d['#Women'] !== undefined ? +d['#Women'] : undefined,
-          Total: d.Total !== undefined ? +d.Total : undefined,
-          '%Women': d['%Women'] !== undefined ? +d['%Women'] : undefined,
-          'Leader Gender': d['Leader Gender'] ? d['Leader Gender'] : '',
-          'Woman Leader': d['Woman Leader'] ? d['Woman Leader'] : '',
-          'Composition Data': d['Composition Data'] ? d['Composition Data'] : '',
-          'Composition Classification': d['Composition Classification'] ? d['Composition Classification'] : '',
-        }));
+        const dataFormated: TFDataType[] = tData.map((d: any) => {
+          const countryTaxonomyIndx = CountryTaxonomy.findIndex((el1) => el1['Country Code'] === d['Country Code']);
+          return {
+            ...d,
+            '#Men': d['#Men'] !== undefined ? +d['#Men'] : undefined,
+            '#Women': d['#Women'] !== undefined ? +d['#Women'] : undefined,
+            Total: d.Total !== undefined ? +d.Total : undefined,
+            incomeGroup: CountryTaxonomy[countryTaxonomyIndx]['Income Group'],
+            fragility: CountryTaxonomy[countryTaxonomyIndx]['Fragility Level'],
+            hdiGroup: CountryTaxonomy[countryTaxonomyIndx]['HDI code'],
+            ldc: CountryTaxonomy[countryTaxonomyIndx]['Least Developed Countries (LDC)'] === 'LDC',
+            sids: CountryTaxonomy[countryTaxonomyIndx]['Small Island Developing States (SIDS)'] === 'SIDS',
+            '%Women': d['%Women'] !== '' ? +d['%Women'] : undefined,
+            'Leader Gender': d['Leader Gender'] !== '' ? d['Leader Gender'] : 'NA',
+            'Woman Leader': d['Woman Leader'],
+            'Composition Data': d['Composition Data'],
+            genderParity: d['%Women'] !== undefined ? !!(+d['%Women'] > 47 && +d['%Women'] < 53) : undefined,
+            'Composition Classification': d['Composition Classification'] !== '' ? d['Composition Classification'] : 'NA',
+          };
+        });
         const countries = uniqBy(pData, 'Country Code').map((d) => ({
           code: d['Country Code'],
           name: d['Country Name'],
@@ -42,10 +52,6 @@ export const CountryProfile = () => {
         setPolicyData(pData);
         setCountryList(countries);
       });
-
-    csv('./data/policies.csv', (d: PolicyDataType[]) => {
-      setPolicyData(d);
-    });
   }, []);
   return (
     <>

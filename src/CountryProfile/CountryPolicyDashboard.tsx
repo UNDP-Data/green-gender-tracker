@@ -24,36 +24,36 @@ export const CountryPolicyDashboard = (props: Props) => {
 
   return (
     <div>
-      <h5 className='bold margin-bottom-05'>
+      <h5 className='bold margin-bottom-05 undp-typography'>
         Policy data for
         {' '}
         {selectedCountry.name}
       </h5>
       <div className='flex-div margin-bottom-02 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(50% - 0.5rem)'>
-          <h2 className='margin-bottom-00'>{countryPoliciesList.length}</h2>
-          <p className='margin-top-05 margin-bottom-00'>Policies for COVID response</p>
+        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
+          <h2 className='margin-bottom-00 undp-typography'>{countryPoliciesList.length}</h2>
+          <p className='margin-top-05 margin-bottom-00 undp-typography'>Policies for COVID-19 response</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(50% - 0.5rem)'>
-          <h2 className='margin-bottom-00'>{genderRelatedPoliciesByCountry.length}</h2>
-          <p className='margin-top-05 margin-bottom-00'>Gender related policies for COVID Response</p>
-        </StatCardsDiv>
-      </div>
-      <div className='flex-div margin-top-05 margin-bottom-07 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 0.666rem)'>
-          <h2 className='margin-bottom-00'>{countryPoliciesList.filter((d) => d['Addresses VAWG'] === 'YES').length}</h2>
-          <p className='margin-top-05 margin-bottom-00'>Policies adressing voilence againt women</p>
-        </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 0.666rem)'>
-          <h2 className='margin-bottom-00'>{countryPoliciesList.filter((d) => d['Directly supports unpaid care'] === 'YES').length}</h2>
-          <p className='margin-top-05 margin-bottom-00'>Policies supporting unpaid care</p>
-        </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 0.666rem)'>
-          <h2 className='margin-bottom-00'>{countryPoliciesList.filter((d) => d["Targets Women's Economic Security"] === 'YES').length}</h2>
-          <p className='margin-top-05 margin-bottom-00'>Policies targetting women&apos;s economic security</p>
+        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
+          <h2 className='margin-bottom-00 undp-typography'>{genderRelatedPoliciesByCountry.length}</h2>
+          <p className='margin-top-05 margin-bottom-00 undp-typography'>Gender-sensitive policies for COVID-19 Response</p>
         </StatCardsDiv>
       </div>
-      <div className='margin-top-12'>
+      <div className='flex-div margin-top-07 flex-space-between flex-wrap'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+          <h2 className='margin-bottom-00 undp-typography'>{countryPoliciesList.filter((d) => d['Addresses VAWG'] === 'YES').length}</h2>
+          <p className='margin-top-05 margin-bottom-00 undp-typography'>Policies addressing violence againt women</p>
+        </StatCardsDiv>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+          <h2 className='margin-bottom-00 undp-typography'>{countryPoliciesList.filter((d) => d['Directly supports unpaid care'] === 'YES').length}</h2>
+          <p className='margin-top-05 margin-bottom-00 undp-typography'>Policies supporting unpaid care</p>
+        </StatCardsDiv>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+          <h2 className='margin-bottom-00 undp-typography'>{countryPoliciesList.filter((d) => d["Targets Women's Economic Security"] === 'YES').length}</h2>
+          <p className='margin-top-05 margin-bottom-00 undp-typography'>Policies targeting women&apos;s economic security</p>
+        </StatCardsDiv>
+      </div>
+      <div className='margin-top-09'>
         <GenderResponseTable
           data={countryPoliciesList}
           selectedCountry={selectedCountry}

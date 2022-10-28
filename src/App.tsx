@@ -1,7 +1,7 @@
 import {
   Tabs,
 } from 'antd';
-import 'antd/dist/antd.css';
+import './style/antd.css';
 import './style/style.css';
 import './style/buttonStyle.css';
 import './style/statCardStyle.css';
@@ -17,23 +17,32 @@ import { GenderResponse } from './GenderResponse';
 import { TaskForce } from './TaskForce';
 import { CountryProfile } from './CountryProfile';
 
+const items = [
+  {
+    label: 'Gender Sensitive Policies',
+    key: '1',
+    children: <GenderResponse />,
+  },
+  {
+    label: 'COVID-19 Task Forces',
+    key: '2',
+    children: <TaskForce />,
+  },
+  {
+    label: 'Country Profile',
+    key: '3',
+    children: <CountryProfile />,
+  },
+];
+
 const App = () => (
   <>
-    <div className='container'>
+    <div className='container margin-top-07 undp-container'>
       <Tabs
         defaultActiveKey='1'
         className='undp-tabs'
-      >
-        <Tabs.TabPane className='undp-tab-content' tab='Gender Sensitive Policy' key='1'>
-          <GenderResponse />
-        </Tabs.TabPane>
-        <Tabs.TabPane className='undp-tab-content' tab='COVID-19 Task Force' key='2'>
-          <TaskForce />
-        </Tabs.TabPane>
-        <Tabs.TabPane className='undp-tab-content' tab='Country Profile' key='3'>
-          <CountryProfile />
-        </Tabs.TabPane>
-      </Tabs>
+        items={items}
+      />
     </div>
   </>
 );

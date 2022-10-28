@@ -1,75 +1,116 @@
-import { Select } from 'antd';
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import { useEffect, useReducer, useState } from 'react';
 import { csv } from 'd3-request';
-import { PolicyDataType, PolicyDataWithIncome } from '../Types';
-import { PolicyDashboard } from './PolicyDashboard';
+import uniqBy from 'lodash.uniqby';
+import { VizArea } from './VisualizationArea';
+import Reducer from './Context/Reducer';
+import Context from './Context/Context';
+import { PolicyDataType, PolicyDataWithCountryData, CountrySummaryDataType } from '../Types';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 
-const SelectionEl = styled.div`
-  width: calc(50% - 1rem);
-`;
+import '../style/segmentedStyle.css';
 
 export const GenderResponse = () => {
-  const [selectedRegion, setSelectedRegion] = useState('All');
-  const [selectedIncomeGroup, setSelectedIncomeGroup] = useState('All');
-  const [policyData, setPolicyData] = useState<PolicyDataWithIncome[] | null>(null);
+  const [policyData, setPolicyData] = useState<PolicyDataWithCountryData[] | null>(null);
+  const [countrySummaryData, setCountrySummaryData] = useState<CountrySummaryDataType[] | null>(null);
+  const initialState = {
+    selectedRegion: 'All',
+    selectedIncomeGroup: 'All',
+    selectedFragilityGroup: 'All',
+    selectedHDI: 'All',
+    selectedDevelopmentGroup: 'All',
+  };
+  const [state, dispatch] = useReducer(Reducer, initialState);
+
+  const updateSelectedRegion = (selectedRegion: string) => {
+    dispatch({
+      type: 'UPDATE_SELECTED_REGION',
+      payload: selectedRegion,
+    });
+  };
+  const updateSelectedIncomeGroup = (selectedIncomeGroup: string) => {
+    dispatch({
+      type: 'UPDATE_SELECTED_INCOME_GROUP',
+      payload: selectedIncomeGroup,
+    });
+  };
+  const updateSelectedFragilityGroup = (selectedFragilityGroup: string) => {
+    dispatch({
+      type: 'UPDATE_SELECTED_FRAGILITY_GROUP',
+      payload: selectedFragilityGroup,
+    });
+  };
+  const updateSelectedHDI = (selectedHDI: string) => {
+    dispatch({
+      type: 'UPDATE_SELECTED_HDI',
+      payload: selectedHDI,
+    });
+  };
+  const updateSelectedDevelopmentGroup = (selectedDevelopemntGroup: string) => {
+    dispatch({
+      type: 'UPDATE_SELECTED_DEVELOPMENT_GROUP',
+      payload: selectedDevelopemntGroup,
+    });
+  };
+
   useEffect(() => {
     csv('./data/policies.csv', (d: PolicyDataType[]) => {
-      const pData: PolicyDataWithIncome[] = d.map((el) => ({ ...el, countryIncomeGroup: CountryTaxonomy[CountryTaxonomy.findIndex((el1) => el1['Alpha-3 code-1'] === el['Country Code'])]['Income group'] }));
+      const pData: PolicyDataWithCountryData[] = d.map((el) => {
+        const countryTaxonomyIndx = CountryTaxonomy.findIndex((el1) => el1['Country Code'] === el['Country Code']);
+        return {
+          ...el,
+          countryIncomeGroup: CountryTaxonomy[countryTaxonomyIndx]['Income Group'],
+          fragility: CountryTaxonomy[countryTaxonomyIndx]['Fragility Level'],
+          hdiGroup: CountryTaxonomy[countryTaxonomyIndx]['HDI code'],
+          ldc: CountryTaxonomy[countryTaxonomyIndx]['Least Developed Countries (LDC)'] === 'LDC',
+          sids: CountryTaxonomy[countryTaxonomyIndx]['Small Island Developing States (SIDS)'] === 'SIDS',
+        };
+      });
+
+      const countryData: CountrySummaryDataType[] = uniqBy(pData, 'Country Code').map((p) => {
+        const countryPoliciesList = pData.filter((el) => el['Country Code'] === p['Country Code']);
+        return {
+          countryName: p['Country Name'],
+          countryCode: p['Country Code'],
+          region: p.Region,
+          incomeGroup: CountryTaxonomy[CountryTaxonomy.findIndex((el) => el['Country Code'] === p['Country Code'])]['Income Group'],
+          fragility: CountryTaxonomy[CountryTaxonomy.findIndex((el) => el['Country Code'] === p['Country Code'])]['Fragility Level'],
+          hdiGroup: CountryTaxonomy[CountryTaxonomy.findIndex((el) => el['Country Code'] === p['Country Code'])]['HDI code'],
+          ldc: CountryTaxonomy[CountryTaxonomy.findIndex((el) => el['Country Code'] === p['Country Code'])]['Least Developed Countries (LDC)'] === 'LDC',
+          sids: CountryTaxonomy[CountryTaxonomy.findIndex((el) => el['Country Code'] === p['Country Code'])]['Small Island Developing States (SIDS)'] === 'SIDS',
+          noOfPolicies: countryPoliciesList.length,
+          noOfGenderPolicies: countryPoliciesList.filter((el) => el['Addresses VAWG'] === 'YES' || el['Directly supports unpaid care'] === 'YES' || el["Targets Women's Economic Security"] === 'YES').length,
+          noOfPoliciesAddressingVAWG: countryPoliciesList.filter((el) => el['Addresses VAWG'] === 'YES').length,
+          noOfPoliciesSupportingUnpaidCare: countryPoliciesList.filter((el) => el['Directly supports unpaid care'] === 'YES').length,
+          noOfPoliciesTargetingWomenEcoSecuirty: countryPoliciesList.filter((el) => el["Targets Women's Economic Security"] === 'YES').length,
+        };
+      });
       setPolicyData(pData);
+      setCountrySummaryData(countryData);
     });
   }, []);
   return (
     <>
-      <h3 className='bold'>Policy Tracker</h3>
-      <div className='flex-div flex-space-between margin-top-07 margin-bottom-07'>
-        <SelectionEl>
-          <p className='label'>Filter by Regions</p>
-          <Select
-            className='undp-select'
-            value={selectedRegion}
-            placeholder='All Regions Selected'
-            onChange={(e) => { setSelectedRegion(e || 'All'); }}
-            allowClear
-            clearIcon={<div className='clearIcon' />}
-          >
-            <Select.Option className='undp-select-option' value='All'>All Regions</Select.Option>
-            <Select.Option className='undp-select-option' value='Africa'>Africa</Select.Option>
-            <Select.Option className='undp-select-option' value='Americas'>Americas</Select.Option>
-            <Select.Option className='undp-select-option' value='Asia'>Asia</Select.Option>
-            <Select.Option className='undp-select-option' value='Europe'>Europe</Select.Option>
-            <Select.Option className='undp-select-option' value='Oceania'>Oceania</Select.Option>
-          </Select>
-        </SelectionEl>
-        <SelectionEl>
-          <p className='label'>Filter by Income Groups</p>
-          <Select
-            className='undp-select'
-            value={selectedIncomeGroup}
-            placeholder='All Regions Selected'
-            onChange={(e) => { setSelectedIncomeGroup(e || 'All'); }}
-            clearIcon={<div className='clearIcon' />}
-            allowClear
-          >
-            <Select.Option className='undp-select-option' value='All'>All income groups</Select.Option>
-            <Select.Option className='undp-select-option' value='High income'>High income</Select.Option>
-            <Select.Option className='undp-select-option' value='Upper middle income'>Upper middle income</Select.Option>
-            <Select.Option className='undp-select-option' value='Lower middle income'>Lower middle income</Select.Option>
-            <Select.Option className='undp-select-option' value='Low income'>Low income</Select.Option>
-          </Select>
-        </SelectionEl>
-      </div>
+      <h3 className='bold undp-typography'>Policy Tracker</h3>
       {
-        policyData
+        policyData && countrySummaryData
           ? (
-            <PolicyDashboard
-              selectedRegion={selectedRegion}
-              selectedIncomeGroup={selectedIncomeGroup}
-              allPolicies={policyData}
-            />
+            <Context.Provider
+              value={{
+                ...state,
+                updateSelectedRegion,
+                updateSelectedIncomeGroup,
+                updateSelectedFragilityGroup,
+                updateSelectedHDI,
+                updateSelectedDevelopmentGroup,
+              }}
+            >
+              <VizArea
+                policyData={policyData}
+                countrySummaryData={countrySummaryData}
+              />
+            </Context.Provider>
           )
-          : <div className='loader' />
+          : <div className='undp-loader' />
       }
     </>
   );

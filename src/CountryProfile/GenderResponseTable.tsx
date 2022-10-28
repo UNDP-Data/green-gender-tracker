@@ -23,7 +23,7 @@ export const GenderResponseTable = (props: Props) => {
   } = props;
   return (
     <>
-      <h5 className='bold margin-bottom-05'>
+      <h5 className='bold margin-bottom-05 undp-typography'>
         All gender response details for
         {' '}
         {selectedCountry.name}
@@ -53,8 +53,8 @@ export const GenderResponseTable = (props: Props) => {
                             {
                               d['Addresses VAWG'] === 'YES' || d['Directly supports unpaid care'] === 'YES' || d['Targets Women\'s Economic Security'] === 'YES'
                                 ? (
-                                  <div className='undp-chip undp-chip-small'>
-                                    Gender sensitive
+                                  <div className='undp-chip undp-chip-small undp-chip-green'>
+                                    Gender-sensitive
                                   </div>
                                 ) : null
                             }
@@ -62,23 +62,23 @@ export const GenderResponseTable = (props: Props) => {
                               d['Addresses VAWG'] === 'YES'
                                 ? (
                                   <div className='undp-chip undp-chip-small undp-chip-blue'>
-                                    Addresses voilence against women
+                                    Violence against women
                                   </div>
                                 ) : null
                             }
                             {
                               d['Directly supports unpaid care'] === 'YES'
                                 ? (
-                                  <div className='undp-chip undp-chip-small undp-chip-yellow'>
-                                    Supports unpaid care
+                                  <div className='undp-chip undp-chip-small undp-chip-blue'>
+                                    Unpaid care work
                                   </div>
                                 ) : null
                             }
                             {
                               d['Targets Women\'s Economic Security'] === 'YES'
                                 ? (
-                                  <div className='undp-chip undp-chip-small undp-chip-green'>
-                                    Targets economic security
+                                  <div className='undp-chip undp-chip-small undp-chip-blue'>
+                                    Women&apos;s economic security
                                   </div>
                                 ) : null
                             }

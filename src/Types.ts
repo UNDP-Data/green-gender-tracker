@@ -13,8 +13,13 @@ export interface PolicyDataType {
   'Directly supports unpaid care': 'YES' | 'NO';
 }
 
-export interface PolicyDataWithIncome extends PolicyDataType {
+export interface PolicyDataWithCountryData extends PolicyDataType {
   countryIncomeGroup: string;
+  fragility: string;
+  hdiGroup: string;
+  ldc: boolean;
+  sids: boolean;
+
 }
 
 export interface TFDataType {
@@ -24,6 +29,10 @@ export interface TFDataType {
   'Sub-region': string;
   'UNDP Region': string;
   incomeGroup: string;
+  fragility: string;
+  hdiGroup: string;
+  ldc: boolean;
+  sids: boolean;
   'Task Force Name': string;
   'Description of Task Force': string;
   Type: 'Expert' | 'Decision-Making';
@@ -33,10 +42,11 @@ export interface TFDataType {
   '#Women'?: number;
   Total?: number;
   '%Women'?: number;
-  'Leader Gender': 'Man' | 'Woman' | 'Man and Woman (co-chairs)' | '' ;
-  'Woman Leader': 'Yes' | 'No' | 'Co-Chair' | 'Missing' | '' ;
-  'Composition Data': 'Yes' | 'No' | '';
-  'Composition Classification': 'Gender Parity' | 'Majority Men' | 'Majority Women' | '';
+  'Leader Gender': 'Man' | 'Woman' | 'Man and Woman (co-chairs)' | 'NA' ;
+  'Woman Leader': 'Yes' | 'No' | 'Co-Chair' | 'Missing' ;
+  'Composition Data': 'Yes' | 'No';
+  'Composition Classification': 'Gender Parity' | 'Majority Men' | 'Majority Women' | 'NA';
+  genderParity?: boolean;
   Sources?: string;
 }
 
@@ -45,6 +55,10 @@ export interface CountrySummaryDataType {
   countryCode: string;
   region: string;
   incomeGroup: string;
+  fragility: string;
+  hdiGroup: string;
+  ldc: boolean;
+  sids: boolean;
   noOfPolicies: number;
   noOfGenderPolicies: number;
   noOfPoliciesAddressingVAWG: number;
@@ -58,16 +72,32 @@ export interface CountryTFSummaryDataType {
   region: string;
   noOfTF: number;
   incomeGroup: string;
+  fragility: string;
+  hdiGroup: string;
+  ldc: boolean;
+  sids: boolean;
   noOfTFWithWomenLeader: number;
   percentOfTFWithWomenLeader: number;
   noOfTFWithMajorityWomenOfGenderParity: number;
   percentOfTFWithMajorityWomenOfGenderParity: number;
-  noOfTFMembers: number;
-  noOfTFMembersWomen: number;
   percentOfTFMembersWomen: number;
+  percentOfTFMembersWomenNA: boolean;
 }
 
 export interface CountryDataType {
   code: string;
   name: string;
+}
+
+export interface CtxDataType {
+  selectedRegion: string;
+  selectedIncomeGroup: string;
+  selectedFragilityGroup: string;
+  selectedHDI: string;
+  selectedDevelopmentGroup: string;
+  updateSelectedRegion: (_d: string) => void;
+  updateSelectedIncomeGroup: (_d: string) => void;
+  updateSelectedFragilityGroup: (_d: string) => void;
+  updateSelectedHDI: (_d: string) => void;
+  updateSelectedDevelopmentGroup: (_d: string) => void;
 }

@@ -1,1682 +1,2763 @@
 [
-    {
-      "Alpha-3 code-1": "GRC",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "BRN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "BGD",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "CYM",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "LBR",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "NRU",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "SWZ",
-      "LDC": false,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "DOM",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "NAM",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "AUS",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "DEU",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "POL",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "FRA",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "ALB",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "LSO",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "COK",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "KHM",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "UKR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "DZA",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "USA",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "BFA",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "GIB",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "ZMB",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "BTN",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "FJI",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "RWA",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "VGB",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "BLR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "ETH",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "GHA",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "VNM",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "MLT",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "BHS",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "MNE",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "BOL",
-      "LDC": false,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "CUB",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "GUM",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "CHE",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "MCO",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "FIN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "AND",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "ZWE",
-      "LDC": false,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "GUF",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "CUW",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "SVN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "SOM",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "BGR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "GIN",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "BMU",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "JEY",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "CIV",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "REU",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "IRN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "COM",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "IND",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "MRT",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "MDG",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "GRD",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "GNB",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "GEO",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "MDV",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "ABW",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "GUY",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "ARG",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "PSE",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "GAB",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "NIC",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "MKD",
-      "LDC": false,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "ARE",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "BWA",
-      "LDC": false,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "LBY",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "WSM",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "OMN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "MWI",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "SRB",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "SSD",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "FRO",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "MHL",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "JOR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "VUT",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "BHR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "TJK",
-      "LDC": false,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "TUV",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "HRV",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "WLF",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "TTO",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "IDN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "ERI",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "PRT",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "KNA",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "MTQ",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "SAU",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "ARM",
-      "LDC": false,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "NOR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "DMA",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "TUR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "MAF",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "SDN",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "PAN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "ESP",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "AGO",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "BRA",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "TLS",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "PER",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "VCT",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "BIH",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "PAK",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "SXM",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "MYT",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "ISR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "SYR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "AZE",
-      "LDC": false,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "ITA",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "CAF",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "KOR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "KWT",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "LIE",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "TKM",
-      "LDC": false,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "STP",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "SGP",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "IRL",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "RUS",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "CZE",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "TCA",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "AIA",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "CPV",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "LUX",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "CMR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "SPM",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "GBR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "CRI",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "EST",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "PRY",
-      "LDC": false,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "PLW",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "URY",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "IMN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "JAM",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "MNG",
-      "LDC": false,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "NZL",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "SUR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "NIU",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "VIR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "KGZ",
-      "LDC": false,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "NCL",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "FLK",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "PRI",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "NGA",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "MLI",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "CYP",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "TON",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "GGY",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "UZB",
-      "LDC": false,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "AUT",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "BRB",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "SLE",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "ZAF",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "CHL",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "FSM",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "PNG",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "COD",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "SVK",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "MSR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "NLD",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "EGY",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "GMB",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "CHN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "GRL",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "ANT",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "SJM",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "TWN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "WBG",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "GTM",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "ECU",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "GLP",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "MUS",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "COL",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "QAT",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "IRQ",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "LBN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "MYS",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "VAT",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "TKL",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "MEX",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "HTI",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "ROU",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "TUN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "SMR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "KEN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "MMR",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "CAN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "BEL",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "BES",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "JPN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "HUN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "MNP",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "BLZ",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "HND",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "YEM",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "VEN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "MOZ",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "LKA",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "SLB",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "TZA",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "LCA",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "GNQ",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "TCD",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "LAO",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "NPL",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "SLV",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "SEN",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "THA",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "LTU",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "PYF",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "BLM",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "MAR",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "TGO",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "AFG",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "ASM",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "DJI",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "ATG",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "SWE",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "KAZ",
-      "LDC": false,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Upper middle income"
-    },
-    {
-      "Alpha-3 code-1": "PHL",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "LVA",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "ISL",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "BDI",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "COG",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "BEN",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "DNK",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "SYC",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "High income"
-    },
-    {
-      "Alpha-3 code-1": "NER",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "MDA",
-      "LDC": false,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "KIR",
-      "LDC": true,
-      "LLDC": false,
-      "SIDS": true,
-      "Income group": "Lower middle income"
-    },
-    {
-      "Alpha-3 code-1": "UGA",
-      "LDC": true,
-      "LLDC": true,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "HKG",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "XKX",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "PRK",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": "Low income"
-    },
-    {
-      "Alpha-3 code-1": "MAC",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "SHN",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    },
-    {
-      "Alpha-3 code-1": "ESH",
-      "LDC": false,
-      "LLDC": false,
-      "SIDS": false,
-      "Income group": ""
-    }
-  ]
+  {
+    "Country Code": "ABW",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "AFG",
+    "Fragility Level": "Extremely Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Asia"
+  },
+  {
+    "Country Code": "AGO",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "AIA",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "ALA",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "ALB",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "AND",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "ARE",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "ARG",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "ARM",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "ASM",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Polynesia"
+  },
+  {
+    "Country Code": "ATF",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "ATG",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "AUS",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Australia and New Zealand"
+  },
+  {
+    "Country Code": "AUT",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Europe"
+  },
+  {
+    "Country Code": "AZE",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "BDI",
+    "Fragility Level": "Extremely Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "BEL",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Europe"
+  },
+  {
+    "Country Code": "BEN",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "BES",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "BFA",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "BGD",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Asia"
+  },
+  {
+    "Country Code": "BGR",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Europe"
+  },
+  {
+    "Country Code": "BHR",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "BHS",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "BIH",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "BLM",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "BLR",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Europe"
+  },
+  {
+    "Country Code": "BLZ",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "BMU",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern America"
+  },
+  {
+    "Country Code": "BOL",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "BRA",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "BRB",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "BRN",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "South-eastern Asia"
+  },
+  {
+    "Country Code": "BTN",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Asia"
+  },
+  {
+    "Country Code": "BVT",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "BWA",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "CAF",
+    "Fragility Level": "Extremely Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "CAN",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern America"
+  },
+  {
+    "Country Code": "CCK",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Australia and New Zealand"
+  },
+  {
+    "Country Code": "XKX",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Region Name": "Europe",
+    "Sub-region Name": "Southern Europe",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Small Island Developing States (SIDS)": "Non-SIDS"
+  },
+  {
+    "Country Code": "CHE",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Europe"
+  },
+  {
+    "Country Code": "CHL",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "CHN",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Asia"
+  },
+  {
+    "Country Code": "CIV",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "CMR",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "COD",
+    "Fragility Level": "Extremely Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "COG",
+    "Fragility Level": "Extremely Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "COK",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Polynesia"
+  },
+  {
+    "Country Code": "COL",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "COM",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "CPV",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "CRI",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "Very High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "CUB",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "CUW",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "CXR",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Australia and New Zealand"
+  },
+  {
+    "Country Code": "CYM",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "CYP",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "CZE",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Europe"
+  },
+  {
+    "Country Code": "DEU",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Europe"
+  },
+  {
+    "Country Code": "DJI",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "DMA",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "DNK",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "DOM",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "DZA",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Africa"
+  },
+  {
+    "Country Code": "ECU",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "EGY",
+    "Fragility Level": "Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Africa"
+  },
+  {
+    "Country Code": "ERI",
+    "Fragility Level": "Extremely Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "ESH",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Africa"
+  },
+  {
+    "Country Code": "ESP",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "EST",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "ETH",
+    "Fragility Level": "Extremely Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "FIN",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "FJI",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Melanesia"
+  },
+  {
+    "Country Code": "FLK",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "FRA",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Europe"
+  },
+  {
+    "Country Code": "FRO",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "FSM",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Micronesia"
+  },
+  {
+    "Country Code": "GAB",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "GBR",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "GEO",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "Very High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "GGY",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "GHA",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "GIB",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "GIN",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "GLP",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "GMB",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "GNB",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "GNQ",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "GRC",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "GRD",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "GRL",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern America"
+  },
+  {
+    "Country Code": "GTM",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "GUF",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "GUM",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Micronesia"
+  },
+  {
+    "Country Code": "GUY",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "HKG",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Asia"
+  },
+  {
+    "Country Code": "HMD",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Australia and New Zealand"
+  },
+  {
+    "Country Code": "HND",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "HRV",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "HTI",
+    "Fragility Level": "Extremely Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "HUN",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Europe"
+  },
+  {
+    "Country Code": "IDN",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "South-eastern Asia"
+  },
+  {
+    "Country Code": "IMN",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "IND",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Asia"
+  },
+  {
+    "Country Code": "IOT",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "IRL",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "IRN",
+    "Fragility Level": "Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Asia"
+  },
+  {
+    "Country Code": "IRQ",
+    "Fragility Level": "Extremely Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "ISL",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "ISR",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "ITA",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "JAM",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "JEY",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "JOR",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "JPN",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Asia"
+  },
+  {
+    "Country Code": "KAZ",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Central Asia"
+  },
+  {
+    "Country Code": "KEN",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "KGZ",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Central Asia"
+  },
+  {
+    "Country Code": "KHM",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "South-eastern Asia"
+  },
+  {
+    "Country Code": "KIR",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Micronesia"
+  },
+  {
+    "Country Code": "KNA",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "KOR",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Asia"
+  },
+  {
+    "Country Code": "KWT",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "LAO",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "South-eastern Asia"
+  },
+  {
+    "Country Code": "LBN",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "LBR",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "LBY",
+    "Fragility Level": "Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Africa"
+  },
+  {
+    "Country Code": "LCA",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "LIE",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Europe"
+  },
+  {
+    "Country Code": "LKA",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Asia"
+  },
+  {
+    "Country Code": "LSO",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "LTU",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "LUX",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Europe"
+  },
+  {
+    "Country Code": "LVA",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "MAC",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Asia"
+  },
+  {
+    "Country Code": "MAF",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "MAR",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Africa"
+  },
+  {
+    "Country Code": "MCO",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": 0,
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Europe"
+  },
+  {
+    "Country Code": "MDA",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Europe"
+  },
+  {
+    "Country Code": "MDG",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "MDV",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Southern Asia"
+  },
+  {
+    "Country Code": "MEX",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "MHL",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Medium",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Micronesia"
+  },
+  {
+    "Country Code": "MKD",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "MLI",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "MLT",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "MMR",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "South-eastern Asia"
+  },
+  {
+    "Country Code": "MNE",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "MNG",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Asia"
+  },
+  {
+    "Country Code": "MNP",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Micronesia"
+  },
+  {
+    "Country Code": "MOZ",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "MRT",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "MSR",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "MTQ",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "MUS",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "Very High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "MWI",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "MYS",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "South-eastern Asia"
+  },
+  {
+    "Country Code": "MYT",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "NAM",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "NCL",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Melanesia"
+  },
+  {
+    "Country Code": "NER",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "NFK",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Australia and New Zealand"
+  },
+  {
+    "Country Code": "NGA",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "NIC",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "NIU",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Polynesia"
+  },
+  {
+    "Country Code": "NLD",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Europe"
+  },
+  {
+    "Country Code": "NoCode",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "NOR",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "NPL",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Asia"
+  },
+  {
+    "Country Code": "NRU",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": 0,
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Micronesia"
+  },
+  {
+    "Country Code": "NZL",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Australia and New Zealand"
+  },
+  {
+    "Country Code": "OMN",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "PAK",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Asia"
+  },
+  {
+    "Country Code": "PAN",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "PCN",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Polynesia"
+  },
+  {
+    "Country Code": "PER",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "PHL",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "South-eastern Asia"
+  },
+  {
+    "Country Code": "PLW",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Micronesia"
+  },
+  {
+    "Country Code": "PNG",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Melanesia"
+  },
+  {
+    "Country Code": "POL",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Europe"
+  },
+  {
+    "Country Code": "PRI",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "PRK",
+    "Fragility Level": "Fragile",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": 0,
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Asia"
+  },
+  {
+    "Country Code": "PRT",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "PRY",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "PSE",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "High",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "PYF",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Polynesia"
+  },
+  {
+    "Country Code": "QAT",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "REU",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "ROU",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Europe"
+  },
+  {
+    "Country Code": "RUS",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Europe"
+  },
+  {
+    "Country Code": "RWA",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "SAU",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "SDN",
+    "Fragility Level": "Extremely Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Africa"
+  },
+  {
+    "Country Code": "SEN",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "SGP",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "South-eastern Asia"
+  },
+  {
+    "Country Code": "SGS",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "SHN",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "SJM",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "SLB",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Melanesia"
+  },
+  {
+    "Country Code": "SLE",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "SLV",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "SMR",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": 0,
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "SOM",
+    "Fragility Level": "Extremely Fragile",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": 0,
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "SPM",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern America"
+  },
+  {
+    "Country Code": "SRB",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "Very High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "SSD",
+    "Fragility Level": "Extremely Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "STP",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "SUR",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "SVK",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Europe"
+  },
+  {
+    "Country Code": "SVN",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "SWE",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Europe"
+  },
+  {
+    "Country Code": "SWZ",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "SXM",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "SYC",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "SYR",
+    "Fragility Level": "Extremely Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Medium",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "TCA",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "TCD",
+    "Fragility Level": "Extremely Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "TGO",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "THA",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "South-eastern Asia"
+  },
+  {
+    "Country Code": "TJK",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Central Asia"
+  },
+  {
+    "Country Code": "TKL",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Polynesia"
+  },
+  {
+    "Country Code": "TKM",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Central Asia"
+  },
+  {
+    "Country Code": "TLS",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "South-eastern Asia"
+  },
+  {
+    "Country Code": "TON",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Polynesia"
+  },
+  {
+    "Country Code": "TTO",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "TUN",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern Africa"
+  },
+  {
+    "Country Code": "TUR",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "TUV",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": 0,
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Polynesia"
+  },
+  {
+    "Country Code": "TWN",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Asia"
+  },
+  {
+    "Country Code": "TZA",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "UGA",
+    "Fragility Level": "Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "UKR",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Eastern Europe"
+  },
+  {
+    "Country Code": "UMI",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Micronesia"
+  },
+  {
+    "Country Code": "URY",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "USA",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Very High",
+    "HDI code 2020": "Very High",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Northern America"
+  },
+  {
+    "Country Code": "UZB",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Central Asia"
+  },
+  {
+    "Country Code": "VAT",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "VCT",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "VEN",
+    "Fragility Level": "Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "VGB",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "VIR",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "High income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Americas",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Latin America and the Caribbean"
+  },
+  {
+    "Country Code": "VNM",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "High",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "South-eastern Asia"
+  },
+  {
+    "Country Code": "VUT",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Melanesia"
+  },
+  {
+    "Country Code": "WLF",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Polynesia"
+  },
+  {
+    "Country Code": "WSM",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Oceania",
+    "Small Island Developing States (SIDS)": "SIDS",
+    "Sub-region Name": "Polynesia"
+  },
+  {
+    "Country Code": "XK",
+    "Fragility Level": "Ungrouped",
+    "HDI code": "Ungrouped",
+    "HDI code 2020": "Ungrouped",
+    "Income Group": "Ungrouped",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Europe",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Southern Europe"
+  },
+  {
+    "Country Code": "YEM",
+    "Fragility Level": "Extremely Fragile",
+    "HDI code": "Low",
+    "HDI code 2020": "Low",
+    "Income Group": "Low income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Asia",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Western Asia"
+  },
+  {
+    "Country Code": "ZAF",
+    "Fragility Level": "Not Fragile",
+    "HDI code": "High",
+    "HDI code 2020": "High",
+    "Income Group": "Upper middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "ZMB",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  },
+  {
+    "Country Code": "ZWE",
+    "Fragility Level": "Fragile",
+    "HDI code": "Medium",
+    "HDI code 2020": "Medium",
+    "Income Group": "Lower middle income",
+    "Least Developed Countries (LDC)": "Non-LDC",
+    "Region Name": "Africa",
+    "Small Island Developing States (SIDS)": "Non-SIDS",
+    "Sub-region Name": "Sub-Saharan Africa"
+  }
+]

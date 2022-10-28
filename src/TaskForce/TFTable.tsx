@@ -1,14 +1,15 @@
-import { Select } from 'antd';
+import { Input, Select } from 'antd';
 import sortBy from 'lodash.sortby';
 import uniqBy from 'lodash.uniqby';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { TFDataType } from '../Types';
+import { CtxDataType, TFDataType } from '../Types';
+import Context from './Context/Context';
+
+import '../style/inputStyle.css';
 
 interface Props {
   data: TFDataType[];
-  selectedRegion: string;
-  selectedIncomeGroup: string;
 }
 
 const SelectionEl = styled.div`
@@ -28,53 +29,110 @@ const CellEl = styled.div<CellProps>`
 export const TFTable = (props: Props) => {
   const {
     data,
+  } = props;
+
+  const {
     selectedRegion,
     selectedIncomeGroup,
-  } = props;
+    selectedFragilityGroup,
+    selectedHDI,
+    selectedDevelopmentGroup,
+    updateSelectedRegion,
+    updateSelectedIncomeGroup,
+    updateSelectedFragilityGroup,
+    updateSelectedHDI,
+    updateSelectedDevelopmentGroup,
+  } = useContext(Context) as CtxDataType;
 
   const [selectedType, setSelectedType] = useState('All');
   const [tableData, setTableData] = useState<TFDataType[] | undefined>(undefined);
-  const [selectedLeadGender, setSelectedLeadGender] = useState<string[]>([]);
+  const [selectedComposition, setSelectedComposition] = useState<string>('All');
   const [selectedCountry, setSelectedCountry] = useState<string[]>([]);
   const [selectedSector, setSelectedSector] = useState<string[]>([]);
+  const [searchValue, setSearchValue] = useState<string | null>(null);
   const dataSorted = sortBy(data, 'Country');
   const countryList = uniqBy(dataSorted, 'Country').map((d) => d.Country);
 
   useEffect(() => {
     setSelectedCountry([]);
-  }, [selectedRegion, selectedIncomeGroup]);
+  }, [selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup]);
 
   useEffect(() => {
     const sortedData = sortBy(data, 'Country');
     const dataByType = selectedType === 'All' ? sortedData : sortedData.filter((d) => d.Type === selectedType);
-    const dataByLeadGender = selectedLeadGender.length === 0 ? dataByType : dataByType.filter((d) => (selectedLeadGender.indexOf(d['Leader Gender']) !== -1));
-    const dataByCountry = selectedCountry.length === 0 ? dataByLeadGender : dataByLeadGender.filter((d) => (selectedCountry.indexOf(d.Country) !== -1));
+    const dataByComposition = selectedComposition === 'All'
+      ? dataByType
+      : selectedComposition === 'Gender Parity'
+        ? dataByType.filter((d) => d['Composition Classification'] === 'Gender Parity')
+        : selectedComposition === 'Woman'
+          ? dataByType.filter((d) => d['%Women'] && d['%Women'] > 50)
+          : dataByType.filter((d) => d['Leader Gender'] !== 'Man' && d['Leader Gender'] !== 'NA');
+    const dataByCountry = selectedCountry.length === 0 ? dataByComposition : dataByComposition.filter((d) => (selectedCountry.indexOf(d.Country) !== -1));
     const dataBySector = selectedSector.length === 0 ? dataByCountry : dataByCountry.filter((d) => (selectedSector.indexOf(d.Sector) !== -1));
-    setTableData(dataBySector);
-  }, [selectedLeadGender, selectedCountry, selectedSector, selectedType, data]);
+    const dataBySearch = searchValue ? dataBySector.filter((d) => (d['Description of Task Force'].toLowerCase().includes(searchValue.toLowerCase()) || d['Task Force Name'].toLowerCase().includes(searchValue.toLowerCase()))) : dataBySector;
+    setTableData(dataBySearch);
+  }, [selectedComposition, selectedCountry, selectedSector, selectedType, searchValue, data]);
 
   return (
     <>
-      <h5 className='bold margin-bottom-04'>
-        All task Force Details
-        {selectedRegion === 'All' ? null : ` in ${selectedRegion}`}
+      <h5 className='bold margin-bottom-05 undp-typography'>
+        Task Force Details
       </h5>
+      {
+        selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' ? null
+          : (
+            <div className='flex-div flex-wrap margin-bottom-07 margin-top-00 flex-vert-align-center' style={{ gap: 'var(--spacing-05)' }}>
+              <>
+                <p className='undp-typography margin-bottom-00 bold'>Filters:</p>
+                {
+                  selectedRegion === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedRegion}</div>
+                }
+                {
+                  selectedIncomeGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedIncomeGroup}</div>
+                }
+                {
+                  selectedFragilityGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedFragilityGroup}</div>
+                }
+                {
+                  selectedHDI === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedHDI}</div>
+                }
+                {
+                  selectedDevelopmentGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedDevelopmentGroup}</div>
+                }
+                <button
+                  className='undp-chip undp-chip-blue undp-chip-small'
+                  type='button'
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => {
+                    updateSelectedRegion('All');
+                    updateSelectedIncomeGroup('All');
+                    updateSelectedFragilityGroup('All');
+                    updateSelectedHDI('All');
+                    updateSelectedDevelopmentGroup('All');
+                  }}
+                >
+                  Reset Filters
+                </button>
+              </>
+            </div>
+          )
+      }
       <div className='margin-top-04 margin-bottom-05 flex-div'>
         <SelectionEl>
-          <p className='label'>Filter by lead gender</p>
+          <p className='label'>Filter by composition</p>
           <Select
             className='undp-select'
-            mode='multiple'
-            value={selectedLeadGender}
+            value={selectedComposition}
             maxTagCount='responsive'
             placeholder='All'
-            onChange={(e) => { setSelectedLeadGender(e); }}
+            onChange={(e) => { setSelectedComposition(e || 'All'); }}
             allowClear
             clearIcon={<div className='clearIcon' />}
           >
-            <Select.Option className='undp-select-option' value='Man'>Men Leadership</Select.Option>
-            <Select.Option className='undp-select-option' value='Woman'>Women Leadership</Select.Option>
-            <Select.Option className='undp-select-option' value='Man and Woman (co-chairs)'>Co-Chair</Select.Option>
+            <Select.Option className='undp-select-option' value='All'>All task forces</Select.Option>
+            <Select.Option className='undp-select-option' value='Gender Parity'>Gender-parity task forces</Select.Option>
+            <Select.Option className='undp-select-option' value='Woman'>Majority women task forces</Select.Option>
+            <Select.Option className='undp-select-option' value='Man and Woman (co-chairs)'>Women-led or co-led task forces</Select.Option>
           </Select>
         </SelectionEl>
         <SelectionEl>
@@ -83,7 +141,7 @@ export const TFTable = (props: Props) => {
             className='undp-select'
             mode='multiple'
             value={selectedSector}
-            placeholder='All Sectors'
+            placeholder='All sectors'
             onChange={(e) => { setSelectedSector(e); }}
             maxTagCount='responsive'
             allowClear
@@ -102,7 +160,6 @@ export const TFTable = (props: Props) => {
           <Select
             className='undp-select'
             value={selectedType}
-            placeholder='All Regions Selected'
             onChange={(e) => { setSelectedType(e); }}
             clearIcon={<div className='clearIcon' />}
           >
@@ -112,12 +169,12 @@ export const TFTable = (props: Props) => {
           </Select>
         </SelectionEl>
         <SelectionEl>
-          <p className='label'>Filter by countries</p>
+          <p className='label'>Filter by countries/territories</p>
           <Select
             className='undp-select'
             value={selectedCountry}
             mode='multiple'
-            placeholder='All countries Selected'
+            placeholder='All countries/territories selected'
             maxTagCount='responsive'
             onChange={(e) => { setSelectedCountry(e); }}
             clearIcon={<div className='clearIcon' />}
@@ -129,6 +186,10 @@ export const TFTable = (props: Props) => {
           </Select>
         </SelectionEl>
       </div>
+      <div className='margin-bottom-07'>
+        <p className='label'>Search Task Force</p>
+        <Input className='undp-input' placeholder='Search Task Force' onChange={(d) => { setSearchValue(d.target.value); }} />
+      </div>
       {
         tableData
           ? (
@@ -138,10 +199,13 @@ export const TFTable = (props: Props) => {
                   <CellEl width='15%' className='undp-table-head-cell undp-sticky-head-column'>
                     Country
                   </CellEl>
-                  <CellEl width='30%' className='undp-table-head-cell'>
-                    Task force Name
+                  <CellEl width='25%' className='undp-table-head-cell'>
+                    Task force name
                   </CellEl>
-                  <CellEl width='55%' className='undp-table-head-cell'>
+                  <CellEl width='15%' className='undp-table-head-cell'>
+                    % Women Members
+                  </CellEl>
+                  <CellEl width='45%' className='undp-table-head-cell'>
                     Description
                   </CellEl>
                 </div>
@@ -151,39 +215,33 @@ export const TFTable = (props: Props) => {
                       <CellEl width='15%' className='undp-table-row-cell-small'>
                         {d.Country}
                       </CellEl>
-                      <CellEl width='30%' className='undp-table-row-cell-small'>
+                      <CellEl width='25%' className='undp-table-row-cell-small'>
                         {d['Task Force Name']}
                       </CellEl>
-                      <CellEl width='55%' className='undp-table-row-cell-small'>
+                      <CellEl width='15%' className='undp-table-row-cell-small'>
+                        {d['%Women'] ? `${d['%Women']}%` : 'NA'}
+                      </CellEl>
+                      <CellEl width='45%' className='undp-table-row-cell-small'>
                         <div>
                           <div className='flex-div flex-vert-align-center flex-wrap margin-bottom-04' style={{ gap: '0.5rem' }}>
                             <div className='undp-chip undp-chip-blue undp-chip-small'>
                               {d.Type}
                             </div>
-                            <div className='undp-chip undp-chip-blue undp-chip-small'>
+                            <div className='undp-chip undp-chip-green undp-chip-small'>
                               {d.Sector}
                             </div>
                             {
                               d['Woman Leader'] === 'Yes' || d['Woman Leader'] === 'Co-Chair'
                                 ? (
-                                  <div className='undp-chip undp-chip-blue undp-chip-small undp-chip-green'>
+                                  <div className='undp-chip undp-chip-small'>
                                     {d['Woman Leader'] === 'Yes' ? 'Women leadership' : 'Women Co-Chair'}
                                   </div>
-                                ) : d['Woman Leader'] === 'No'
-                                  ? (
-                                    <div className='undp-chip undp-chip-blue undp-chip-small undp-chip-yellow'>
-                                      Men leadership
-                                    </div>
-                                  ) : null
+                                ) : null
                             }
                             {
                               d['Composition Classification'] === 'Majority Women' || d['Composition Classification'] === 'Gender Parity'
                                 ? (
-                                  <div className='undp-chip undp-chip-blue undp-chip-small undp-chip-green'>
-                                    {d['Composition Classification']}
-                                  </div>
-                                ) : d['Composition Classification'] === 'Majority Men' ? (
-                                  <div className='undp-chip undp-chip-blue undp-chip-small undp-chip-yellow'>
+                                  <div className='undp-chip undp-chip-small'>
                                     {d['Composition Classification']}
                                   </div>
                                 ) : null

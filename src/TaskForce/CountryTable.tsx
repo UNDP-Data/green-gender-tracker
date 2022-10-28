@@ -1,12 +1,12 @@
 import sortBy from 'lodash.sortby';
-import { useState } from 'react';
+import { useContext } from 'react';
 import styled from 'styled-components';
-import { CountryTFSummaryDataType } from '../Types';
+import { CountryTFSummaryDataType, CtxDataType } from '../Types';
+import { GetFilteredCountryTFSummaryData } from '../utils/getFilteredData';
+import Context from './Context/Context';
 
 interface Props {
   data: CountryTFSummaryDataType[];
-  selectedRegion: string;
-  selectedIncomeGroup: string;
 }
 
 interface CellProps {
@@ -22,111 +22,104 @@ const CellEl = styled.div<CellProps>`
 export const CountryTable = (props: Props) => {
   const {
     data,
+  } = props;
+  const {
     selectedRegion,
     selectedIncomeGroup,
-  } = props;
-  const [sort, setSort] = useState(1);
-  const dataFilteredByIncomeGroup = selectedIncomeGroup === 'All' ? data : data.filter((d) => d.incomeGroup === selectedIncomeGroup);
-  const dataFilteredByRegion = selectedRegion === 'All' ? dataFilteredByIncomeGroup : dataFilteredByIncomeGroup.filter((d) => d.region === selectedRegion);
-  let sortKey = 'countryName';
-  switch (sort) {
-    case 1:
-      sortKey = 'countryName';
-      break;
-    case 2:
-      sortKey = 'noOfTF';
-      break;
-    case 3:
-      sortKey = 'noOfTFWithWomenLeader';
-      break;
-    case 4:
-      sortKey = 'noOfTFWithMajorityWomenOfGenderParity';
-      break;
-    case 5:
-      sortKey = 'noOfTFMembers';
-      break;
-    case 6:
-      sortKey = 'noOfTFMembersWomen';
-      break;
-    case 7:
-      sortKey = 'percentOfTFMembersWomen';
-      break;
-    default:
-      sortKey = 'countryName';
-      break;
-  }
-  const dataSorted = sortKey === 'countryName' ? sortBy(dataFilteredByRegion, sortKey) : sortBy(dataFilteredByRegion, sortKey).reverse();
+    selectedFragilityGroup,
+    selectedHDI,
+    selectedDevelopmentGroup,
+    updateSelectedRegion,
+    updateSelectedIncomeGroup,
+    updateSelectedFragilityGroup,
+    updateSelectedHDI,
+    updateSelectedDevelopmentGroup,
+  } = useContext(Context) as CtxDataType;
+  const filteredData = GetFilteredCountryTFSummaryData(data, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup);
+  const dataSorted = sortBy(filteredData, 'countryName');
   return (
     <>
-      <h5 className='bold margin-bottom-05'>
+      <h5 className='bold margin-bottom-05 undp-typography'>
         Task force by country
-        {selectedRegion === 'All' ? null : ` for ${selectedRegion}`}
       </h5>
+      {
+        selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' ? null
+          : (
+            <div className='flex-div flex-wrap margin-bottom-07 margin-top-00 flex-vert-align-center' style={{ gap: 'var(--spacing-05)' }}>
+              <>
+                <p className='undp-typography margin-bottom-00 bold'>Filters:</p>
+                {
+                  selectedRegion === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedRegion}</div>
+                }
+                {
+                  selectedIncomeGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedIncomeGroup}</div>
+                }
+                {
+                  selectedFragilityGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedFragilityGroup}</div>
+                }
+                {
+                  selectedHDI === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedHDI}</div>
+                }
+                {
+                  selectedDevelopmentGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedDevelopmentGroup}</div>
+                }
+                <button
+                  className='undp-chip undp-chip-blue undp-chip-small'
+                  type='button'
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => {
+                    updateSelectedRegion('All');
+                    updateSelectedIncomeGroup('All');
+                    updateSelectedFragilityGroup('All');
+                    updateSelectedHDI('All');
+                    updateSelectedDevelopmentGroup('All');
+                  }}
+                >
+                  Reset Filters
+                </button>
+              </>
+            </div>
+          )
+      }
       <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
         <div style={{ width: '100%' }}>
           <div className='undp-table-head-small undp-table-head-sticky'>
-            <CellEl width='20%' className='undp-table-head-cell undp-sticky-head-column' cursor='pointer' onClick={() => { setSort(1); }}>
+            <CellEl width='30%' className='undp-table-head-cell undp-sticky-head-column' cursor='pointer'>
               Countries (
               {dataSorted.length}
               )
-              {' '}
-              {sort === 1 ? '↓' : null}
             </CellEl>
-            <CellEl width='10%' className='undp-table-head-cell align-right' cursor='pointer' onClick={() => { setSort(2); }}>
+            <CellEl width='10%' className='undp-table-head-cell align-right' cursor='pointer'>
               # Task force
-              {' '}
-              {sort === 2 ? '↓' : null}
             </CellEl>
-            <CellEl width='15%' className='undp-table-head-cell align-right' cursor='pointer' onClick={() => { setSort(3); }}>
+            <CellEl width='20%' className='undp-table-head-cell align-right' cursor='pointer'>
               # Task force with women leader or co-chair
-              {' '}
-              {sort === 3 ? '↓' : null}
             </CellEl>
-            <CellEl width='15%' className='undp-table-head-cell align-right' cursor='pointer' onClick={() => { setSort(4); }}>
+            <CellEl width='20%' className='undp-table-head-cell align-right' cursor='pointer'>
               # Task force with gender parity or women majority
-              {' '}
-              {sort === 4 ? '↓' : null}
             </CellEl>
-            <CellEl width='13%' className='undp-table-head-cell align-right' cursor='pointer' onClick={() => { setSort(5); }}>
-              # Task force member
-              {' '}
-              {sort === 5 ? '↓' : null}
-            </CellEl>
-            <CellEl width='13%' className='undp-table-head-cell align-right' cursor='pointer' onClick={() => { setSort(6); }}>
-              # Women member
-              {' '}
-              {sort === 6 ? '↓' : null}
-            </CellEl>
-            <CellEl width='14%' className='undp-table-head-cell align-right' cursor='pointer' onClick={() => { setSort(7); }}>
-              Proportion of women member
-              {' '}
-              {sort === 7 ? '↓' : null}
+            <CellEl width='20%' className='undp-table-head-cell align-right' cursor='pointer'>
+              Avg. Proportion of women member
             </CellEl>
           </div>
           {
             dataSorted.map((d, i) => (
               <div key={i} className='undp-table-row'>
-                <CellEl width='20%' className='undp-table-row-cell'>
+                <CellEl width='30%' className='undp-table-row-cell'>
                   {d.countryName}
                 </CellEl>
                 <CellEl width='10%' className='undp-table-row-cell align-right'>
                   {d.noOfTF}
                 </CellEl>
-                <CellEl width='15%' className='undp-table-row-cell align-right'>
-                  {d.noOfTFWithWomenLeader}
+                <CellEl width='20%' className='undp-table-row-cell align-right'>
+                  {d.noOfTFWithWomenLeader !== -1 ? d.noOfTFWithWomenLeader : 'NA'}
                 </CellEl>
-                <CellEl width='15%' className='undp-table-row-cell align-right'>
-                  {d.noOfTFWithMajorityWomenOfGenderParity}
+                <CellEl width='20%' className='undp-table-row-cell align-right'>
+                  {d.noOfTFWithMajorityWomenOfGenderParity !== -1 ? d.noOfTFWithMajorityWomenOfGenderParity : 'NA'}
                 </CellEl>
-                <CellEl width='13%' className='undp-table-row-cell align-right'>
-                  {d.noOfTFMembers !== -1 ? d.noOfTFMembers : 'NA'}
-                </CellEl>
-                <CellEl width='13%' className='undp-table-row-cell align-right'>
-                  {d.noOfTFMembersWomen !== -1 ? d.noOfTFMembersWomen : 'NA'}
-                </CellEl>
-                <CellEl width='14%' className='undp-table-row-cell align-right'>
+                <CellEl width='20%' className='undp-table-row-cell align-right'>
                   {
-                    d.percentOfTFMembersWomen !== -1 ? `${d.percentOfTFMembersWomen.toFixed(1)}%` : 'NA'
+                    !d.percentOfTFMembersWomenNA ? `${d.percentOfTFMembersWomen.toFixed(1)}%` : 'NA'
                   }
                 </CellEl>
               </div>
