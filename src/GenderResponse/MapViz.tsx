@@ -63,7 +63,7 @@ export const MapViz = (props: Props) => {
   const mapG = useRef<SVGGElement>(null);
   const projection = geoEqualEarth().rotate([0, 0]).scale(265).translate([550, 380]);
 
-  const [variable, setVariable] = useState<'noOfGenderPolicies' | 'noOfPoliciesAddressingVAWG' | 'noOfPoliciesSupportingUnpaidCare' | 'noOfPoliciesTargetingWomenEcoSecuirty'>('noOfGenderPolicies');
+  const [variable, setVariable] = useState<'noOfGenderPolicies' | 'noOfPoliciesAddressingVAWG' | 'noOfPoliciesSupportingUnpaidCare' | 'noOfPoliciesTargetingWomenEcoSecurity' | 'noOfPoliciesThatAreEnvironmentalRelevance' | 'noOfPoliciesGenderGreenNexus'>('noOfGenderPolicies');
   const [calculation, setCalculation] = useState<'abs' | 'percent'>('abs');
   const [hoverData, setHoverData] = useState<HoverDataType | undefined>(undefined);
   const [selectedColor, setSelectedColor] = useState<string | undefined>(undefined);
@@ -101,7 +101,9 @@ export const MapViz = (props: Props) => {
             <Select.Option className='undp-select-option' value='noOfGenderPolicies'>All gender-sensitive policies</Select.Option>
             <Select.Option className='undp-select-option' value='noOfPoliciesAddressingVAWG'>Policies addressing violence againt women</Select.Option>
             <Select.Option className='undp-select-option' value='noOfPoliciesSupportingUnpaidCare'>Policies supporting unpaid care</Select.Option>
-            <Select.Option className='undp-select-option' value='noOfPoliciesTargetingWomenEcoSecuirty'>Policies targeting women&apos;s economic security</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfPoliciesTargetingWomenEcoSecurity'>Policies targeting women&apos;s economic security</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfPoliciesThatAreEnvironmentalRelevance'>Environment relavant policies</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfPoliciesGenderGreenNexus'>Gender-green nexus policies</Select.Option>
           </Select>
         </div>
         <Radio.Group
@@ -308,7 +310,11 @@ export const MapViz = (props: Props) => {
                 ? 'Policies addressing violence against women'
                 : variable === 'noOfPoliciesSupportingUnpaidCare'
                   ? 'Policies supporting unpaid care'
-                  : "Policies targeting women's economic security"
+                  : variable === 'noOfPoliciesTargetingWomenEcoSecurity'
+                    ? "Policies targeting women's economic security"
+                    : variable === 'noOfPoliciesThatAreEnvironmentalRelevance'
+                      ? 'Policies that are relavant to environment'
+                      : 'Policies with gender-green-nexus'
           }
         </p>
         <svg width='100%' viewBox={`0 0 ${335} ${30}`}>

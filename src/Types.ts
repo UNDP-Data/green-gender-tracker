@@ -11,6 +11,9 @@ export interface PolicyDataType {
   'Addresses VAWG': 'YES' | 'NO';
   "Targets Women's Economic Security": 'YES' | 'NO';
   'Directly supports unpaid care': 'YES' | 'NO';
+  'Environmental relevance': 'YES' | 'NO';
+  'Positive for environment': 'YES' | 'NO';
+  'Gender-Green Nexus': 'YES' | 'NO';
 }
 
 export interface PolicyDataWithCountryData extends PolicyDataType {
@@ -63,7 +66,10 @@ export interface CountrySummaryDataType {
   noOfGenderPolicies: number;
   noOfPoliciesAddressingVAWG: number;
   noOfPoliciesSupportingUnpaidCare: number;
-  noOfPoliciesTargetingWomenEcoSecuirty: number;
+  noOfPoliciesTargetingWomenEcoSecurity: number;
+  noOfPoliciesThatAreEnvironmentalRelevance: number;
+  noOfPoliciesPositiveForEnvironment: number;
+  noOfPoliciesGenderGreenNexus: number;
 }
 
 export interface CountryTFSummaryDataType {

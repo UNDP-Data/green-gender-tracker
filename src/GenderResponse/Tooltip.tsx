@@ -66,12 +66,36 @@ export const Tooltip = (props: Props) => {
           {data.noOfPoliciesSupportingUnpaidCare}
         </div>
       </div>
-      <div className='flex-div flex-space-between'>
+      <div className='flex-div flex-space-between margin-bottom-05'>
         <div>
           No. of policies targeting economic security
         </div>
         <div className='bold'>
-          {data.noOfPoliciesTargetingWomenEcoSecuirty}
+          {data.noOfPoliciesTargetingWomenEcoSecurity}
+        </div>
+      </div>
+      <div className='flex-div flex-space-between margin-bottom-05'>
+        <div>
+          No. of environment relavant policies
+        </div>
+        <div className='bold'>
+          {data.noOfPoliciesThatAreEnvironmentalRelevance}
+        </div>
+      </div>
+      <div className='flex-div flex-space-between margin-bottom-05'>
+        <div>
+          No. of policies positive for environment
+        </div>
+        <div className='bold'>
+          {data.noOfPoliciesPositiveForEnvironment}
+        </div>
+      </div>
+      <div className='flex-div flex-space-between'>
+        <div>
+          No. of policies with gender-green nexus
+        </div>
+        <div className='bold'>
+          {data.noOfPoliciesGenderGreenNexus}
         </div>
       </div>
     </TooltipEl>

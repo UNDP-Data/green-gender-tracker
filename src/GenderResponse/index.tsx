@@ -81,7 +81,10 @@ export const GenderResponse = () => {
           noOfGenderPolicies: countryPoliciesList.filter((el) => el['Addresses VAWG'] === 'YES' || el['Directly supports unpaid care'] === 'YES' || el["Targets Women's Economic Security"] === 'YES').length,
           noOfPoliciesAddressingVAWG: countryPoliciesList.filter((el) => el['Addresses VAWG'] === 'YES').length,
           noOfPoliciesSupportingUnpaidCare: countryPoliciesList.filter((el) => el['Directly supports unpaid care'] === 'YES').length,
-          noOfPoliciesTargetingWomenEcoSecuirty: countryPoliciesList.filter((el) => el["Targets Women's Economic Security"] === 'YES').length,
+          noOfPoliciesTargetingWomenEcoSecurity: countryPoliciesList.filter((el) => el["Targets Women's Economic Security"] === 'YES').length,
+          noOfPoliciesThatAreEnvironmentalRelevance: countryPoliciesList.filter((el) => el['Environmental relevance'] === 'YES').length,
+          noOfPoliciesPositiveForEnvironment: countryPoliciesList.filter((el) => el['Positive for environment'] === 'YES').length,
+          noOfPoliciesGenderGreenNexus: countryPoliciesList.filter((el) => el['Gender-Green Nexus'] === 'YES').length,
         };
       });
       setPolicyData(pData);

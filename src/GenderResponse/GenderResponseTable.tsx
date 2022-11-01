@@ -62,7 +62,11 @@ export const GenderResponseTable = (props: Props) => {
           ? sortedData.filter((d) => d['Addresses VAWG'] === 'YES')
           : selectedType === 'unpaidCare'
             ? sortedData.filter((d) => d['Directly supports unpaid care'] === 'YES')
-            : sortedData.filter((d) => d['Targets Women\'s Economic Security'] === 'YES');
+            : selectedType === 'ecoSecurity'
+              ? sortedData.filter((d) => d['Targets Women\'s Economic Security'] === 'YES')
+              : selectedType === 'envRelavant'
+                ? sortedData.filter((d) => d['Environmental relevance'] === 'YES')
+                : sortedData.filter((d) => d['Gender-Green Nexus'] === 'YES');
     const dataByCountry = selectedCountry.length === 0 ? dataByType : dataByType.filter((d) => (selectedCountry.indexOf(d['Country Name']) !== -1));
     const dataBySearch = searchValue ? dataByCountry.filter((d) => (d['Policy Measure Description'].toLowerCase().includes(searchValue.toLowerCase()))) : dataByCountry;
     setTableData(dataBySearch);
@@ -117,7 +121,6 @@ export const GenderResponseTable = (props: Props) => {
           <Select
             className='undp-select'
             value={selectedType}
-            placeholder='All Regions Selected'
             onChange={(e) => { setSelectedType(e); }}
           >
             <Select.Option className='undp-select-option' value='All'>All policies</Select.Option>
@@ -125,6 +128,8 @@ export const GenderResponseTable = (props: Props) => {
             <Select.Option className='undp-select-option' value='vawg'>Policies addressing violence against women</Select.Option>
             <Select.Option className='undp-select-option' value='unpaidCare'>Policies supporting unpaid care</Select.Option>
             <Select.Option className='undp-select-option' value='ecoSecurity'>Policies targeting women&apos;s economic security</Select.Option>
+            <Select.Option className='undp-select-option' value='envRelavant'>Environmentally relavant policies</Select.Option>
+            <Select.Option className='undp-select-option' value='envGenNexus'>Policies with gender-green nexus</Select.Option>
           </Select>
         </SelectionEl>
         <SelectionEl>
@@ -183,7 +188,7 @@ export const GenderResponseTable = (props: Props) => {
                                   {
                                     d['Addresses VAWG'] === 'YES' || d['Directly supports unpaid care'] === 'YES' || d['Targets Women\'s Economic Security'] === 'YES'
                                       ? (
-                                        <div className='undp-chip undp-chip-small undp-chip-green'>
+                                        <div className='undp-chip undp-chip-small undp-chip-blue'>
                                           Gender-sensitive
                                         </div>
                                       ) : null
@@ -191,7 +196,7 @@ export const GenderResponseTable = (props: Props) => {
                                   {
                                     d['Addresses VAWG'] === 'YES'
                                       ? (
-                                        <div className='undp-chip undp-chip-small undp-chip-blue'>
+                                        <div className='undp-chip undp-chip-small undp-chip-yellow'>
                                           Violence against women
                                         </div>
                                       ) : null
@@ -199,7 +204,7 @@ export const GenderResponseTable = (props: Props) => {
                                   {
                                     d['Directly supports unpaid care'] === 'YES'
                                       ? (
-                                        <div className='undp-chip undp-chip-small undp-chip-blue'>
+                                        <div className='undp-chip undp-chip-small undp-chip-yellow'>
                                           Unpaid care work
                                         </div>
                                       ) : null
@@ -207,8 +212,16 @@ export const GenderResponseTable = (props: Props) => {
                                   {
                                     d['Targets Women\'s Economic Security'] === 'YES'
                                       ? (
-                                        <div className='undp-chip undp-chip-small undp-chip-blue'>
+                                        <div className='undp-chip undp-chip-small undp-chip-yellow'>
                                           Women&apos;s economic security
+                                        </div>
+                                      ) : null
+                                  }
+                                  {
+                                    d['Environmental relevance'] === 'YES'
+                                      ? (
+                                        <div className='undp-chip undp-chip-small undp-chip-green'>
+                                          Environmental relevance
                                         </div>
                                       ) : null
                                   }
