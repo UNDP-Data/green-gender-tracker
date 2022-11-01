@@ -53,7 +53,7 @@ export const GenderResponseTable = (props: Props) => {
                             {
                               d['Addresses VAWG'] === 'YES' || d['Directly supports unpaid care'] === 'YES' || d['Targets Women\'s Economic Security'] === 'YES'
                                 ? (
-                                  <div className='undp-chip undp-chip-small undp-chip-green'>
+                                  <div className='undp-chip undp-chip-small undp-chip-blue'>
                                     Gender-sensitive
                                   </div>
                                 ) : null
@@ -61,7 +61,7 @@ export const GenderResponseTable = (props: Props) => {
                             {
                               d['Addresses VAWG'] === 'YES'
                                 ? (
-                                  <div className='undp-chip undp-chip-small undp-chip-blue'>
+                                  <div className='undp-chip undp-chip-small undp-chip-yellow'>
                                     Violence against women
                                   </div>
                                 ) : null
@@ -69,7 +69,7 @@ export const GenderResponseTable = (props: Props) => {
                             {
                               d['Directly supports unpaid care'] === 'YES'
                                 ? (
-                                  <div className='undp-chip undp-chip-small undp-chip-blue'>
+                                  <div className='undp-chip undp-chip-small undp-chip-yellow'>
                                     Unpaid care work
                                   </div>
                                 ) : null
@@ -77,8 +77,16 @@ export const GenderResponseTable = (props: Props) => {
                             {
                               d['Targets Women\'s Economic Security'] === 'YES'
                                 ? (
-                                  <div className='undp-chip undp-chip-small undp-chip-blue'>
+                                  <div className='undp-chip undp-chip-small undp-chip-yellow'>
                                     Women&apos;s economic security
+                                  </div>
+                                ) : null
+                            }
+                            {
+                              d['Environmental relevance'] === 'YES'
+                                ? (
+                                  <div className='undp-chip undp-chip-small undp-chip-green'>
+                                    Environmental relevance
                                   </div>
                                 ) : null
                             }

@@ -18,9 +18,13 @@ const StatCardsDiv = styled.div<WidthProps>`
 export const CountryPolicyDashboard = (props: Props) => {
   const { selectedCountry, allPolicies } = props;
   const genderRelatedPolicies = allPolicies.filter((d) => d['Addresses VAWG'] === 'YES' || d['Directly supports unpaid care'] === 'YES' || d["Targets Women's Economic Security"] === 'YES');
+  const environmentRelatedPolicies = allPolicies.filter((d) => d['Environmental relevance'] === 'YES');
+  const genderGreenNexusPolicies = allPolicies.filter((d) => d['Gender-Green Nexus'] === 'YES');
 
   const countryPoliciesList = allPolicies.filter((d) => d['Country Code'] === selectedCountry.code);
   const genderRelatedPoliciesByCountry = genderRelatedPolicies.filter((d) => d['Country Code'] === selectedCountry.code);
+  const environmentRelatedPoliciesByCountry = environmentRelatedPolicies.filter((d) => d['Country Code'] === selectedCountry.code);
+  const genderGreenNexusPoliciesByCountry = genderGreenNexusPolicies.filter((d) => d['Country Code'] === selectedCountry.code);
 
   return (
     <div>
@@ -30,13 +34,21 @@ export const CountryPolicyDashboard = (props: Props) => {
         {selectedCountry.name}
       </h5>
       <div className='flex-div margin-bottom-02 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
+        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
           <h2 className='margin-bottom-00 undp-typography'>{countryPoliciesList.length}</h2>
           <p className='margin-top-05 margin-bottom-00 undp-typography'>Policies for COVID-19 response</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
+        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
           <h2 className='margin-bottom-00 undp-typography'>{genderRelatedPoliciesByCountry.length}</h2>
           <p className='margin-top-05 margin-bottom-00 undp-typography'>Gender-sensitive policies for COVID-19 Response</p>
+        </StatCardsDiv>
+        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
+          <h2 className='margin-bottom-00 undp-typography'>{environmentRelatedPoliciesByCountry.length}</h2>
+          <p className='margin-top-05 margin-bottom-00 undp-typography'>Environment relavant policies for COVID-19 Response</p>
+        </StatCardsDiv>
+        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
+          <h2 className='margin-bottom-00 undp-typography'>{genderGreenNexusPoliciesByCountry.length}</h2>
+          <p className='margin-top-05 margin-bottom-00 undp-typography'>Gender-green nexus policies for COVID-19 Response</p>
         </StatCardsDiv>
       </div>
       <div className='flex-div margin-top-07 flex-space-between flex-wrap'>
