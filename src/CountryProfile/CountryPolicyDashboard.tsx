@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { CountryDataType, PolicyDataType } from '../Types';
+import { CountryDataType, PolicyGreenLenseDataType } from '../Types';
 import { GenderResponseTable } from './GenderResponseTable';
 
 interface Props {
-  allPolicies: PolicyDataType[];
+  allPolicies: PolicyGreenLenseDataType[];
   selectedCountry: CountryDataType;
 }
 
@@ -54,7 +54,7 @@ export const CountryPolicyDashboard = (props: Props) => {
       <div className='flex-div margin-top-07 flex-space-between flex-wrap'>
         <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
           <h2 className='margin-bottom-00 undp-typography'>{countryPoliciesList.filter((d) => d['Addresses VAWG'] === 'YES').length}</h2>
-          <p className='margin-top-05 margin-bottom-00 undp-typography'>Policies addressing violence againt women</p>
+          <p className='margin-top-05 margin-bottom-00 undp-typography'>Policies addressing violence against women</p>
         </StatCardsDiv>
         <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
           <h2 className='margin-bottom-00 undp-typography'>{countryPoliciesList.filter((d) => d['Directly supports unpaid care'] === 'YES').length}</h2>

@@ -33,65 +33,48 @@ export const PolicyDashboard = (props: Props) => {
     selectedFragilityGroup,
     selectedHDI,
     selectedDevelopmentGroup,
+    selectedPolicyMeasureCat,
   } = useContext(Context) as CtxDataType;
   const genderRelatedPolicies = allPolicies.filter((d) => d['Addresses VAWG'] === 'YES' || d['Directly supports unpaid care'] === 'YES' || d["Targets Women's Economic Security"] === 'YES');
-  const environmentRelatedPolicies = allPolicies.filter((d) => d['Environmental relevance'] === 'YES');
-  const environmentPositivePolicies = allPolicies.filter((d) => d['Positive for environment'] === 'YES');
-  const genderGreenNexusPolicies = allPolicies.filter((d) => d['Gender-Green Nexus'] === 'YES');
-  const allFilteredPolicies = GetFilteredData(allPolicies, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup);
-  const filteredGenderedPolicies = GetFilteredData(genderRelatedPolicies, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup);
-  const filteredEnvironmentRelatedPolicies = GetFilteredData(environmentRelatedPolicies, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup);
-  const filteredEnvironmentPositivePolicies = GetFilteredData(environmentPositivePolicies, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup);
-  const filteredCenderGreenNexusPolicies = GetFilteredData(genderGreenNexusPolicies, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup);
+  const allFilteredPolicies = GetFilteredData(allPolicies, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup, selectedPolicyMeasureCat);
+  const filteredGenderedPolicies = GetFilteredData(genderRelatedPolicies, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup, selectedPolicyMeasureCat);
   const allCountriesLength = uniqBy(allFilteredPolicies, 'Country Code').length;
   const countryWithGenderPoliciesLength = uniqBy(filteredGenderedPolicies, 'Country Code').length;
 
   return (
     <div className='margin-top-09'>
       <div className='flex-div margin-bottom-07 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
           <h3 className='undp-typography margin-bottom-00'>{allCountriesLength}</h3>
           <p className='margin-top-05 margin-bottom-00'>Countries/territories with COVID-19 response policies</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{countryWithGenderPoliciesLength}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with gender related COVID-19 response policies</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+      </div>
+      <div className='flex-div margin-bottom-07 flex-space-between flex-wrap'>
+        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{allFilteredPolicies.length}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>Policies for COVID-19 response</p>
         </StatCardsDiv>
-      </div>
-      <div className='flex-div margin-bottom-07 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{filteredGenderedPolicies.length}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>Gender-sensitive policies for COVID-19 Response</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
-          <h3 className='margin-bottom-00 undp-typography'>{filteredEnvironmentRelatedPolicies.length}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Environment relavant policies for COVID-19 Response</p>
-        </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
-          <h3 className='margin-bottom-00 undp-typography'>{filteredCenderGreenNexusPolicies.length}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Gender-green nexus policies for COVID-19 Response</p>
-        </StatCardsDiv>
       </div>
       <div className='flex-div margin-top-07 margin-bottom-07 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{allFilteredPolicies.filter((d) => d['Addresses VAWG'] === 'YES').length}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Policies addressing violence againt women</p>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>Policies addressing violence against women</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{allFilteredPolicies.filter((d) => d['Directly supports unpaid care'] === 'YES').length}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>Policies supporting unpaid care</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{allFilteredPolicies.filter((d) => d["Targets Women's Economic Security"] === 'YES').length}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>Policies targeting women&apos;s economic security</p>
-        </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
-          <h3 className='margin-bottom-00 undp-typography'>{filteredEnvironmentPositivePolicies.length}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Policies positive for environment</p>
         </StatCardsDiv>
       </div>
       <MapViz

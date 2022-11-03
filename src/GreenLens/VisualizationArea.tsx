@@ -2,15 +2,15 @@ import { Segmented, Select } from 'antd';
 import { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import uniqBy from 'lodash.uniqby';
-import { PolicyDataWithCountryData, CtxDataType, CountrySummaryDataType } from '../Types';
+import { PolicyGreenLenseDataWithCountryData, CountryGreenLenseSummaryDataType, CtxDataType } from '../Types';
 import { PolicyDashboard } from './PolicyDashboard';
+import Context from './Context/Context';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 
 import '../style/segmentedStyle.css';
-import Context from './Context/Context';
 
 interface Props {
-  policyData: PolicyDataWithCountryData[];
+  policyData: PolicyGreenLenseDataWithCountryData[];
 }
 
 const SelectionEl = styled.div`
@@ -37,9 +37,9 @@ export const VizArea = (props: Props) => {
     updateSelectedDevelopmentGroup,
     updateSelectedPolicyMeasureCat,
   } = useContext(Context) as CtxDataType;
-  const [countryData, setCountryData] = useState<CountrySummaryDataType[] | null>(null);
+  const [countryData, setCountryData] = useState<CountryGreenLenseSummaryDataType[] | null>(null);
   useEffect(() => {
-    const cData: CountrySummaryDataType[] = uniqBy(policyData, 'Country Code').map((p) => {
+    const cData: CountryGreenLenseSummaryDataType[] = uniqBy(policyData, 'Country Code').map((p) => {
       const countryPoliciesList = selectedPolicyMeasureCat === 'All' ? policyData.filter((el) => el['Country Code'] === p['Country Code']) : policyData.filter((el) => el['Country Code'] === p['Country Code'] && el['Policy Measure Category'] === selectedPolicyMeasureCat);
       return {
         countryName: p['Country Name'],
@@ -52,9 +52,12 @@ export const VizArea = (props: Props) => {
         sids: CountryTaxonomy[CountryTaxonomy.findIndex((el) => el['Country Code'] === p['Country Code'])]['Small Island Developing States (SIDS)'] === 'SIDS',
         noOfPolicies: countryPoliciesList.length,
         noOfGenderPolicies: countryPoliciesList.filter((el) => el['Addresses VAWG'] === 'YES' || el['Directly supports unpaid care'] === 'YES' || el["Targets Women's Economic Security"] === 'YES').length,
-        noOfPoliciesAddressingVAWG: countryPoliciesList.filter((el) => el['Addresses VAWG'] === 'YES').length,
-        noOfPoliciesSupportingUnpaidCare: countryPoliciesList.filter((el) => el['Directly supports unpaid care'] === 'YES').length,
-        noOfPoliciesTargetingWomenEcoSecurity: countryPoliciesList.filter((el) => el["Targets Women's Economic Security"] === 'YES').length,
+        noOfEnvironmetallyPositivePoliciesAddressingVAWG: countryPoliciesList.filter((el) => el['Addresses VAWG'] === 'YES' && el['Positive for environment'] === 'YES').length,
+        noOfEnvironmetallyPositivePoliciesSupportingUnpaidCare: countryPoliciesList.filter((el) => el['Directly supports unpaid care'] === 'YES' && el['Positive for environment'] === 'YES').length,
+        noOfEnvironmetallyPositivePoliciesTargetingWomenEcoSecurity: countryPoliciesList.filter((el) => el["Targets Women's Economic Security"] === 'YES' && el['Positive for environment'] === 'YES').length,
+        noOfPoliciesThatAreEnvironmentalRelevance: countryPoliciesList.filter((el) => el['Environmental relevance'] === 'YES').length,
+        noOfPoliciesPositiveForEnvironment: countryPoliciesList.filter((el) => el['Positive for environment'] === 'YES').length,
+        noOfPoliciesGenderGreenNexus: countryPoliciesList.filter((el) => el['Gender-Green Nexus'] === 'YES').length,
       };
     });
     setCountryData(cData);

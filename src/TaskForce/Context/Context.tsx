@@ -1,7 +1,7 @@
 import { createContext } from 'react';
-import { CtxDataType } from '../../Types';
+import { CtxTFDataType } from '../../Types';
 
-const Context = createContext<CtxDataType>({
+const Context = createContext<CtxTFDataType>({
   selectedRegion: 'All',
   selectedIncomeGroup: 'All',
   selectedFragilityGroup: 'All',

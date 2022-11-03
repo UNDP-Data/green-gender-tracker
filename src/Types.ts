@@ -11,6 +11,9 @@ export interface PolicyDataType {
   'Addresses VAWG': 'YES' | 'NO';
   "Targets Women's Economic Security": 'YES' | 'NO';
   'Directly supports unpaid care': 'YES' | 'NO';
+}
+
+export interface PolicyGreenLenseDataType extends PolicyDataType {
   'Environmental relevance': 'YES' | 'NO';
   'Positive for environment': 'YES' | 'NO';
   'Gender-Green Nexus': 'YES' | 'NO';
@@ -22,7 +25,14 @@ export interface PolicyDataWithCountryData extends PolicyDataType {
   hdiGroup: string;
   ldc: boolean;
   sids: boolean;
+}
 
+export interface PolicyGreenLenseDataWithCountryData extends PolicyGreenLenseDataType {
+  countryIncomeGroup: string;
+  fragility: string;
+  hdiGroup: string;
+  ldc: boolean;
+  sids: boolean;
 }
 
 export interface TFDataType {
@@ -67,6 +77,21 @@ export interface CountrySummaryDataType {
   noOfPoliciesAddressingVAWG: number;
   noOfPoliciesSupportingUnpaidCare: number;
   noOfPoliciesTargetingWomenEcoSecurity: number;
+}
+export interface CountryGreenLenseSummaryDataType {
+  countryName: string;
+  countryCode: string;
+  region: string;
+  incomeGroup: string;
+  fragility: string;
+  hdiGroup: string;
+  ldc: boolean;
+  sids: boolean;
+  noOfPolicies: number;
+  noOfGenderPolicies: number;
+  noOfEnvironmetallyPositivePoliciesAddressingVAWG: number;
+  noOfEnvironmetallyPositivePoliciesSupportingUnpaidCare: number;
+  noOfEnvironmetallyPositivePoliciesTargetingWomenEcoSecurity: number;
   noOfPoliciesThatAreEnvironmentalRelevance: number;
   noOfPoliciesPositiveForEnvironment: number;
   noOfPoliciesGenderGreenNexus: number;
@@ -96,6 +121,21 @@ export interface CountryDataType {
 }
 
 export interface CtxDataType {
+  selectedRegion: string;
+  selectedIncomeGroup: string;
+  selectedFragilityGroup: string;
+  selectedHDI: string;
+  selectedDevelopmentGroup: string;
+  selectedPolicyMeasureCat: string;
+  updateSelectedRegion: (_d: string) => void;
+  updateSelectedIncomeGroup: (_d: string) => void;
+  updateSelectedFragilityGroup: (_d: string) => void;
+  updateSelectedHDI: (_d: string) => void;
+  updateSelectedDevelopmentGroup: (_d: string) => void;
+  updateSelectedPolicyMeasureCat: (_d: string) => void;
+}
+
+export interface CtxTFDataType {
   selectedRegion: string;
   selectedIncomeGroup: string;
   selectedFragilityGroup: string;

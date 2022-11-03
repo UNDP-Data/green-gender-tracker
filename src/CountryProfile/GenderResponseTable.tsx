@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { PolicyDataType, CountryDataType } from '../Types';
+import { PolicyGreenLenseDataType, CountryDataType } from '../Types';
 
 interface Props {
-  data: PolicyDataType[];
+  data: PolicyGreenLenseDataType[];
   selectedCountry: CountryDataType;
 }
 

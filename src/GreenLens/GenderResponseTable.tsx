@@ -3,11 +3,11 @@ import sortBy from 'lodash.sortby';
 import uniqBy from 'lodash.uniqby';
 import { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { CtxDataType, PolicyDataType } from '../Types';
+import { CtxDataType, PolicyGreenLenseDataType } from '../Types';
 import Context from './Context/Context';
 
 interface Props {
-  data: PolicyDataType[];
+  data: PolicyGreenLenseDataType[];
 }
 
 const SelectionEl = styled.div`
@@ -44,7 +44,7 @@ export const GenderResponseTable = (props: Props) => {
   } = useContext(Context) as CtxDataType;
 
   const [selectedType, setSelectedType] = useState('All');
-  const [tableData, setTableData] = useState<PolicyDataType[] | undefined>(undefined);
+  const [tableData, setTableData] = useState<PolicyGreenLenseDataType[] | undefined>(undefined);
   const [selectedCountry, setSelectedCountry] = useState<string[]>([]);
   const [searchValue, setSearchValue] = useState<string | null>(null);
   const dataSorted = sortBy(data, 'Country Name');
@@ -64,7 +64,11 @@ export const GenderResponseTable = (props: Props) => {
           ? sortedData.filter((d) => d['Addresses VAWG'] === 'YES')
           : selectedType === 'unpaidCare'
             ? sortedData.filter((d) => d['Directly supports unpaid care'] === 'YES')
-            : sortedData.filter((d) => d['Targets Women\'s Economic Security'] === 'YES');
+            : selectedType === 'ecoSecurity'
+              ? sortedData.filter((d) => d['Targets Women\'s Economic Security'] === 'YES')
+              : selectedType === 'envRelavant'
+                ? sortedData.filter((d) => d['Positive for environment'] === 'YES')
+                : sortedData.filter((d) => d['Gender-Green Nexus'] === 'YES');
     const dataByCountry = selectedCountry.length === 0 ? dataByType : dataByType.filter((d) => (selectedCountry.indexOf(d['Country Name']) !== -1));
     const dataBySearch = searchValue ? dataByCountry.filter((d) => (d['Policy Measure Description'].toLowerCase().includes(searchValue.toLowerCase()))) : dataByCountry;
     setTableData(dataBySearch);
@@ -127,11 +131,11 @@ export const GenderResponseTable = (props: Props) => {
           >
             <Select.Option className='undp-select-option' value='All'>All policies</Select.Option>
             <Select.Option className='undp-select-option' value='genderRelated'>Gender-sensitive policies</Select.Option>
+            <Select.Option className='undp-select-option' value='envRelavant'>Environmentally positive policies</Select.Option>
+            <Select.Option className='undp-select-option' value='envGenNexus'>Policies with gender-green nexus</Select.Option>
             <Select.Option className='undp-select-option' value='vawg'>Policies addressing violence against women</Select.Option>
             <Select.Option className='undp-select-option' value='unpaidCare'>Policies supporting unpaid care</Select.Option>
             <Select.Option className='undp-select-option' value='ecoSecurity'>Policies targeting women&apos;s economic security</Select.Option>
-            <Select.Option className='undp-select-option' value='envRelavant'>Environmentally relavant policies</Select.Option>
-            <Select.Option className='undp-select-option' value='envGenNexus'>Policies with gender-green nexus</Select.Option>
           </Select>
         </SelectionEl>
         <SelectionEl>
@@ -216,6 +220,14 @@ export const GenderResponseTable = (props: Props) => {
                                       ? (
                                         <div className='undp-chip undp-chip-small undp-chip-yellow'>
                                           Women&apos;s economic security
+                                        </div>
+                                      ) : null
+                                  }
+                                  {
+                                    d['Positive for environment'] === 'YES'
+                                      ? (
+                                        <div className='undp-chip undp-chip-small undp-chip-green'>
+                                          Environmentally Positive
                                         </div>
                                       ) : null
                                   }

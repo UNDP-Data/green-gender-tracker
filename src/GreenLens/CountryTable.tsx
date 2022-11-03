@@ -1,14 +1,14 @@
 import sortBy from 'lodash.sortby';
 import { useContext, useState } from 'react';
 import styled from 'styled-components';
-import { CountrySummaryDataType, CtxDataType } from '../Types';
-import { GetFilteredCountrySummaryData } from '../utils/getFilteredData';
+import { CountryGreenLenseSummaryDataType, CtxDataType } from '../Types';
+import { GetFilteredCountryGreenLensSummaryData } from '../utils/getFilteredData';
 
 import '../style/chipStyle.css';
 import Context from './Context/Context';
 
 interface Props {
-  data: CountrySummaryDataType[];
+  data: CountryGreenLenseSummaryDataType[];
 }
 
 interface SVGBarProps {
@@ -86,7 +86,7 @@ export const CountryTable = (props: Props) => {
     updateSelectedPolicyMeasureCat,
   } = useContext(Context) as CtxDataType;
   const [sort, setSort] = useState(1);
-  const filteredData = GetFilteredCountrySummaryData(data, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup);
+  const filteredData: CountryGreenLenseSummaryDataType[] = GetFilteredCountryGreenLensSummaryData(data, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup);
   let sortKey = 'countryName';
   switch (sort) {
     case 1:
@@ -168,35 +168,45 @@ export const CountryTable = (props: Props) => {
       }
       <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
         <div className='undp-table-head-small undp-table-head-sticky'>
-          <CellEl width='20%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(1); }}>
+          <CellEl width='16%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(1); }}>
             Countries (
             {dataSorted.length}
             )
             {' '}
             {sort === 1 ? '↓' : null}
           </CellEl>
-          <CellEl width='16%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(2); }}>
+          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(2); }}>
             All
             {' '}
             {sort === 2 ? '↓' : null}
           </CellEl>
-          <CellEl width='16%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(3); }}>
+          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(3); }}>
             Gender sensitive
             {' '}
             {sort === 3 ? '↓' : null}
           </CellEl>
-          <CellEl width='16%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(4); }}>
-            Violence against women
+          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(3); }}>
+            Evironmentally Positive
+            {' '}
+            {sort === 7 ? '↓' : null}
+          </CellEl>
+          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(3); }}>
+            Gender-green nexus
+            {' '}
+            {sort === 8 ? '↓' : null}
+          </CellEl>
+          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(4); }}>
+            Evironmentally Positive Policies for Violence against women
             {' '}
             {sort === 4 ? '↓' : null}
           </CellEl>
-          <CellEl width='16%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(5); }}>
-            Unpaid care
+          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(5); }}>
+            Evironmentally Positive Policies for Unpaid care
             {' '}
             {sort === 5 ? '↓' : null}
           </CellEl>
-          <CellEl width='16%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(6); }}>
-            Women&apos;s economic security
+          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(6); }}>
+            Evironmentally Positive Policies for Women&apos;s economic security
             {' '}
             {sort === 6 ? '↓' : null}
           </CellEl>
@@ -204,23 +214,29 @@ export const CountryTable = (props: Props) => {
         {
           dataSorted.map((d, i) => (
             <div key={i} className='undp-table-row'>
-              <CellEl width='20%' className='undp-table-row-cell'>
+              <CellEl width='16%' className='undp-table-row-cell'>
                 {d.countryName}
               </CellEl>
-              <CellEl width='16%' style={{ backgroundColor: 'var(--light-yellow)' }} className='undp-table-row-cell'>
+              <CellEl width='12%' style={{ backgroundColor: 'var(--light-yellow)' }} className='undp-table-row-cell'>
                 <SVGBar value={d.noOfPolicies} />
               </CellEl>
-              <CellEl width='16%' style={{ backgroundColor: 'var(--light-azure)' }} className='undp-table-row-cell'>
+              <CellEl width='12%' style={{ backgroundColor: 'var(--light-azure)' }} className='undp-table-row-cell'>
                 <SVGBar value={d.noOfGenderPolicies} />
               </CellEl>
-              <CellEl width='16%' className='undp-table-row-cell'>
-                <SVGBar bgBar value={d.noOfPoliciesAddressingVAWG} />
+              <CellEl width='12%' style={{ backgroundColor: 'var(--light-green)' }} className='undp-table-row-cell'>
+                <SVGBar value={d.noOfPoliciesPositiveForEnvironment} />
               </CellEl>
-              <CellEl width='16%' className='undp-table-row-cell'>
-                <SVGBar bgBar value={d.noOfPoliciesSupportingUnpaidCare} />
+              <CellEl width='12%' className='undp-table-row-cell'>
+                <SVGBar bgBar value={d.noOfPoliciesGenderGreenNexus} />
               </CellEl>
-              <CellEl width='16%' className='undp-table-row-cell'>
-                <SVGBar bgBar value={d.noOfPoliciesTargetingWomenEcoSecurity} />
+              <CellEl width='12%' className='undp-table-row-cell'>
+                <SVGBar bgBar value={d.noOfEnvironmetallyPositivePoliciesAddressingVAWG} />
+              </CellEl>
+              <CellEl width='12%' className='undp-table-row-cell'>
+                <SVGBar bgBar value={d.noOfEnvironmetallyPositivePoliciesSupportingUnpaidCare} />
+              </CellEl>
+              <CellEl width='12%' className='undp-table-row-cell'>
+                <SVGBar bgBar value={d.noOfEnvironmetallyPositivePoliciesTargetingWomenEcoSecurity} />
               </CellEl>
             </div>
           ))

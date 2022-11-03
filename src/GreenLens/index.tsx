@@ -3,13 +3,13 @@ import { csv } from 'd3-request';
 import { VizArea } from './VisualizationArea';
 import Reducer from './Context/Reducer';
 import Context from './Context/Context';
-import { PolicyDataType, PolicyDataWithCountryData } from '../Types';
+import { PolicyGreenLenseDataType, PolicyGreenLenseDataWithCountryData } from '../Types';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 
 import '../style/segmentedStyle.css';
 
-export const GenderResponse = () => {
-  const [policyData, setPolicyData] = useState<PolicyDataWithCountryData[] | null>(null);
+export const GreenLens = () => {
+  const [policyData, setPolicyData] = useState<PolicyGreenLenseDataWithCountryData[] | null>(null);
   const initialState = {
     selectedRegion: 'All',
     selectedIncomeGroup: 'All',
@@ -58,8 +58,8 @@ export const GenderResponse = () => {
   };
 
   useEffect(() => {
-    csv('./data/gender-policies.csv', (d: PolicyDataType[]) => {
-      const pData: PolicyDataWithCountryData[] = d.map((el) => {
+    csv('./data/green-policies.csv', (d: PolicyGreenLenseDataType[]) => {
+      const pData: PolicyGreenLenseDataWithCountryData[] = d.map((el) => {
         const countryTaxonomyIndx = CountryTaxonomy.findIndex((el1) => el1['Country Code'] === el['Country Code']);
         return {
           ...el,
@@ -75,7 +75,7 @@ export const GenderResponse = () => {
   }, []);
   return (
     <>
-      <h3 className='bold undp-typography'>Policy Tracker</h3>
+      <h3 className='bold undp-typography'>Green Lens Policy Tracker</h3>
       {
         policyData
           ? (

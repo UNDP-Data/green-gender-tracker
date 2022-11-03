@@ -476,3 +476,75 @@ a.undp-style:focus-visible {
     width: 96px;
   }
 }
+
+.highcharts-point.highcharts-color-0{
+  fill: #C0A1FF !important;
+  opacity: 1 !important;
+}
+
+.highcharts-point.highcharts-color-1{
+  fill: #66E0A3 !important;
+  opacity: 1 !important;
+}
+
+.highcharts-point.highcharts-color-2{
+  fill: #9F9AEC !important;
+  opacity: 1 !important;
+}
+
+.highcharts-data-label text {
+  font-family: var(--fontFamily) !important;
+  font-size: 1.25rem !important;
+  fill: var(--white) !important;
+  color: var(--white) !important;
+  stroke-width: 0 !important;
+  opacity: 1 !important;
+  font-weight: bold !important;
+}
+
+.highcharts-label.highcharts-data-label.highcharts-data-label-color-2 text{
+  opacity: 0 !important;
+}
+
+.highcharts-data-label text tspan {
+  stroke-width: 0 !important;
+  opacity: 1 !important;
+}
+
+.highcharts-tooltip path {
+  opacity: 0 !important;
+}
+
+.highcharts-tooltip text tspan{
+  opacity: 0 !important;
+}
+
+.highcharts-tooltip text tspan.highcharts-br{
+  opacity: 0 !important;
+}
+
+.highcharts-text-outline {
+  opacity: 0 !important;
+}
+
+.highcharts-data-label-color-0 text {
+  fill: #2B038F !important;
+}
+
+.highcharts-data-label-color-1 text{
+  fill: #00451A !important;
+}
+
+.highcharts-data-label-color-0 text tspan {
+  fill: #2B038F !important;
+  stroke-width: 0 !important;
+}
+
+.highcharts-data-label-color-1 text tspan{
+  fill: #00451A !important;
+  stroke-width: 0 !important;
+}
+
+.highcharts-tooltip {
+  opacity: 0 !important;
+}

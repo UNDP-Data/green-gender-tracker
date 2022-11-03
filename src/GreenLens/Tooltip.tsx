@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { CountrySummaryDataType } from '../Types';
+import { CountryGreenLenseSummaryDataType } from '../Types';
 
 interface Props {
-  data: CountrySummaryDataType;
+  data: CountryGreenLenseSummaryDataType;
   xPos: number;
   yPos: number;
 }
@@ -52,26 +52,18 @@ export const Tooltip = (props: Props) => {
       </div>
       <div className='flex-div flex-space-between margin-bottom-05'>
         <div>
-          No. of policies addressing violence against women
+          No. of policies positive for environment
         </div>
         <div className='bold'>
-          {data.noOfPoliciesAddressingVAWG}
+          {data.noOfPoliciesPositiveForEnvironment}
         </div>
       </div>
-      <div className='flex-div flex-space-between margin-bottom-05'>
+      <div className='flex-div flex-space-between'>
         <div>
-          No. of policies supporting unpaid care
+          No. of policies with gender-green nexus
         </div>
         <div className='bold'>
-          {data.noOfPoliciesSupportingUnpaidCare}
-        </div>
-      </div>
-      <div className='flex-div flex-space-between margin-bottom-05'>
-        <div>
-          No. of policies targeting economic security
-        </div>
-        <div className='bold'>
-          {data.noOfPoliciesTargetingWomenEcoSecurity}
+          {data.noOfPoliciesGenderGreenNexus}
         </div>
       </div>
     </TooltipEl>

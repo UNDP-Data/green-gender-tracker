@@ -63,3 +63,16 @@
   margin-top: 0;
   margin-bottom: 1rem;
 }
+
+.stat-card-no-hover {
+  padding: 2rem;
+  background-color: var(--gray-200);
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--black);
+  transition: 300ms all;
+}
+
+.stat-card-no-hover:hover {
+  background-color: var(--gray-200) !important;
+}

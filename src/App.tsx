@@ -15,7 +15,7 @@ import './style/tableStyle.css';
 import './style/chipStyle.css';
 import { GenderResponse } from './GenderResponse';
 import { TaskForce } from './TaskForce';
-import { CountryProfile } from './CountryProfile';
+import { GreenLens } from './GreenLens';
 
 const items = [
   {
@@ -24,14 +24,14 @@ const items = [
     children: <GenderResponse />,
   },
   {
-    label: 'COVID-19 Task Forces',
+    label: 'Policies With Green Lense',
     key: '2',
-    children: <TaskForce />,
+    children: <GreenLens />,
   },
   {
-    label: 'Country Profile',
+    label: 'COVID-19 Task Forces',
     key: '3',
-    children: <CountryProfile />,
+    children: <TaskForce />,
   },
 ];
 

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { csv } from 'd3-request';
 import { queue } from 'd3-queue';
 import uniqBy from 'lodash.uniqby';
-import { CountryDataType, PolicyDataType, TFDataType } from '../Types';
+import { CountryDataType, PolicyGreenLenseDataType, TFDataType } from '../Types';
 import { CountryPolicyDashboard } from './CountryPolicyDashboard';
 import { CountryTFDashboard } from './CountryTFDashboard';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
@@ -15,14 +15,14 @@ const SelectionEl = styled.div`
 
 export const CountryProfile = () => {
   const [selectedCountry, setSelectedCountry] = useState <CountryDataType>({ name: 'Afghanistan', code: 'AFG' });
-  const [policyData, setPolicyData] = useState<PolicyDataType[] | null>(null);
+  const [policyData, setPolicyData] = useState<PolicyGreenLenseDataType[] | null>(null);
   const [tfData, setTFData] = useState<TFDataType[] | null>(null);
   const [countryList, setCountryList] = useState<CountryDataType[] | null>(null);
   useEffect(() => {
     queue()
       .defer(csv, './data/policies.csv')
       .defer(csv, './data/TaskForce.csv')
-      .await((err: any, pData: PolicyDataType[], tData: any) => {
+      .await((err: any, pData: PolicyGreenLenseDataType[], tData: any) => {
         if (err) throw err;
         const dataFormated: TFDataType[] = tData.map((d: any) => {
           const countryTaxonomyIndx = CountryTaxonomy.findIndex((el1) => el1['Country Code'] === d['Country Code']);
