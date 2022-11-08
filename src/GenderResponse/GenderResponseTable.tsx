@@ -99,7 +99,7 @@ export const GenderResponseTable = (props: Props) => {
                   selectedPolicyMeasureCat === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedPolicyMeasureCat}</div>
                 }
                 <button
-                  className='undp-chip undp-chip-blue undp-chip-small'
+                  className='undp-chip undp-chip-red undp-chip-small'
                   type='button'
                   style={{ cursor: 'pointer' }}
                   onClick={() => {
@@ -119,7 +119,7 @@ export const GenderResponseTable = (props: Props) => {
       }
       <div className='margin-top-04 margin-bottom-05 flex-div flex-space-between'>
         <SelectionEl>
-          <p className='label'>Filter by Policy Type</p>
+          <p className='label'>Filter by policy type</p>
           <Select
             className='undp-select'
             value={selectedType}
@@ -130,8 +130,6 @@ export const GenderResponseTable = (props: Props) => {
             <Select.Option className='undp-select-option' value='vawg'>Policies addressing violence against women</Select.Option>
             <Select.Option className='undp-select-option' value='unpaidCare'>Policies supporting unpaid care</Select.Option>
             <Select.Option className='undp-select-option' value='ecoSecurity'>Policies targeting women&apos;s economic security</Select.Option>
-            <Select.Option className='undp-select-option' value='envRelavant'>Environmentally relavant policies</Select.Option>
-            <Select.Option className='undp-select-option' value='envGenNexus'>Policies with gender-green nexus</Select.Option>
           </Select>
         </SelectionEl>
         <SelectionEl>
@@ -153,7 +151,7 @@ export const GenderResponseTable = (props: Props) => {
         </SelectionEl>
       </div>
       <div className='margin-bottom-07'>
-        <p className='label'>Search Policy</p>
+        <p className='label'>Search policy</p>
         <Input className='undp-input' placeholder='Search policies' onChange={(d) => { setSearchValue(d.target.value); }} />
       </div>
       {
@@ -190,7 +188,7 @@ export const GenderResponseTable = (props: Props) => {
                                   {
                                     d['Addresses VAWG'] === 'YES' || d['Directly supports unpaid care'] === 'YES' || d['Targets Women\'s Economic Security'] === 'YES'
                                       ? (
-                                        <div className='undp-chip undp-chip-small undp-chip-blue'>
+                                        <div className='undp-chip undp-chip-small' style={{ backgroundColor: '#E4D4E8' }}>
                                           Gender-sensitive
                                         </div>
                                       ) : null
@@ -198,7 +196,7 @@ export const GenderResponseTable = (props: Props) => {
                                   {
                                     d['Addresses VAWG'] === 'YES'
                                       ? (
-                                        <div className='undp-chip undp-chip-small undp-chip-yellow'>
+                                        <div className='undp-chip undp-chip-small undp-chip-blue'>
                                           Violence against women
                                         </div>
                                       ) : null
@@ -206,7 +204,7 @@ export const GenderResponseTable = (props: Props) => {
                                   {
                                     d['Directly supports unpaid care'] === 'YES'
                                       ? (
-                                        <div className='undp-chip undp-chip-small undp-chip-yellow'>
+                                        <div className='undp-chip undp-chip-small undp-chip-blue'>
                                           Unpaid care work
                                         </div>
                                       ) : null
@@ -214,7 +212,7 @@ export const GenderResponseTable = (props: Props) => {
                                   {
                                     d['Targets Women\'s Economic Security'] === 'YES'
                                       ? (
-                                        <div className='undp-chip undp-chip-small undp-chip-yellow'>
+                                        <div className='undp-chip undp-chip-small undp-chip-blue'>
                                           Women&apos;s economic security
                                         </div>
                                       ) : null

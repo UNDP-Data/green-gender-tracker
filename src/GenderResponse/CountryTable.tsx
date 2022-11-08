@@ -148,7 +148,7 @@ export const CountryTable = (props: Props) => {
                   selectedPolicyMeasureCat === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedPolicyMeasureCat}</div>
                 }
                 <button
-                  className='undp-chip undp-chip-blue undp-chip-small'
+                  className='undp-chip undp-chip-red undp-chip-small'
                   type='button'
                   style={{ cursor: 'pointer' }}
                   onClick={() => {
@@ -181,7 +181,7 @@ export const CountryTable = (props: Props) => {
             {sort === 2 ? '↓' : null}
           </CellEl>
           <CellEl width='16%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(3); }}>
-            Gender sensitive
+            Gender-sensitive
             {' '}
             {sort === 3 ? '↓' : null}
           </CellEl>
@@ -207,10 +207,10 @@ export const CountryTable = (props: Props) => {
               <CellEl width='20%' className='undp-table-row-cell'>
                 {d.countryName}
               </CellEl>
-              <CellEl width='16%' style={{ backgroundColor: 'var(--light-yellow)' }} className='undp-table-row-cell'>
+              <CellEl width='16%' style={{ backgroundColor: 'var(--light-azure)' }} className='undp-table-row-cell'>
                 <SVGBar value={d.noOfPolicies} />
               </CellEl>
-              <CellEl width='16%' style={{ backgroundColor: 'var(--light-azure)' }} className='undp-table-row-cell'>
+              <CellEl width='16%' style={{ backgroundColor: '#E4D4E8' }} className='undp-table-row-cell'>
                 <SVGBar value={d.noOfGenderPolicies} />
               </CellEl>
               <CellEl width='16%' className='undp-table-row-cell'>

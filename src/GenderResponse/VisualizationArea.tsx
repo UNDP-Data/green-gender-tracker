@@ -61,44 +61,9 @@ export const VizArea = (props: Props) => {
   }, [policyData, selectedPolicyMeasureCat]);
   return (
     <>
-      <div className='flex-div flex-space-between margin-top-07 margin-bottom-07 flex-wrap'>
+      <div className='flex-div flex-space-between margin-top-07 margin-bottom-05 flex-wrap'>
         <SelectionEl>
-          <p className='label'>Filter by Regions</p>
-          <Select
-            className='undp-select'
-            value={selectedRegion}
-            placeholder='All Regions Selected'
-            onChange={(e) => { updateSelectedRegion(e || 'All'); }}
-            allowClear
-            clearIcon={<div className='clearIcon' />}
-          >
-            <Select.Option className='undp-select-option' value='All'>All Regions</Select.Option>
-            <Select.Option className='undp-select-option' value='Africa'>Africa</Select.Option>
-            <Select.Option className='undp-select-option' value='Americas'>Americas</Select.Option>
-            <Select.Option className='undp-select-option' value='Asia'>Asia</Select.Option>
-            <Select.Option className='undp-select-option' value='Europe'>Europe</Select.Option>
-            <Select.Option className='undp-select-option' value='Oceania'>Oceania</Select.Option>
-          </Select>
-        </SelectionEl>
-        <SelectionEl>
-          <p className='label'>Filter by Income Groups</p>
-          <Select
-            className='undp-select'
-            value={selectedIncomeGroup}
-            placeholder='All Regions Selected'
-            onChange={(e) => { updateSelectedIncomeGroup(e || 'All'); }}
-            clearIcon={<div className='clearIcon' />}
-            allowClear
-          >
-            <Select.Option className='undp-select-option' value='All'>All income groups</Select.Option>
-            <Select.Option className='undp-select-option' value='High income'>High income</Select.Option>
-            <Select.Option className='undp-select-option' value='Upper middle income'>Upper middle income</Select.Option>
-            <Select.Option className='undp-select-option' value='Lower middle income'>Lower middle income</Select.Option>
-            <Select.Option className='undp-select-option' value='Low income'>Low income</Select.Option>
-          </Select>
-        </SelectionEl>
-        <SelectionEl>
-          <p className='label'>Filter by Policy Measure Category</p>
+          <p className='label'>Filter by policy measure category</p>
           <Select
             className='undp-select'
             value={selectedPolicyMeasureCat}
@@ -114,8 +79,43 @@ export const VizArea = (props: Props) => {
             <Select.Option className='undp-select-option' value='Social protection'>Social protection</Select.Option>
           </Select>
         </SelectionEl>
+        <SelectionEl>
+          <p className='label'>Filter by regions</p>
+          <Select
+            className='undp-select'
+            value={selectedRegion}
+            placeholder='All Regions Selected'
+            onChange={(e) => { updateSelectedRegion(e || 'All'); }}
+            allowClear
+            clearIcon={<div className='clearIcon' />}
+          >
+            <Select.Option className='undp-select-option' value='All'>All regions</Select.Option>
+            <Select.Option className='undp-select-option' value='Africa'>Africa</Select.Option>
+            <Select.Option className='undp-select-option' value='Americas'>Americas</Select.Option>
+            <Select.Option className='undp-select-option' value='Asia'>Asia</Select.Option>
+            <Select.Option className='undp-select-option' value='Europe'>Europe</Select.Option>
+            <Select.Option className='undp-select-option' value='Oceania'>Oceania</Select.Option>
+          </Select>
+        </SelectionEl>
+        <SelectionEl>
+          <p className='label'>Filter by income groups</p>
+          <Select
+            className='undp-select'
+            value={selectedIncomeGroup}
+            placeholder='All Regions Selected'
+            onChange={(e) => { updateSelectedIncomeGroup(e || 'All'); }}
+            clearIcon={<div className='clearIcon' />}
+            allowClear
+          >
+            <Select.Option className='undp-select-option' value='All'>All income groups</Select.Option>
+            <Select.Option className='undp-select-option' value='High income'>High income</Select.Option>
+            <Select.Option className='undp-select-option' value='Upper middle income'>Upper middle income</Select.Option>
+            <Select.Option className='undp-select-option' value='Lower middle income'>Lower middle income</Select.Option>
+            <Select.Option className='undp-select-option' value='Low income'>Low income</Select.Option>
+          </Select>
+        </SelectionEl>
         <SegmentedEl>
-          <p className='label'>Filter By Fragility Level</p>
+          <p className='label'>Filter By fragility level</p>
           <Segmented
             className='undp-segmented'
             value={selectedFragilityGroup}
@@ -127,7 +127,7 @@ export const VizArea = (props: Props) => {
                   value: 'All',
                 },
                 {
-                  label: 'Extremely Fragile',
+                  label: 'Extremely fragile',
                   value: 'Extremely Fragile',
                 },
                 {
@@ -135,7 +135,7 @@ export const VizArea = (props: Props) => {
                   value: 'Fragile',
                 },
                 {
-                  label: 'Not Fragile',
+                  label: 'Not fragile',
                   value: 'Not Fragile',
                 },
               ]
@@ -143,7 +143,7 @@ export const VizArea = (props: Props) => {
           />
         </SegmentedEl>
         <SegmentedEl>
-          <p className='label'>Filter By HDI</p>
+          <p className='label'>Filter by human development index</p>
           <Segmented
             className='undp-segmented'
             value={selectedHDI}
@@ -155,7 +155,7 @@ export const VizArea = (props: Props) => {
                   value: 'All',
                 },
                 {
-                  label: 'Very High',
+                  label: 'Very high',
                   value: 'Very High',
                 },
                 {
@@ -175,7 +175,7 @@ export const VizArea = (props: Props) => {
           />
         </SegmentedEl>
         <SegmentedEl>
-          <p className='label'>Filter By Development</p>
+          <p className='label'>Filter by development</p>
           <Segmented
             className='undp-segmented'
             value={selectedDevelopmentGroup}
@@ -195,6 +195,30 @@ export const VizArea = (props: Props) => {
           />
         </SegmentedEl>
       </div>
+      {
+        selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' && selectedPolicyMeasureCat === 'All' ? null
+          : (
+            <div className='flex-div flex-wrap margin-bottom-07 margin-top-00 flex-vert-align-center'>
+              <>
+                <button
+                  className='undp-chip undp-chip-red'
+                  type='button'
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => {
+                    updateSelectedRegion('All');
+                    updateSelectedIncomeGroup('All');
+                    updateSelectedFragilityGroup('All');
+                    updateSelectedHDI('All');
+                    updateSelectedDevelopmentGroup('All');
+                    updateSelectedPolicyMeasureCat('All');
+                  }}
+                >
+                  Reset Filters
+                </button>
+              </>
+            </div>
+          )
+      }
       {
         countryData
           ? (

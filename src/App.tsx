@@ -19,14 +19,14 @@ import { GreenLens } from './GreenLens';
 
 const items = [
   {
-    label: 'Gender Sensitive Policies',
+    label: 'Gender-Green Lens',
     key: '1',
-    children: <GenderResponse />,
+    children: <GreenLens />,
   },
   {
-    label: 'Policies With Green Lense',
+    label: 'Gender Response Policy Tracker',
     key: '2',
-    children: <GreenLens />,
+    children: <GenderResponse />,
   },
   {
     label: 'COVID-19 Task Forces',

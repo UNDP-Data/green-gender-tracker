@@ -36,9 +36,9 @@ export const VizArea = (props: Props) => {
   } = useContext(Context) as CtxDataType;
   return (
     <>
-      <div className='flex-div flex-space-between margin-top-07 margin-bottom-07 flex-wrap'>
+      <div className='flex-div flex-space-between margin-top-07 margin-bottom-05 flex-wrap'>
         <SelectionEl>
-          <p className='label'>Filter by Regions</p>
+          <p className='label'>Filter by regions</p>
           <Select
             className='undp-select'
             value={selectedRegion}
@@ -47,7 +47,7 @@ export const VizArea = (props: Props) => {
             allowClear
             clearIcon={<div className='clearIcon' />}
           >
-            <Select.Option className='undp-select-option' value='All'>All Regions</Select.Option>
+            <Select.Option className='undp-select-option' value='All'>All regions</Select.Option>
             <Select.Option className='undp-select-option' value='Africa'>Africa</Select.Option>
             <Select.Option className='undp-select-option' value='Americas'>Americas</Select.Option>
             <Select.Option className='undp-select-option' value='Asia'>Asia</Select.Option>
@@ -56,7 +56,7 @@ export const VizArea = (props: Props) => {
           </Select>
         </SelectionEl>
         <SelectionEl>
-          <p className='label'>Filter by Income Groups</p>
+          <p className='label'>Filter by income groups</p>
           <Select
             className='undp-select'
             value={selectedIncomeGroup}
@@ -73,7 +73,7 @@ export const VizArea = (props: Props) => {
           </Select>
         </SelectionEl>
         <SegmentedEl>
-          <p className='label'>Filter By Fragility Level</p>
+          <p className='label'>Filter By fragility level</p>
           <Segmented
             className='undp-segmented'
             value={selectedFragilityGroup}
@@ -85,7 +85,7 @@ export const VizArea = (props: Props) => {
                   value: 'All',
                 },
                 {
-                  label: 'Extremely Fragile',
+                  label: 'Extremely fragile',
                   value: 'Extremely Fragile',
                 },
                 {
@@ -93,7 +93,7 @@ export const VizArea = (props: Props) => {
                   value: 'Fragile',
                 },
                 {
-                  label: 'Not Fragile',
+                  label: 'Not fragile',
                   value: 'Not Fragile',
                 },
               ]
@@ -101,7 +101,7 @@ export const VizArea = (props: Props) => {
           />
         </SegmentedEl>
         <SegmentedEl>
-          <p className='label'>Filter By HDI</p>
+          <p className='label'>Filter By human development index</p>
           <Segmented
             className='undp-segmented'
             value={selectedHDI}
@@ -113,7 +113,7 @@ export const VizArea = (props: Props) => {
                   value: 'All',
                 },
                 {
-                  label: 'Very High',
+                  label: 'Very high',
                   value: 'Very High',
                 },
                 {
@@ -133,7 +133,7 @@ export const VizArea = (props: Props) => {
           />
         </SegmentedEl>
         <SegmentedEl>
-          <p className='label'>Filter By Development</p>
+          <p className='label'>Filter by development</p>
           <Segmented
             className='undp-segmented'
             value={selectedDevelopmentGroup}
@@ -145,7 +145,7 @@ export const VizArea = (props: Props) => {
                   value: 'All',
                 },
                 {
-                  label: 'Least Developed Countries (LDC)',
+                  label: 'Least developed countries (LDC)',
                   value: 'Least Developed Countries (LDC)',
                 },
               ]
@@ -153,6 +153,29 @@ export const VizArea = (props: Props) => {
           />
         </SegmentedEl>
       </div>
+      {
+        selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' ? null
+          : (
+            <div className='flex-div flex-wrap margin-bottom-07 margin-top-00 flex-vert-align-center'>
+              <>
+                <button
+                  className='undp-chip undp-chip-red'
+                  type='button'
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => {
+                    updateSelectedRegion('All');
+                    updateSelectedIncomeGroup('All');
+                    updateSelectedFragilityGroup('All');
+                    updateSelectedHDI('All');
+                    updateSelectedDevelopmentGroup('All');
+                  }}
+                >
+                  Reset Filters
+                </button>
+              </>
+            </div>
+          )
+      }
       <TaskForceDashboard
         allTFs={tfData}
         tfCountryData={tfCountryData}

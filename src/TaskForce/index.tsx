@@ -90,6 +90,8 @@ export const TaskForce = () => {
           ldc: CountryTaxonomy[CountryTaxonomy.findIndex((el) => el['Country Code'] === d['Country Code'])]['Least Developed Countries (LDC)'] === 'LDC',
           sids: CountryTaxonomy[CountryTaxonomy.findIndex((el) => el['Country Code'] === d['Country Code'])]['Small Island Developing States (SIDS)'] === 'SIDS',
           noOfTF: countryTFList.length,
+          noOfTFWithMembershipData: countryTFList.filter((el) => el['Composition Classification'] !== 'NA').length,
+          noOfTFWithLeadershipData: countryTFList.filter((el) => el['Leader Gender'] !== 'NA').length,
           noOfTFWithMajorityWomenOfGenderParity: countryTFList.filter((el) => el['Composition Classification'] !== 'NA').length > 0 ? countryTFsByRegionWomenMajority.length : -1,
           percentOfTFWithMajorityWomenOfGenderParity: countryTFList.filter((el) => el['Composition Classification'] !== 'NA').length > 0 ? (countryTFsByRegionWomenMajority.length * 100) / countryTFList.filter((el) => el['Composition Classification'] !== 'NA').length : -1,
           noOfTFWithWomenLeader: countryTFList.filter((el) => el['Leader Gender'] !== 'NA').length > 0 ? countryTFsByRegionWomenLeader.length : -1,
@@ -104,7 +106,7 @@ export const TaskForce = () => {
   }, []);
   return (
     <>
-      <h3 className='bold undp-typography'>COVID-19 Task Forces</h3>
+      <h3 className='bold undp-typography'>Women’s Participation in COVID-19 Task Forces</h3>
       {
         tfData && tfCountryData
           ? (

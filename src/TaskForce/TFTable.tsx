@@ -76,7 +76,7 @@ export const TFTable = (props: Props) => {
   return (
     <>
       <h5 className='bold margin-bottom-05 undp-typography'>
-        Task Force Details
+        COVID-19 task force details
       </h5>
       {
         selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' ? null
@@ -100,7 +100,7 @@ export const TFTable = (props: Props) => {
                   selectedDevelopmentGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedDevelopmentGroup}</div>
                 }
                 <button
-                  className='undp-chip undp-chip-blue undp-chip-small'
+                  className='undp-chip undp-chip-red undp-chip-small'
                   type='button'
                   style={{ cursor: 'pointer' }}
                   onClick={() => {
@@ -163,7 +163,7 @@ export const TFTable = (props: Props) => {
             onChange={(e) => { setSelectedType(e); }}
             clearIcon={<div className='clearIcon' />}
           >
-            <Select.Option className='undp-select-option' value='All'>All task forces type</Select.Option>
+            <Select.Option className='undp-select-option' value='All'>All task force types</Select.Option>
             <Select.Option className='undp-select-option' value='Decision-Making'>Decision-Making</Select.Option>
             <Select.Option className='undp-select-option' value='Expert'>Expert</Select.Option>
           </Select>

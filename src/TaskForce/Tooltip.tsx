@@ -21,7 +21,7 @@ const TooltipEl = styled.div<TooltipElProps>`
   word-wrap: break-word;
   top: ${(props) => (props.verticalAlignment === 'bottom' ? props.y - 40 : props.y + 40)}px;
   left: ${(props) => (props.horizontalAlignment === 'left' ? props.x - 20 : props.x + 20)}px;
-  max-width: 30rem;
+  max-width: 35rem;
   transform: ${(props) => `translate(${props.horizontalAlignment === 'left' ? '-100%' : '0%'},${props.verticalAlignment === 'top' ? '-100%' : '0%'})`};
 `;
 
@@ -36,7 +36,7 @@ export const Tooltip = (props: Props) => {
       <h4 className='margin-bottom-07 undp-typography'>{data.countryName}</h4>
       <div className='flex-div flex-space-between margin-bottom-05'>
         <div>
-          # Task force
+          # Task forces
         </div>
         <div className='bold'>
           {data.noOfTF}
@@ -44,7 +44,7 @@ export const Tooltip = (props: Props) => {
       </div>
       <div className='flex-div flex-space-between margin-bottom-05'>
         <div>
-          # task force with women leader or co-chair
+          # Task forces with women leads or co-leads
         </div>
         {
           data.noOfTFWithWomenLeader !== -1
@@ -62,7 +62,7 @@ export const Tooltip = (props: Props) => {
       </div>
       <div className='flex-div flex-space-between margin-bottom-05'>
         <div>
-          # task force with gender parity or women majority
+          # Task forces with gender parity or majority women members
         </div>
         {
           data.noOfTFWithMajorityWomenOfGenderParity !== -1
@@ -81,7 +81,7 @@ export const Tooltip = (props: Props) => {
       <hr />
       <div className='flex-div flex-space-between'>
         <div>
-          Share of women members in task force
+          Average share of women members in country task force(s)
         </div>
         {
           data.percentOfTFMembersWomen !== -1

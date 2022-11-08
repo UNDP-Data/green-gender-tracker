@@ -110,6 +110,8 @@ export interface CountryTFSummaryDataType {
   noOfTFWithWomenLeader: number;
   percentOfTFWithWomenLeader: number;
   noOfTFWithMajorityWomenOfGenderParity: number;
+  noOfTFWithMembershipData: number;
+  noOfTFWithLeadershipData: number;
   percentOfTFWithMajorityWomenOfGenderParity: number;
   percentOfTFMembersWomen: number;
   percentOfTFMembersWomenNA: boolean;

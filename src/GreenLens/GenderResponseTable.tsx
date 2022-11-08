@@ -1,4 +1,4 @@
-import { Input, Select } from 'antd';
+import { Input, Select, Switch } from 'antd';
 import sortBy from 'lodash.sortby';
 import uniqBy from 'lodash.uniqby';
 import { useContext, useEffect, useState } from 'react';
@@ -6,12 +6,14 @@ import styled from 'styled-components';
 import { CtxDataType, PolicyGreenLenseDataType } from '../Types';
 import Context from './Context/Context';
 
+import '../style/switchStyle.css';
+
 interface Props {
   data: PolicyGreenLenseDataType[];
 }
 
 const SelectionEl = styled.div`
-  width: calc(50% - 1rem);
+  width: calc(33.33% - 1.334rem);
 `;
 
 interface CellProps {
@@ -47,11 +49,14 @@ export const GenderResponseTable = (props: Props) => {
   const [tableData, setTableData] = useState<PolicyGreenLenseDataType[] | undefined>(undefined);
   const [selectedCountry, setSelectedCountry] = useState<string[]>([]);
   const [searchValue, setSearchValue] = useState<string | null>(null);
+  const [showEnvPositiveOnly, setShowEnvPositiveOnly] = useState(false);
   const dataSorted = sortBy(data, 'Country Name');
   const countryList = uniqBy(dataSorted, 'Country Name').map((d) => d['Country Name']);
 
   useEffect(() => {
     setSelectedCountry([]);
+    setShowEnvPositiveOnly(false);
+    setSearchValue(null);
   }, [selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup]);
 
   useEffect(() => {
@@ -70,9 +75,10 @@ export const GenderResponseTable = (props: Props) => {
                 ? sortedData.filter((d) => d['Positive for environment'] === 'YES')
                 : sortedData.filter((d) => d['Gender-Green Nexus'] === 'YES');
     const dataByCountry = selectedCountry.length === 0 ? dataByType : dataByType.filter((d) => (selectedCountry.indexOf(d['Country Name']) !== -1));
-    const dataBySearch = searchValue ? dataByCountry.filter((d) => (d['Policy Measure Description'].toLowerCase().includes(searchValue.toLowerCase()))) : dataByCountry;
+    const dataByEnv = showEnvPositiveOnly ? dataByCountry.filter((d) => d['Positive for environment'] === 'YES') : dataByCountry;
+    const dataBySearch = searchValue ? dataByEnv.filter((d) => (d['Policy Measure Description'].toLowerCase().includes(searchValue.toLowerCase()))) : dataByEnv;
     setTableData(dataBySearch);
-  }, [selectedCountry, selectedType, searchValue, data]);
+  }, [selectedCountry, selectedType, searchValue, showEnvPositiveOnly, data]);
   return (
     <>
       <h5 className='bold margin-bottom-05 undp-typography'>
@@ -103,7 +109,7 @@ export const GenderResponseTable = (props: Props) => {
                   selectedPolicyMeasureCat === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedPolicyMeasureCat}</div>
                 }
                 <button
-                  className='undp-chip undp-chip-blue undp-chip-small'
+                  className='undp-chip undp-chip-red undp-chip-small'
                   type='button'
                   style={{ cursor: 'pointer' }}
                   onClick={() => {
@@ -123,7 +129,7 @@ export const GenderResponseTable = (props: Props) => {
       }
       <div className='margin-top-04 margin-bottom-05 flex-div flex-space-between'>
         <SelectionEl>
-          <p className='label'>Filter by Policy Type</p>
+          <p className='label'>Filter by policy type</p>
           <Select
             className='undp-select'
             value={selectedType}
@@ -155,9 +161,13 @@ export const GenderResponseTable = (props: Props) => {
             }
           </Select>
         </SelectionEl>
+        <SelectionEl>
+          <p className='label'>Show only environmentally positive policies</p>
+          <Switch className='undp-switch' onChange={(checked) => { setShowEnvPositiveOnly(checked); }} />
+        </SelectionEl>
       </div>
       <div className='margin-bottom-07'>
-        <p className='label'>Search Policy</p>
+        <p className='label'>Search policy</p>
         <Input className='undp-input' placeholder='Search policies' onChange={(d) => { setSearchValue(d.target.value); }} />
       </div>
       {
@@ -194,7 +204,7 @@ export const GenderResponseTable = (props: Props) => {
                                   {
                                     d['Addresses VAWG'] === 'YES' || d['Directly supports unpaid care'] === 'YES' || d['Targets Women\'s Economic Security'] === 'YES'
                                       ? (
-                                        <div className='undp-chip undp-chip-small undp-chip-blue'>
+                                        <div className='undp-chip undp-chip-small' style={{ backgroundColor: '#E4D4E8' }}>
                                           Gender-sensitive
                                         </div>
                                       ) : null
@@ -202,7 +212,7 @@ export const GenderResponseTable = (props: Props) => {
                                   {
                                     d['Addresses VAWG'] === 'YES'
                                       ? (
-                                        <div className='undp-chip undp-chip-small undp-chip-yellow'>
+                                        <div className='undp-chip undp-chip-small undp-chip-blue'>
                                           Violence against women
                                         </div>
                                       ) : null
@@ -210,7 +220,7 @@ export const GenderResponseTable = (props: Props) => {
                                   {
                                     d['Directly supports unpaid care'] === 'YES'
                                       ? (
-                                        <div className='undp-chip undp-chip-small undp-chip-yellow'>
+                                        <div className='undp-chip undp-chip-small undp-chip-blue'>
                                           Unpaid care work
                                         </div>
                                       ) : null
@@ -218,7 +228,7 @@ export const GenderResponseTable = (props: Props) => {
                                   {
                                     d['Targets Women\'s Economic Security'] === 'YES'
                                       ? (
-                                        <div className='undp-chip undp-chip-small undp-chip-yellow'>
+                                        <div className='undp-chip undp-chip-small undp-chip-blue'>
                                           Women&apos;s economic security
                                         </div>
                                       ) : null

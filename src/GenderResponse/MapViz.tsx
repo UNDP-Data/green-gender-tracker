@@ -6,7 +6,7 @@ import { geoEqualEarth } from 'd3-geo';
 import { zoom } from 'd3-zoom';
 import { select } from 'd3-selection';
 import { scaleThreshold } from 'd3-scale';
-import { Radio, Select } from 'antd';
+import { Select } from 'antd';
 import styled from 'styled-components';
 import World from '../Data/worldMap.json';
 import { CountrySummaryDataType, CtxDataType } from '../Types';
@@ -40,9 +40,6 @@ const LegendEl = styled.div`
   }
 `;
 
-const PERCENT_COLOR = ['#ffffd9', '#e4f4cb', '#c4e6c3', '#9dd4c0', '#69c1c1', '#3ea2bd', '#347cab', '#265994', '#173978', '#081d58'];
-const PERCENT_VALUE = [10, 20, 30, 40, 50, 60, 70, 80, 90];
-
 const ABS_COLOR = ['#ffffcc', '#c7e9b4', '#7fcdbb', '#41b6c4', '#1d91c0', '#225ea8', '#0c2c84'];
 const ABS_VALUE = [5, 10, 15, 20, 25, 30];
 
@@ -70,17 +67,13 @@ export const MapViz = (props: Props) => {
   const mapG = useRef<SVGGElement>(null);
   const projection = geoEqualEarth().rotate([0, 0]).scale(265).translate([550, 380]);
 
-  const [variable, setVariable] = useState<'noOfGenderPolicies' | 'noOfPoliciesAddressingVAWG' | 'noOfPoliciesSupportingUnpaidCare' | 'noOfPoliciesTargetingWomenEcoSecurity'>('noOfGenderPolicies');
-  const [calculation, setCalculation] = useState<'abs' | 'percent'>('abs');
+  const [variable, setVariable] = useState<'noOfPolicies' | 'noOfGenderPolicies' | 'noOfPoliciesAddressingVAWG' | 'noOfPoliciesSupportingUnpaidCare' | 'noOfPoliciesTargetingWomenEcoSecurity'>('noOfGenderPolicies');
   const [hoverData, setHoverData] = useState<HoverDataType | undefined>(undefined);
   const [selectedColor, setSelectedColor] = useState<string | undefined>(undefined);
 
-  const colorArray = calculation === 'abs' ? ABS_COLOR : PERCENT_COLOR;
-  const valueArray = calculation === 'abs' ? ABS_VALUE : PERCENT_VALUE;
+  const colorArray = ABS_COLOR;
+  const valueArray = ABS_VALUE;
 
-  const percentColorScale = scaleThreshold<number, string>()
-    .domain(PERCENT_VALUE)
-    .range(PERCENT_COLOR);
   const absColorScale = scaleThreshold<number, string>()
     .domain(ABS_VALUE)
     .range(ABS_COLOR);
@@ -105,19 +98,13 @@ export const MapViz = (props: Props) => {
             value={variable}
             onChange={(e) => { setVariable(e); }}
           >
+            <Select.Option className='undp-select-option' value='noOfPolicies'>All policies</Select.Option>
             <Select.Option className='undp-select-option' value='noOfGenderPolicies'>All gender-sensitive policies</Select.Option>
             <Select.Option className='undp-select-option' value='noOfPoliciesAddressingVAWG'>Policies addressing violence against women</Select.Option>
             <Select.Option className='undp-select-option' value='noOfPoliciesSupportingUnpaidCare'>Policies supporting unpaid care</Select.Option>
             <Select.Option className='undp-select-option' value='noOfPoliciesTargetingWomenEcoSecurity'>Policies targeting women&apos;s economic security</Select.Option>
           </Select>
         </div>
-        <Radio.Group
-          value={calculation}
-          onChange={(e) => { setCalculation(e.target.value); }}
-        >
-          <Radio className='undp-radio' value='abs'>No. of Policies</Radio>
-          <Radio className='undp-radio' value='percent'>Percentage of Total Policies</Radio>
-        </Radio.Group>
       </div>
       {
         selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' && selectedPolicyMeasureCat === 'All' ? null
@@ -144,7 +131,7 @@ export const MapViz = (props: Props) => {
                   selectedPolicyMeasureCat === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedPolicyMeasureCat}</div>
                 }
                 <button
-                  className='undp-chip undp-chip-blue undp-chip-small'
+                  className='undp-chip undp-chip-red undp-chip-small'
                   type='button'
                   style={{ cursor: 'pointer' }}
                   onClick={() => {
@@ -219,7 +206,7 @@ export const MapViz = (props: Props) => {
           {
             data.map((d, i: number) => {
               const index = (World as any).features.findIndex((el: any) => d.countryCode === el.properties.ISO3);
-              const color = d[variable] > 0 ? calculation === 'abs' ? absColorScale(d[variable]) : percentColorScale((d[variable] * 100) / d.noOfPolicies) : '#D4D6D8';
+              const color = d[variable] > 0 ? absColorScale(d[variable]) : '#D4D6D8';
               const regionOpacity = selectedRegion === 'All' || selectedRegion === d.region;
               const incomeOpacity = selectedIncomeGroup === 'All' || selectedIncomeGroup === d.incomeGroup;
               const fragilityOpacity = selectedFragilityGroup === 'All' || selectedFragilityGroup === d.fragility;
@@ -352,13 +339,15 @@ export const MapViz = (props: Props) => {
       <LegendEl>
         <p className='margin-bottom-03 small-font'>
           {
-            variable === 'noOfGenderPolicies'
-              ? 'Gender related policy'
-              : variable === 'noOfPoliciesAddressingVAWG'
-                ? 'Policies addressing violence against women'
-                : variable === 'noOfPoliciesSupportingUnpaidCare'
-                  ? 'Policies supporting unpaid care'
-                  : "Policies targeting women's economic security"
+            variable === 'noOfPolicies'
+              ? 'All policies'
+              : variable === 'noOfGenderPolicies'
+                ? 'Gender-sensitive policies'
+                : variable === 'noOfPoliciesAddressingVAWG'
+                  ? 'Policies addressing violence against women'
+                  : variable === 'noOfPoliciesSupportingUnpaidCare'
+                    ? 'Policies supporting unpaid care'
+                    : "Policies targeting women's economic security"
           }
         </p>
         <svg width='100%' viewBox={`0 0 ${335} ${30}`}>
@@ -393,7 +382,7 @@ export const MapViz = (props: Props) => {
             }
             <g
               style={{ cursor: 'pointer' }}
-              onMouseOver={() => { setSelectedColor(calculation === 'abs' ? '#0c2c84' : '#081d58'); }}
+              onMouseOver={() => { setSelectedColor('#0c2c84'); }}
               onMouseLeave={() => { setSelectedColor(undefined); }}
             >
               <rect
@@ -404,9 +393,7 @@ export const MapViz = (props: Props) => {
                 fill={colorArray[valueArray.length]}
                 strokeWidth={1}
                 stroke={
-                  calculation === 'abs'
-                    ? selectedColor === '#0c2c84' ? '#212121' : '#0c2c84'
-                    : selectedColor === '#081d58' ? '#212121' : '#081d58'
+                  selectedColor === '#0c2c84' ? '#212121' : '#0c2c84'
                 }
               />
             </g>

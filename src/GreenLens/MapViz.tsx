@@ -67,7 +67,7 @@ export const MapViz = (props: Props) => {
   const mapG = useRef<SVGGElement>(null);
   const projection = geoEqualEarth().rotate([0, 0]).scale(265).translate([550, 380]);
 
-  const [variable, setVariable] = useState<'noOfGenderPolicies' | 'noOfEnvironmetallyPositivePoliciesAddressingVAWG' | 'noOfEnvironmetallyPositivePoliciesSupportingUnpaidCare' | 'noOfEnvironmetallyPositivePoliciesTargetingWomenEcoSecurity' | 'noOfPoliciesPositiveForEnvironment' | 'noOfPoliciesGenderGreenNexus'>('noOfPoliciesPositiveForEnvironment');
+  const [variable, setVariable] = useState<'noOfGenderPolicies' | 'noOfEnvironmetallyPositivePoliciesAddressingVAWG' | 'noOfEnvironmetallyPositivePoliciesSupportingUnpaidCare' | 'noOfEnvironmetallyPositivePoliciesTargetingWomenEcoSecurity' | 'noOfPoliciesPositiveForEnvironment' | 'noOfPoliciesGenderGreenNexus'>('noOfPoliciesGenderGreenNexus');
   const [hoverData, setHoverData] = useState<HoverDataType | undefined>(undefined);
   const [selectedColor, setSelectedColor] = useState<string | undefined>(undefined);
 
@@ -97,12 +97,12 @@ export const MapViz = (props: Props) => {
             value={variable}
             onChange={(e) => { setVariable(e); }}
           >
-            <Select.Option className='undp-select-option' value='noOfPoliciesThatAreEnvironmentalRelevance'>Environmentally positive policies</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfPoliciesGenderGreenNexus'>Policies with gender-green-nexus</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfPoliciesPositiveForEnvironment'>Environmentally positive policies</Select.Option>
             <Select.Option className='undp-select-option' value='noOfGenderPolicies'>All gender-sensitive policies</Select.Option>
-            <Select.Option className='undp-select-option' value='noOfPoliciesGenderGreenNexus'>Gender-green nexus policies</Select.Option>
-            <Select.Option className='undp-select-option' value='noOfEnvironmetallyPositivePoliciesAddressingVAWG'>Policies addressing violence against women</Select.Option>
-            <Select.Option className='undp-select-option' value='noOfEnvironmetallyPositivePoliciesSupportingUnpaidCare'>Policies supporting unpaid care</Select.Option>
-            <Select.Option className='undp-select-option' value='noOfEnvironmetallyPositivePoliciesTargetingWomenEcoSecurity'>Policies targeting women&apos;s economic security</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfEnvironmetallyPositivePoliciesAddressingVAWG'>Environmentally positive policies addressing violence against women</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfEnvironmetallyPositivePoliciesSupportingUnpaidCare'>Environmentally positive policies supporting unpaid care</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfEnvironmetallyPositivePoliciesTargetingWomenEcoSecurity'>Environmentally positive policies targeting women&apos;s economic security</Select.Option>
           </Select>
         </div>
       </div>
@@ -131,7 +131,7 @@ export const MapViz = (props: Props) => {
                   selectedPolicyMeasureCat === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedPolicyMeasureCat}</div>
                 }
                 <button
-                  className='undp-chip undp-chip-blue undp-chip-small'
+                  className='undp-chip undp-chip-red undp-chip-small'
                   type='button'
                   style={{ cursor: 'pointer' }}
                   onClick={() => {
@@ -340,7 +340,7 @@ export const MapViz = (props: Props) => {
         <p className='margin-bottom-03 small-font'>
           {
             variable === 'noOfGenderPolicies'
-              ? 'Gender related policy'
+              ? 'Gender-sensitive policies'
               : variable === 'noOfEnvironmetallyPositivePoliciesAddressingVAWG'
                 ? 'Environmentally positive policies addressing violence against women'
                 : variable === 'noOfEnvironmetallyPositivePoliciesSupportingUnpaidCare'
@@ -348,8 +348,8 @@ export const MapViz = (props: Props) => {
                   : variable === 'noOfEnvironmetallyPositivePoliciesTargetingWomenEcoSecurity'
                     ? "Environmentally positive policies targeting women's economic security"
                     : variable === 'noOfPoliciesPositiveForEnvironment'
-                      ? 'Policies that are environmentally positive'
-                      : 'Policies with gender-green-nexus'
+                      ? 'Environmentally positive policies'
+                      : 'Policies with gender-green nexus'
           }
         </p>
         <svg width='100%' viewBox={`0 0 ${335} ${30}`}>

@@ -40,7 +40,7 @@ export const CountryTable = (props: Props) => {
   return (
     <>
       <h5 className='bold margin-bottom-05 undp-typography'>
-        Task force by country
+        COVID-19 task forces, by country/territory
       </h5>
       {
         selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' ? null
@@ -64,7 +64,7 @@ export const CountryTable = (props: Props) => {
                   selectedDevelopmentGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedDevelopmentGroup}</div>
                 }
                 <button
-                  className='undp-chip undp-chip-blue undp-chip-small'
+                  className='undp-chip undp-chip-red undp-chip-small'
                   type='button'
                   style={{ cursor: 'pointer' }}
                   onClick={() => {
@@ -84,43 +84,55 @@ export const CountryTable = (props: Props) => {
       <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
         <div style={{ width: '100%' }}>
           <div className='undp-table-head-small undp-table-head-sticky'>
-            <CellEl width='30%' className='undp-table-head-cell undp-sticky-head-column' cursor='pointer'>
-              Countries (
+            <CellEl width='20%' className='undp-table-head-cell undp-sticky-head-column' cursor='pointer'>
+              Countries/territories (
               {dataSorted.length}
               )
             </CellEl>
             <CellEl width='10%' className='undp-table-head-cell align-right' cursor='pointer'>
-              # Task force
+              Total task forces
+            </CellEl>
+            <CellEl width='10%' className='undp-table-head-cell align-right' cursor='pointer'>
+              Task forces with membership data
+            </CellEl>
+            <CellEl width='10%' className='undp-table-head-cell align-right' cursor='pointer'>
+              Task forces with leadership data
+            </CellEl>
+            <CellEl width='15%' className='undp-table-head-cell align-right' cursor='pointer'>
+              Average share of women members
             </CellEl>
             <CellEl width='20%' className='undp-table-head-cell align-right' cursor='pointer'>
-              # Task force with women leader or co-chair
+              Task forces with gender parity or majority women members
             </CellEl>
-            <CellEl width='20%' className='undp-table-head-cell align-right' cursor='pointer'>
-              # Task force with gender parity or women majority
-            </CellEl>
-            <CellEl width='20%' className='undp-table-head-cell align-right' cursor='pointer'>
-              Avg. Proportion of women member
+            <CellEl width='15%' className='undp-table-head-cell align-right' cursor='pointer'>
+              Task forces with women lead or co-lead
             </CellEl>
           </div>
           {
             dataSorted.map((d, i) => (
               <div key={i} className='undp-table-row'>
-                <CellEl width='30%' className='undp-table-row-cell'>
+                <CellEl width='20%' className='undp-table-row-cell'>
                   {d.countryName}
                 </CellEl>
                 <CellEl width='10%' className='undp-table-row-cell align-right'>
                   {d.noOfTF}
                 </CellEl>
-                <CellEl width='20%' className='undp-table-row-cell align-right'>
-                  {d.noOfTFWithWomenLeader !== -1 ? d.noOfTFWithWomenLeader : 'NA'}
+                <CellEl width='10%' className='undp-table-row-cell align-right'>
+                  {d.noOfTFWithMembershipData}
+                </CellEl>
+                <CellEl width='10%' className='undp-table-row-cell align-right'>
+                  {d.noOfTFWithLeadershipData}
+                </CellEl>
+                <CellEl width='15%' className='undp-table-row-cell align-right'>
+                  {
+                    !d.percentOfTFMembersWomenNA ? `${Math.round(d.percentOfTFMembersWomen)}%` : 'NA'
+                  }
                 </CellEl>
                 <CellEl width='20%' className='undp-table-row-cell align-right'>
                   {d.noOfTFWithMajorityWomenOfGenderParity !== -1 ? d.noOfTFWithMajorityWomenOfGenderParity : 'NA'}
                 </CellEl>
-                <CellEl width='20%' className='undp-table-row-cell align-right'>
-                  {
-                    !d.percentOfTFMembersWomenNA ? `${d.percentOfTFMembersWomen.toFixed(1)}%` : 'NA'
-                  }
+                <CellEl width='15%' className='undp-table-row-cell align-right'>
+                  {d.noOfTFWithWomenLeader !== -1 ? d.noOfTFWithWomenLeader : 'NA'}
                 </CellEl>
               </div>
             ))

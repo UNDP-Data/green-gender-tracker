@@ -97,9 +97,9 @@ export const MapViz = (props: Props) => {
             value={variable}
             onChange={(e) => { setVariable(e); }}
           >
-            <Select.Option className='undp-select-option' value='noOfTFMembersWomen'>Avg. share of women member in task force</Select.Option>
-            <Select.Option className='undp-select-option' value='noOfTFWithWomenLeader'>Percent of task force with women leads or co-leads</Select.Option>
-            <Select.Option className='undp-select-option' value='noOfTFWithMajorityWomenOfGenderParity'>Percent of task force with gender parity or with majortiy women member</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfTFMembersWomen'>Average share of women members (%)</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfTFWithWomenLeader'>Percent of task forces with women leads or co-leads</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfTFWithMajorityWomenOfGenderParity'>Percent of task forces with gender parity or majority women members</Select.Option>
           </Select>
         </div>
       </div>
@@ -295,10 +295,10 @@ export const MapViz = (props: Props) => {
         <p className='margin-bottom-03 small-font'>
           {
             variable === 'noOfTFWithWomenLeader'
-              ? 'Task force with women leader or co-chair'
+              ? 'Percent of task forces with women leads or co-leads'
               : variable === 'noOfTFMembersWomen'
-                ? 'Average share of women'
-                : 'Task force with gender parity or majority women'
+                ? 'Average share of women members (%)'
+                : 'Percent of task forces with gender parity or majority women members'
           }
         </p>
         <svg width='100%' viewBox={`0 0 ${335} ${30}`}>
