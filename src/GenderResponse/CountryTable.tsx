@@ -1,6 +1,7 @@
 import sortBy from 'lodash.sortby';
 import { useContext, useState } from 'react';
 import styled from 'styled-components';
+import { format } from 'd3-format';
 import { CountrySummaryDataType, CtxDataType } from '../Types';
 import { GetFilteredCountrySummaryData } from '../utils/getFilteredData';
 
@@ -24,6 +25,15 @@ interface CellProps {
 const CellEl = styled.div<CellProps>`
   width: ${(props) => props.width};
   cursor: ${(props) => (props.cursor ? props.cursor : 'auto')};
+`;
+
+interface WidthProps {
+  width: string;
+}
+
+const StatCardsDiv = styled.div<WidthProps>`
+  width: ${(props) => props.width};
+  cursor: auto;
 `;
 
 const SVGBar = (props: SVGBarProps) => {
@@ -166,6 +176,16 @@ export const CountryTable = (props: Props) => {
             </div>
           )
       }
+      <div className='flex-div margin-bottom-07 margin-top-07 flex-space-between flex-wrap'>
+        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
+          <h3 className='undp-typography margin-bottom-00'>{format(',')(filteredData.filter((d) => d.noOfPolicies > 0).length)}</h3>
+          <p className='margin-top-05 margin-bottom-00'>Countries/territories with COVID-19 response policies</p>
+        </StatCardsDiv>
+        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
+          <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredData.filter((d) => d.noOfGenderPolicies > 0).length)}</h3>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with gender-sensitive COVID-19 response policies</p>
+        </StatCardsDiv>
+      </div>
       <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
         <div className='undp-table-head-small undp-table-head-sticky'>
           <CellEl width='20%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(1); }}>

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import uniqBy from 'lodash.uniqby';
 import { useContext } from 'react';
 import { format } from 'd3-format';
 import { MapViz } from './MapViz';
@@ -43,11 +42,6 @@ export const PolicyDashboard = (props: Props) => {
   const filteredGenderedPolicies = GetFilteredGreenLenseData(genderRelatedPolicies, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup, selectedPolicyMeasureCat);
   const filteredEnvironmentPositivePolicies = GetFilteredGreenLenseData(environmentPositivePolicies, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup, selectedPolicyMeasureCat);
   const filteredCenderGreenNexusPolicies = GetFilteredGreenLenseData(genderGreenNexusPolicies, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup, selectedPolicyMeasureCat);
-  const allCountriesLength = uniqBy(allFilteredPolicies, 'Country Code').length;
-  const countryWithGenderPoliciesLength = uniqBy(filteredGenderedPolicies, 'Country Code').length;
-  const countryWithEnvPoliciesLength = uniqBy(filteredEnvironmentPositivePolicies, 'Country Code').length;
-  const countryWithNexusPoliciesLength = uniqBy(filteredCenderGreenNexusPolicies, 'Country Code').length;
-
   return (
     <div className='margin-top-09'>
       <div className='flex-div margin-bottom-07 flex-space-between flex-wrap'>
@@ -66,24 +60,6 @@ export const PolicyDashboard = (props: Props) => {
         <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredCenderGreenNexusPolicies.length)}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>Policies with gender-green nexus</p>
-        </StatCardsDiv>
-      </div>
-      <div className='flex-div margin-bottom-07 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
-          <h3 className='undp-typography margin-bottom-00'>{format(',')(allCountriesLength)}</h3>
-          <p className='margin-top-05 margin-bottom-00'>Countries/territories with COVID-19 response policies</p>
-        </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
-          <h3 className='margin-bottom-00 undp-typography'>{format(',')(countryWithGenderPoliciesLength)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with gender-sensitive COVID-19 response policies</p>
-        </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
-          <h3 className='margin-bottom-00 undp-typography'>{format(',')(countryWithEnvPoliciesLength)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with environmentally postive COVID-19 response policies</p>
-        </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
-          <h3 className='margin-bottom-00 undp-typography'>{format(',')(countryWithNexusPoliciesLength)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with policies with gender-green nexus</p>
         </StatCardsDiv>
       </div>
       <div className='flex-div margin-top-07 margin-bottom-07 flex-space-between flex-wrap'>

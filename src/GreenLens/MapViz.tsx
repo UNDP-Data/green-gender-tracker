@@ -40,7 +40,7 @@ const LegendEl = styled.div`
   }
 `;
 
-const ABS_COLOR = ['#ffffcc', '#c7e9b4', '#7fcdbb', '#41b6c4', '#1d91c0', '#225ea8', '#0c2c84'];
+const ABS_COLOR = ['#F8C1A8', '#EF9198', '#E8608A', '#C0458A', '#8F3192', '#63218F', '#4B186C'];
 const ABS_VALUE = [5, 10, 15, 20, 25, 30];
 
 export const MapViz = (props: Props) => {
@@ -176,8 +176,8 @@ export const MapViz = (props: Props) => {
                         <path
                           key={j}
                           d={masterPath}
-                          stroke='#AAA'
-                          strokeWidth={0.25}
+                          stroke='#fff'
+                          strokeWidth={0.5}
                           fill='#FAFAFA'
                         />
                       );
@@ -192,8 +192,8 @@ export const MapViz = (props: Props) => {
                         <path
                           key={j}
                           d={path}
-                          stroke='#AAA'
-                          strokeWidth={0.25}
+                          stroke='#fff'
+                          strokeWidth={0.5}
                           fill='#FAFAFA'
                         />
                       );
@@ -255,8 +255,8 @@ export const MapViz = (props: Props) => {
                           <path
                             key={j}
                             d={masterPath}
-                            stroke='#AAA'
-                            strokeWidth={0.25}
+                            stroke='#fff'
+                            strokeWidth={0.5}
                             fill={color}
                           />
                         );
@@ -271,8 +271,8 @@ export const MapViz = (props: Props) => {
                           <path
                             key={j}
                             d={path}
-                            stroke='#AAA'
-                            strokeWidth={0.25}
+                            stroke='#fff'
+                            strokeWidth={0.5}
                             fill={color}
                           />
                         );
@@ -384,7 +384,7 @@ export const MapViz = (props: Props) => {
             }
             <g
               style={{ cursor: 'pointer' }}
-              onMouseOver={() => { setSelectedColor('#0c2c84'); }}
+              onMouseOver={() => { setSelectedColor('#4B186C'); }}
               onMouseLeave={() => { setSelectedColor(undefined); }}
             >
               <rect
@@ -395,7 +395,7 @@ export const MapViz = (props: Props) => {
                 fill={colorArray[valueArray.length]}
                 strokeWidth={1}
                 stroke={
-                  selectedColor === '#0c2c84' ? '#212121' : '#0c2c84'
+                  selectedColor === '#4B186C' ? '#212121' : '#4B186C'
                 }
               />
             </g>

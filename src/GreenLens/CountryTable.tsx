@@ -1,6 +1,7 @@
 import sortBy from 'lodash.sortby';
 import { useContext, useState } from 'react';
 import styled from 'styled-components';
+import { format } from 'd3-format';
 import { CountryGreenLenseSummaryDataType, CtxDataType } from '../Types';
 import { GetFilteredCountryGreenLensSummaryData } from '../utils/getFilteredData';
 
@@ -20,6 +21,15 @@ interface CellProps {
   width: string;
   cursor?: string;
 }
+
+interface WidthProps {
+  width: string;
+}
+
+const StatCardsDiv = styled.div<WidthProps>`
+  width: ${(props) => props.width};
+  cursor: auto;
+`;
 
 const CellEl = styled.div<CellProps>`
   width: ${(props) => props.width};
@@ -166,6 +176,24 @@ export const CountryTable = (props: Props) => {
             </div>
           )
       }
+      <div className='flex-div margin-bottom-07 margin-top-07 flex-space-between flex-wrap'>
+        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
+          <h3 className='undp-typography margin-bottom-00'>{format(',')(filteredData.filter((d) => d.noOfPolicies > 0).length)}</h3>
+          <p className='margin-top-05 margin-bottom-00'>Countries/territories with COVID-19 response policies</p>
+        </StatCardsDiv>
+        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
+          <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredData.filter((d) => d.noOfGenderPolicies > 0).length)}</h3>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with gender-sensitive COVID-19 response policies</p>
+        </StatCardsDiv>
+        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
+          <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredData.filter((d) => d.noOfPoliciesPositiveForEnvironment > 0).length)}</h3>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with environmentally postive COVID-19 response policies</p>
+        </StatCardsDiv>
+        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
+          <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredData.filter((d) => d.noOfPoliciesGenderGreenNexus > 0).length)}</h3>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with policies with gender-green nexus</p>
+        </StatCardsDiv>
+      </div>
       <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
         <div className='undp-table-head-small undp-table-head-sticky'>
           <CellEl width='16%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(1); }}>
