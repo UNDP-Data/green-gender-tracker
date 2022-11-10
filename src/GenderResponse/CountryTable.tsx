@@ -131,7 +131,7 @@ export const CountryTable = (props: Props) => {
   return (
     <>
       <h5 className='bold margin-bottom-05 undp-typography'>
-        Number of measures by country/territory
+        Measures by country/territory
       </h5>
       {
         selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' && selectedPolicyMeasureCat === 'All' ? null
@@ -179,11 +179,11 @@ export const CountryTable = (props: Props) => {
       <div className='flex-div margin-bottom-07 margin-top-07 flex-space-between flex-wrap'>
         <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
           <h3 className='undp-typography margin-bottom-00'>{format(',')(filteredData.filter((d) => d.noOfPolicies > 0).length)}</h3>
-          <p className='margin-top-05 margin-bottom-00'>Countries/territories with COVID-19 response policies</p>
+          <p className='margin-top-05 margin-bottom-00'>Countries/territories with COVID-19 response measures</p>
         </StatCardsDiv>
         <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredData.filter((d) => d.noOfGenderPolicies > 0).length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with gender-sensitive COVID-19 response policies</p>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with gender-sensitive COVID-19 response measures</p>
         </StatCardsDiv>
       </div>
       <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
@@ -196,7 +196,7 @@ export const CountryTable = (props: Props) => {
             {sort === 1 ? '↓' : null}
           </CellEl>
           <CellEl width='16%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(2); }}>
-            All
+            Total
             {' '}
             {sort === 2 ? '↓' : null}
           </CellEl>

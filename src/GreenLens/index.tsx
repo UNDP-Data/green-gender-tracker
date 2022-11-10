@@ -75,7 +75,7 @@ export const GreenLens = () => {
   }, []);
   return (
     <>
-      <h3 className='bold undp-typography'>Gender Response Policy Tracker with a Green Lens</h3>
+      <h3 className='bold undp-typography'>Gender Response Tracker with a Green Lens</h3>
       {
         policyData
           ? (

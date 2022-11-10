@@ -75,7 +75,7 @@ export const GenderResponse = () => {
   }, []);
   return (
     <>
-      <h3 className='bold undp-typography'>Gender Response Policy Tracker</h3>
+      <h3 className='bold undp-typography'>Gender Response Tracker</h3>
       {
         policyData
           ? (

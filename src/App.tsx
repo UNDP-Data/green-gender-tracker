@@ -24,7 +24,7 @@ const items = [
     children: <GreenLens />,
   },
   {
-    label: 'Gender Response Policy Tracker',
+    label: 'Gender Response Tracker',
     key: '2',
     children: <GenderResponse />,
   },

@@ -44,25 +44,25 @@ export const PolicyDashboard = (props: Props) => {
       <div className='flex-div margin-bottom-07 flex-space-between flex-wrap'>
         <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(allFilteredPolicies.length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Policies for COVID-19 response</p>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>Total COVID-19 response measures</p>
         </StatCardsDiv>
         <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredGenderedPolicies.length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Gender-sensitive policies for COVID-19 Response</p>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>COVID-19 response measures are gender-sensitive</p>
         </StatCardsDiv>
       </div>
       <div className='flex-div margin-top-07 margin-bottom-07 flex-space-between flex-wrap'>
         <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(allFilteredPolicies.filter((d) => d['Addresses VAWG'] === 'YES').length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Policies addressing violence against women</p>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>Measures address violence against women</p>
         </StatCardsDiv>
         <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(allFilteredPolicies.filter((d) => d['Directly supports unpaid care'] === 'YES').length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Policies supporting unpaid care</p>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>Measures support unpaid care</p>
         </StatCardsDiv>
         <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(allFilteredPolicies.filter((d) => d["Targets Women's Economic Security"] === 'YES').length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Policies targeting women&apos;s economic security</p>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>Measures target women&apos;s economic security</p>
         </StatCardsDiv>
       </div>
       <MapViz

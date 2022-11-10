@@ -187,7 +187,7 @@ export const TFTable = (props: Props) => {
         </SelectionEl>
       </div>
       <div className='margin-bottom-07'>
-        <p className='label'>Search Task Force</p>
+        <p className='label'>Task force description – key word search</p>
         <Input className='undp-input' placeholder='Search Task Force' onChange={(d) => { setSearchValue(d.target.value); }} />
       </div>
       {

@@ -40,7 +40,7 @@ const LegendEl = styled.div`
   }
 `;
 
-const ABS_COLOR = ['#F8C1A8', '#EF9198', '#E8608A', '#C0458A', '#8F3192', '#63218F', '#4B186C'];
+const ABS_COLOR = ['#ffffcc', '#c7e9b4', '#7fcdbb', '#41b6c4', '#1d91c0', '#225ea8', '#0c2c84'];
 const ABS_VALUE = [5, 10, 15, 20, 25, 30];
 
 export const MapViz = (props: Props) => {
@@ -98,11 +98,11 @@ export const MapViz = (props: Props) => {
             value={variable}
             onChange={(e) => { setVariable(e); }}
           >
-            <Select.Option className='undp-select-option' value='noOfPolicies'>All policies</Select.Option>
-            <Select.Option className='undp-select-option' value='noOfGenderPolicies'>All gender-sensitive policies</Select.Option>
-            <Select.Option className='undp-select-option' value='noOfPoliciesAddressingVAWG'>Policies addressing violence against women</Select.Option>
-            <Select.Option className='undp-select-option' value='noOfPoliciesSupportingUnpaidCare'>Policies supporting unpaid care</Select.Option>
-            <Select.Option className='undp-select-option' value='noOfPoliciesTargetingWomenEcoSecurity'>Policies targeting women&apos;s economic security</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfPolicies'>All measures</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfGenderPolicies'>Gender-sensitive measures</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfPoliciesAddressingVAWG'>Violence against women measures</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfPoliciesSupportingUnpaidCare'>Unpaid care measures</Select.Option>
+            <Select.Option className='undp-select-option' value='noOfPoliciesTargetingWomenEcoSecurity'>Women&apos;s economic security measures</Select.Option>
           </Select>
         </div>
       </div>
@@ -149,7 +149,7 @@ export const MapViz = (props: Props) => {
             </div>
           )
       }
-      <svg width='100%' height='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`} ref={mapSvg}>
+      <svg width='100%' height='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`} ref={mapSvg} style={{ backgroundColor: 'var(--gray-100)' }}>
         <g ref={mapG}>
           {
             (World as any).features.map((d: any, i: number) => {
@@ -176,7 +176,7 @@ export const MapViz = (props: Props) => {
                         <path
                           key={j}
                           d={masterPath}
-                          stroke='#fff'
+                          stroke='#DDD'
                           strokeWidth={0.5}
                           fill='#FAFAFA'
                         />
@@ -192,7 +192,7 @@ export const MapViz = (props: Props) => {
                         <path
                           key={j}
                           d={path}
-                          stroke='#fff'
+                          stroke='#DDD'
                           strokeWidth={0.5}
                           fill='#FAFAFA'
                         />
@@ -255,7 +255,7 @@ export const MapViz = (props: Props) => {
                           <path
                             key={j}
                             d={masterPath}
-                            stroke='#fff'
+                            stroke='#DDD'
                             strokeWidth={0.5}
                             fill={color}
                           />
@@ -271,7 +271,7 @@ export const MapViz = (props: Props) => {
                           <path
                             key={j}
                             d={path}
-                            stroke='#fff'
+                            stroke='#DDD'
                             strokeWidth={0.5}
                             fill={color}
                           />
@@ -382,7 +382,7 @@ export const MapViz = (props: Props) => {
             }
             <g
               style={{ cursor: 'pointer' }}
-              onMouseOver={() => { setSelectedColor('#4B186C'); }}
+              onMouseOver={() => { setSelectedColor('#0c2c84'); }}
               onMouseLeave={() => { setSelectedColor(undefined); }}
             >
               <rect
@@ -393,7 +393,7 @@ export const MapViz = (props: Props) => {
                 fill={colorArray[valueArray.length]}
                 strokeWidth={1}
                 stroke={
-                  selectedColor === '#4B186C' ? '#212121' : '#4B186C'
+                  selectedColor === '#0c2c84' ? '#212121' : '#0c2c84'
                 }
               />
             </g>

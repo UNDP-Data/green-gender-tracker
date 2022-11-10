@@ -103,7 +103,7 @@ export const MapViz = (props: Props) => {
           </Select>
         </div>
       </div>
-      <svg width='100%' height='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`} ref={mapSvg}>
+      <svg width='100%' height='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`} ref={mapSvg} style={{ backgroundColor: 'var(--gray-100)' }}>
         <g ref={mapG}>
           {
             (World as any).features.map((d: any, i: number) => {
@@ -130,8 +130,8 @@ export const MapViz = (props: Props) => {
                         <path
                           key={j}
                           d={masterPath}
-                          stroke='#AAA'
-                          strokeWidth={0.25}
+                          stroke='#DDD'
+                          strokeWidth={0.5}
                           fill='#FAFAFA'
                         />
                       );
@@ -147,7 +147,7 @@ export const MapViz = (props: Props) => {
                           key={j}
                           d={path}
                           stroke='#AAA'
-                          strokeWidth={0.25}
+                          strokeWidth={0.5}
                           fill='#FAFAFA'
                         />
                       );
@@ -211,7 +211,7 @@ export const MapViz = (props: Props) => {
                             key={j}
                             d={masterPath}
                             stroke='#AAA'
-                            strokeWidth={0.25}
+                            strokeWidth={0.5}
                             fill={color}
                           />
                         );
@@ -227,7 +227,7 @@ export const MapViz = (props: Props) => {
                             key={j}
                             d={path}
                             stroke='#AAA'
-                            strokeWidth={0.25}
+                            strokeWidth={0.5}
                             fill={color}
                           />
                         );

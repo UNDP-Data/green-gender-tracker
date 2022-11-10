@@ -45,35 +45,17 @@ export const PolicyDashboard = (props: Props) => {
   return (
     <div className='margin-top-09'>
       <div className='flex-div margin-bottom-07 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
-          <h3 className='margin-bottom-00 undp-typography'>{format(',')(allFilteredPolicies.length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Policies for COVID-19 response</p>
-        </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredGenderedPolicies.length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Gender-sensitive policies for COVID-19 Response</p>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>COVID-19 measures are gender sensitive</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredEnvironmentPositivePolicies.length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Policies positive for environment</p>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>COVID-19 measures are green</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredCenderGreenNexusPolicies.length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Policies with gender-green nexus</p>
-        </StatCardsDiv>
-      </div>
-      <div className='flex-div margin-top-07 margin-bottom-07 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
-          <h3 className='margin-bottom-00 undp-typography'>{format(',')(allFilteredPolicies.filter((d) => d['Addresses VAWG'] === 'YES').length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Policies addressing violence against women</p>
-        </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
-          <h3 className='margin-bottom-00 undp-typography'>{format(',')(allFilteredPolicies.filter((d) => d['Directly supports unpaid care'] === 'YES').length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Policies supporting unpaid care</p>
-        </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
-          <h3 className='margin-bottom-00 undp-typography'>{format(',')(allFilteredPolicies.filter((d) => d["Targets Women's Economic Security"] === 'YES').length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Policies targeting women&apos;s economic security</p>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>COVID-19 measures are both green and gender-sensitive</p>
         </StatCardsDiv>
       </div>
       <MapViz

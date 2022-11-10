@@ -115,7 +115,7 @@ export const VizArea = (props: Props) => {
           </Select>
         </SelectionEl>
         <SegmentedEl>
-          <p className='label'>Filter By fragility level</p>
+          <p className='label'>Filter by fragility level</p>
           <Segmented
             className='undp-segmented'
             value={selectedFragilityGroup}

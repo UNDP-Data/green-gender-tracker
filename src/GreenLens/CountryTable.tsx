@@ -131,7 +131,7 @@ export const CountryTable = (props: Props) => {
   return (
     <>
       <h5 className='bold margin-bottom-05 undp-typography'>
-        Number of measures by country/territory
+        Measures by country/territory
       </h5>
       {
         selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' && selectedPolicyMeasureCat === 'All' ? null
@@ -177,21 +177,17 @@ export const CountryTable = (props: Props) => {
           )
       }
       <div className='flex-div margin-bottom-07 margin-top-07 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
-          <h3 className='undp-typography margin-bottom-00'>{format(',')(filteredData.filter((d) => d.noOfPolicies > 0).length)}</h3>
-          <p className='margin-top-05 margin-bottom-00'>Countries/territories with COVID-19 response policies</p>
-        </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredData.filter((d) => d.noOfGenderPolicies > 0).length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with gender-sensitive COVID-19 response policies</p>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with gender-sensitive COVID-19 response measures</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredData.filter((d) => d.noOfPoliciesPositiveForEnvironment > 0).length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with environmentally postive COVID-19 response policies</p>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with green COVID-19 response measures</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredData.filter((d) => d.noOfPoliciesGenderGreenNexus > 0).length)}</h3>
-          <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with policies with gender-green nexus</p>
+          <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with green and gender-sensitive COVID-19 response measures</p>
         </StatCardsDiv>
       </div>
       <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
@@ -204,14 +200,9 @@ export const CountryTable = (props: Props) => {
             {sort === 1 ? '↓' : null}
           </CellEl>
           <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(2); }}>
-            All
+            Total
             {' '}
             {sort === 2 ? '↓' : null}
-          </CellEl>
-          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(8); }}>
-            Gender-green nexus
-            {' '}
-            {sort === 8 ? '↓' : null}
           </CellEl>
           <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(3); }}>
             Gender-sensitive
@@ -219,22 +210,27 @@ export const CountryTable = (props: Props) => {
             {sort === 3 ? '↓' : null}
           </CellEl>
           <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(7); }}>
-            Environmentally positive
+            Green
             {' '}
             {sort === 7 ? '↓' : null}
           </CellEl>
+          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(8); }}>
+            Green and gender-sensitive
+            {' '}
+            {sort === 8 ? '↓' : null}
+          </CellEl>
           <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(4); }}>
-            Environmentally positive policies for violence against women
+            Green policies for violence against women
             {' '}
             {sort === 4 ? '↓' : null}
           </CellEl>
           <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(5); }}>
-            Environmentally positive policies for Unpaid care
+            Green policies for unpaid care
             {' '}
             {sort === 5 ? '↓' : null}
           </CellEl>
           <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(6); }}>
-            Environmentally positive policies for women&apos;s economic security
+            Green policies for women&apos;s economic security
             {' '}
             {sort === 6 ? '↓' : null}
           </CellEl>
@@ -248,14 +244,14 @@ export const CountryTable = (props: Props) => {
               <CellEl width='12%' style={{ backgroundColor: 'var(--light-azure)' }} className='undp-table-row-cell'>
                 <SVGBar value={d.noOfPolicies} />
               </CellEl>
-              <CellEl width='12%' className='undp-table-row-cell'>
-                <SVGBar bgBar value={d.noOfPoliciesGenderGreenNexus} />
-              </CellEl>
               <CellEl width='12%' style={{ backgroundColor: '#E4D4E8' }} className='undp-table-row-cell'>
                 <SVGBar value={d.noOfGenderPolicies} />
               </CellEl>
               <CellEl width='12%' style={{ backgroundColor: 'var(--light-green)' }} className='undp-table-row-cell'>
                 <SVGBar value={d.noOfPoliciesPositiveForEnvironment} />
+              </CellEl>
+              <CellEl width='12%' className='undp-table-row-cell'>
+                <SVGBar bgBar value={d.noOfPoliciesGenderGreenNexus} />
               </CellEl>
               <CellEl width='12%' className='undp-table-row-cell'>
                 <SVGBar bgBar value={d.noOfEnvironmetallyPositivePoliciesAddressingVAWG} />

@@ -82,7 +82,7 @@ export const GenderResponseTable = (props: Props) => {
   return (
     <>
       <h5 className='bold margin-bottom-05 undp-typography'>
-        View policy details
+        View policy measure details
       </h5>
       {
         selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' && selectedPolicyMeasureCat === 'All' ? null
@@ -135,13 +135,13 @@ export const GenderResponseTable = (props: Props) => {
             value={selectedType}
             onChange={(e) => { setSelectedType(e); }}
           >
-            <Select.Option className='undp-select-option' value='All'>All policies</Select.Option>
-            <Select.Option className='undp-select-option' value='genderRelated'>Gender-sensitive policies</Select.Option>
-            <Select.Option className='undp-select-option' value='envRelavant'>Environmentally positive policies</Select.Option>
-            <Select.Option className='undp-select-option' value='envGenNexus'>Policies with gender-green nexus</Select.Option>
-            <Select.Option className='undp-select-option' value='vawg'>Policies addressing violence against women</Select.Option>
-            <Select.Option className='undp-select-option' value='unpaidCare'>Policies supporting unpaid care</Select.Option>
-            <Select.Option className='undp-select-option' value='ecoSecurity'>Policies targeting women&apos;s economic security</Select.Option>
+            <Select.Option className='undp-select-option' value='All'>All measures</Select.Option>
+            <Select.Option className='undp-select-option' value='genderRelated'>Gender-sensitive</Select.Option>
+            <Select.Option className='undp-select-option' value='envRelavant'>Green</Select.Option>
+            <Select.Option className='undp-select-option' value='envGenNexus'>Green and gender-sensitive</Select.Option>
+            <Select.Option className='undp-select-option' value='vawg'>Violence against women</Select.Option>
+            <Select.Option className='undp-select-option' value='unpaidCare'>Unpaid care</Select.Option>
+            <Select.Option className='undp-select-option' value='ecoSecurity'>Women&apos;s economic security</Select.Option>
           </Select>
         </SelectionEl>
         <SelectionEl>
@@ -162,12 +162,12 @@ export const GenderResponseTable = (props: Props) => {
           </Select>
         </SelectionEl>
         <SelectionEl>
-          <p className='label'>Show only environmentally positive policies</p>
+          <p className='label'>Show only green measures</p>
           <Switch className='undp-switch' onChange={(checked) => { setShowEnvPositiveOnly(checked); }} />
         </SelectionEl>
       </div>
       <div className='margin-bottom-07'>
-        <p className='label'>Search policy</p>
+        <p className='label'>Measure description – key word search</p>
         <Input className='undp-input' placeholder='Search policies' onChange={(d) => { setSearchValue(d.target.value); }} />
       </div>
       {
@@ -237,7 +237,7 @@ export const GenderResponseTable = (props: Props) => {
                                     d['Positive for environment'] === 'YES'
                                       ? (
                                         <div className='undp-chip undp-chip-small undp-chip-green'>
-                                          Environmentally Positive
+                                          Green
                                         </div>
                                       ) : null
                                   }
