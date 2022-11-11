@@ -92,7 +92,6 @@ export interface CountryGreenLenseSummaryDataType {
   noOfEnvironmetallyPositivePoliciesAddressingVAWG: number;
   noOfEnvironmetallyPositivePoliciesSupportingUnpaidCare: number;
   noOfEnvironmetallyPositivePoliciesTargetingWomenEcoSecurity: number;
-  noOfPoliciesThatAreEnvironmentalRelevance: number;
   noOfPoliciesPositiveForEnvironment: number;
   noOfPoliciesGenderGreenNexus: number;
 }

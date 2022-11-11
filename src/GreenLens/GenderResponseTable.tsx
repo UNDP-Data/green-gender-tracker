@@ -78,6 +78,7 @@ export const GenderResponseTable = (props: Props) => {
     const dataByEnv = showEnvPositiveOnly ? dataByCountry.filter((d) => d['Positive for environment'] === 'YES') : dataByCountry;
     const dataBySearch = searchValue ? dataByEnv.filter((d) => (d['Policy Measure Description'].toLowerCase().includes(searchValue.toLowerCase()))) : dataByEnv;
     setTableData(dataBySearch);
+    console.log(dataBySearch[0]['Positive for environment']);
   }, [selectedCountry, selectedType, searchValue, showEnvPositiveOnly, data]);
   return (
     <>
@@ -198,7 +199,7 @@ export const GenderResponseTable = (props: Props) => {
                       <CellEl width='65%' className='undp-table-row-cell-small'>
                         <div>
                           {
-                            d['Addresses VAWG'] === 'YES' || d['Directly supports unpaid care'] === 'YES' || d['Targets Women\'s Economic Security'] === 'YES'
+                            d['Addresses VAWG'] === 'YES' || d['Directly supports unpaid care'] === 'YES' || d['Targets Women\'s Economic Security'] === 'YES' || d['Positive for environment'] === 'YES'
                               ? (
                                 <div className='flex-div flex-vert-align-center flex-wrap margin-bottom-04' style={{ gap: '0.5rem' }}>
                                   {

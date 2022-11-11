@@ -38,7 +38,7 @@ const CellEl = styled.div<CellProps>`
 
 const SVGBar = (props: SVGBarProps) => {
   const { value, bgBar } = props;
-  const maxWidth = 168.8;
+  const maxWidth = 115.8;
   const barHeight = 30;
   const maxValue = 80;
   return (
