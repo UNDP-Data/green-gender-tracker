@@ -78,7 +78,6 @@ export const GenderResponseTable = (props: Props) => {
     const dataByEnv = showEnvPositiveOnly ? dataByCountry.filter((d) => d['Positive for environment'] === 'YES') : dataByCountry;
     const dataBySearch = searchValue ? dataByEnv.filter((d) => (d['Policy Measure Description'].toLowerCase().includes(searchValue.toLowerCase()))) : dataByEnv;
     setTableData(dataBySearch);
-    console.log(dataBySearch[0]['Positive for environment']);
   }, [selectedCountry, selectedType, searchValue, showEnvPositiveOnly, data]);
   return (
     <>
