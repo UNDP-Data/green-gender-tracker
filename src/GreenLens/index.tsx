@@ -58,7 +58,7 @@ export const GreenLens = () => {
   };
 
   useEffect(() => {
-    csv('./data/green-policies.csv', (d: PolicyGreenLenseDataType[]) => {
+    csv('https://raw.githubusercontent.com/UNDP-Data/green-gender-tracker/main/public/data/green-policies.csv', (d: PolicyGreenLenseDataType[]) => {
       const pData: PolicyGreenLenseDataWithCountryData[] = d.map((el) => {
         const countryTaxonomyIndx = CountryTaxonomy.findIndex((el1) => el1['Country Code'] === el['Country Code']);
         return {

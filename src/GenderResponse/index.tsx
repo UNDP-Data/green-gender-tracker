@@ -58,7 +58,7 @@ export const GenderResponse = () => {
   };
 
   useEffect(() => {
-    csv('./data/gender-policies.csv', (d: PolicyDataType[]) => {
+    csv('https://raw.githubusercontent.com/UNDP-Data/green-gender-tracker/main/public/data/gender-policies.csv', (d: PolicyDataType[]) => {
       const pData: PolicyDataWithCountryData[] = d.map((el) => {
         const countryTaxonomyIndx = CountryTaxonomy.findIndex((el1) => el1['Country Code'] === el['Country Code']);
         return {

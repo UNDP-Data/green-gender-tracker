@@ -54,7 +54,7 @@ export const TaskForce = () => {
   };
 
   useEffect(() => {
-    csv('./data/TaskForce.csv', (data: any) => {
+    csv('https://raw.githubusercontent.com/UNDP-Data/green-gender-tracker/main/public/data/Taskforce.csv', (data: any) => {
       const dataFormated: TFDataType[] = data.map((d: any) => {
         const countryTaxonomyIndx = CountryTaxonomy.findIndex((el1) => el1['Country Code'] === d['Country Code']);
         return {
