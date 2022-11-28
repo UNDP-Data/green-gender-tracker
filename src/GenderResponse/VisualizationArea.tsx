@@ -15,10 +15,14 @@ interface Props {
 
 const SelectionEl = styled.div`
   width: calc(33.33% - 1.334rem);
+  min-width: 20rem;
+  flex-grow: 1;
 `;
 
 const SegmentedEl = styled.div`
   width: calc(33.33% - 1.334rem);
+  min-width: 25rem;
+  flex-grow: 1;
 `;
 
 export const VizArea = (props: Props) => {

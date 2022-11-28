@@ -14,6 +14,8 @@ interface Props {
 
 const SelectionEl = styled.div`
   width: calc(33.33% - 1.334rem);
+  min-width: 20rem;
+  flex-grow: 1;
 `;
 
 interface CellProps {
@@ -127,7 +129,7 @@ export const GenderResponseTable = (props: Props) => {
             </div>
           )
       }
-      <div className='margin-top-04 margin-bottom-05 flex-div flex-space-between'>
+      <div className='margin-top-04 margin-bottom-05 flex-div flex-wrap flex-space-between'>
         <SelectionEl>
           <p className='label'>Filter by policy type</p>
           <Select
@@ -175,7 +177,7 @@ export const GenderResponseTable = (props: Props) => {
           ? (
             <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
               <div style={{ width: '100%' }}>
-                <div className='undp-table-head-small undp-table-head-sticky'>
+                <div className='undp-table-head-small undp-table-head-sticky' style={{ minWidth: '67.5rem' }}>
                   <CellEl width='15%' className='undp-table-head-cell undp-sticky-head-column'>
                     Country
                   </CellEl>
@@ -188,7 +190,7 @@ export const GenderResponseTable = (props: Props) => {
                 </div>
                 {
                   tableData.map((d, i) => (
-                    <div key={i} className='undp-table-row'>
+                    <div key={i} className='undp-table-row' style={{ minWidth: '67.5rem' }}>
                       <CellEl width='15%' className='undp-table-row-cell-small'>
                         {d['Country Name']}
                       </CellEl>

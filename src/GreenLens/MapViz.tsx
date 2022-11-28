@@ -28,16 +28,18 @@ const G = styled.g`
 `;
 
 const LegendEl = styled.div`
-  padding: 1rem 1rem 0 1rem;
-  background-color:rgba(255,255,255,0.7);
-  width: 25rem;
+padding: 1rem 1rem 0 1rem;
+background-color:rgba(255,255,255,0.7);
+position: relative;
+margin-bottom: var(--spacing-13);
+z-index: 1000;
+@media (min-width: 961px) {
+  max-width: 25rem;
   margin-left: 1rem;
   margin-top: -2rem;
-  position: relative;
-  z-index: 1000;
-  @media (min-width: 961px) {
-    transform: translateY(-100%);
-  }
+  margin-bottom: var(--spacing-00);
+  transform: translateY(-100%);
+}
 `;
 
 const ABS_COLOR = ['#ffffcc', '#c7e9b4', '#7fcdbb', '#41b6c4', '#1d91c0', '#225ea8', '#0c2c84'];
@@ -61,11 +63,11 @@ export const MapViz = (props: Props) => {
     updateSelectedPolicyMeasureCat,
     updateSelectedRegion,
   } = useContext(Context) as CtxDataType;
-  const svgHeight = 678;
+  const svgHeight = window.innerWidth > 960 ? 678 : 500;
   const svgWidth = window.innerWidth > 960 ? 1280 : 960;
   const mapSvg = useRef<SVGSVGElement>(null);
   const mapG = useRef<SVGGElement>(null);
-  const projection = geoEqualEarth().rotate([0, 0]).scale(265).translate([550, 380]);
+  const projection = geoEqualEarth().rotate([0, 0]).scale(window.innerWidth > 960 ? 265 : 180).translate([window.innerWidth > 960 ? 550 : 430, window.innerWidth > 960 ? 380 : 280]);
 
   const [variable, setVariable] = useState<'noOfGenderPolicies' | 'noOfPoliciesPositiveForEnvironment' | 'noOfPoliciesGenderGreenNexus'>('noOfPoliciesGenderGreenNexus');
   const [hoverData, setHoverData] = useState<HoverDataType | undefined>(undefined);
@@ -91,7 +93,7 @@ export const MapViz = (props: Props) => {
   return (
     <div>
       <div className='flex-div flex-space-between flex-vert-align-center margin-top-10 margin-bottom-07'>
-        <div style={{ width: '50%' }}>
+        <div style={{ width: '50%', minWidth: '20rem' }}>
           <Select
             className='undp-select'
             value={variable}

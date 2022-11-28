@@ -159,7 +159,7 @@ export const GenderResponseTable = (props: Props) => {
           ? (
             <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
               <div style={{ width: '100%' }}>
-                <div className='undp-table-head-small undp-table-head-sticky'>
+                <div className='undp-table-head-small undp-table-head-sticky' style={{ minWidth: '67.5rem' }}>
                   <CellEl width='15%' className='undp-table-head-cell undp-sticky-head-column'>
                     Country
                   </CellEl>
@@ -172,7 +172,7 @@ export const GenderResponseTable = (props: Props) => {
                 </div>
                 {
                   tableData.map((d, i) => (
-                    <div key={i} className='undp-table-row'>
+                    <div key={i} className='undp-table-row' style={{ minWidth: '67.5rem' }}>
                       <CellEl width='15%' className='undp-table-row-cell-small'>
                         {d['Country Name']}
                       </CellEl>

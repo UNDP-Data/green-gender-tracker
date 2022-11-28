@@ -28,6 +28,8 @@ interface WidthProps {
 
 const StatCardsDiv = styled.div<WidthProps>`
   width: ${(props) => props.width};
+  min-width: 20rem;
+  flex-grow: 1;
   cursor: auto;
 `;
 
@@ -191,7 +193,7 @@ export const CountryTable = (props: Props) => {
         </StatCardsDiv>
       </div>
       <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
-        <div className='undp-table-head-small undp-table-head-sticky'>
+        <div className='undp-table-head-small undp-table-head-sticky' style={{ minWidth: '67.5rem' }}>
           <CellEl width='16%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(1); }}>
             Country/territory (
             {dataSorted.length}
@@ -237,7 +239,7 @@ export const CountryTable = (props: Props) => {
         </div>
         {
           dataSorted.map((d, i) => (
-            <div key={i} className='undp-table-row'>
+            <div key={i} className='undp-table-row' style={{ minWidth: '67.5rem' }}>
               <CellEl width='16%' className='undp-table-row-cell'>
                 {d.countryName}
               </CellEl>

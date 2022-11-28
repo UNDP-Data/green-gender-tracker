@@ -19,6 +19,8 @@ interface WidthProps {
 
 const StatCardsDiv = styled.div<WidthProps>`
   width: ${(props) => props.width};
+  min-width: 20rem;
+  flex-grow: 1;
   cursor: auto;
 `;
 

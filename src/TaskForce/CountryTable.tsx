@@ -111,7 +111,7 @@ export const CountryTable = (props: Props) => {
       }
       <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
         <div style={{ width: '100%' }}>
-          <div className='undp-table-head-small undp-table-head-sticky'>
+          <div className='undp-table-head-small undp-table-head-sticky' style={{ minWidth: '80rem' }}>
             <CellEl width='20%' className='undp-table-head-cell undp-sticky-head-column' cursor='pointer' onClick={() => { setSort(1); }}>
               Countries/territories (
               {dataSorted.length}
@@ -152,7 +152,7 @@ export const CountryTable = (props: Props) => {
           </div>
           {
             dataSorted.map((d, i) => (
-              <div key={i} className='undp-table-row'>
+              <div key={i} className='undp-table-row' style={{ minWidth: '80rem' }}>
                 <CellEl width='20%' className='undp-table-row-cell'>
                   {d.countryName}
                 </CellEl>
