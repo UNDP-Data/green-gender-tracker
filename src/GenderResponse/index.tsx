@@ -78,12 +78,12 @@ export const GenderResponse = () => {
       <div className='flex-div flex-space-between flex-vert-align-bottom flex-wrap margin-bottom-05'>
         <h2 className='bold undp-typography margin-bottom-00'>Gender Response Tracker</h2>
         <div>
-          <p className='margin-bottom-00' style={{ textAlign: 'end' }}>
+          <p className='margin-bottom-00 margin-top-00' style={{ textAlign: 'end' }}>
             In partnership with
           </p>
           <div className='flex-div flex-vert-align-center' style={{ gap: '1rem' }}>
             <img src='/img/UNDP-Logo-Blue-Medium.png' alt='UNDP logo' height='56' />
-            <img src='/img/un-women-blue.png' alt='UNDP Women logo' width='128' />
+            <img src='/img/un-women-blue.png' alt='UN Women logo' width='128' />
           </div>
         </div>
       </div>

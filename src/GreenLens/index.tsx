@@ -78,7 +78,7 @@ export const GreenLens = () => {
       <div className='flex-div flex-space-between flex-vert-align-bottom flex-wrap margin-bottom-05'>
         <h2 className='bold undp-typography margin-bottom-00'>Gender Response Tracker with a Green Lens</h2>
         <div>
-          <p className='margin-bottom-00' style={{ textAlign: 'end' }}>
+          <p className='margin-bottom-00 margin-top-00' style={{ textAlign: 'end' }}>
             In partnership with
           </p>
           <div className='flex-div flex-vert-align-center' style={{ gap: '1rem' }}>
