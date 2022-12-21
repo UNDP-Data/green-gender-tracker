@@ -16,6 +16,7 @@ import './style/chipStyle.css';
 import { GenderResponse } from './GenderResponse';
 import { TaskForce } from './TaskForce';
 import { GreenLens } from './GreenLens';
+import { Policies } from './Policies';
 
 const items = [
   {
@@ -32,6 +33,11 @@ const items = [
     label: 'COVID-19 Task Forces',
     key: '3',
     children: <TaskForce />,
+  },
+  {
+    label: 'Promising Policies for Gender Equality Catalogue',
+    key: '4',
+    children: <Policies />,
   },
 ];
 

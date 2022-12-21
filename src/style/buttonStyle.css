@@ -81,7 +81,7 @@
 }
 
 .undp-button.button-tertiary {
-  background-color: var(--white);
+  background-color: transparent;
   color: var(--black);
 }
 

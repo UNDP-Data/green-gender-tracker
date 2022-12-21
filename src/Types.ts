@@ -148,3 +148,24 @@ export interface CtxTFDataType {
   updateSelectedHDI: (_d: string) => void;
   updateSelectedDevelopmentGroup: (_d: string) => void;
 }
+
+export interface PromisingPoliciesDataType{
+  'Measure ID 2': string;
+  'Country code': string;
+  'Flag link': string;
+  Country: string;
+  Region: string;
+  Subregion: string;
+  'Gender-sensitive dimension': 'Violence against women and girls' | 'Unpaid care' | "Women's economic security";
+  'Policy measure category': string;
+  'Policy measure type': string;
+  'Policy measure sub-type': string;
+  'Policy measure title': string;
+  'Policy measure description': string;
+  'Problem addressed': string;
+  'Why promising': string;
+  Who: string;
+  Budget: string;
+  'Potential challenges': string;
+  'Further reading': string;
+}
