@@ -111,19 +111,19 @@ export const CountryTable = (props: Props) => {
       sortKey = 'noOfGenderPolicies';
       break;
     case 4:
-      sortKey = 'noOfPoliciesAddressingVAWG';
-      break;
-    case 5:
-      sortKey = 'noOfPoliciesSupportingUnpaidCare';
-      break;
-    case 6:
-      sortKey = 'noOfPoliciesTargetingWomenEcoSecurity';
-      break;
-    case 7:
       sortKey = 'noOfPoliciesThatAreEnvironmentalRelevance';
       break;
-    case 8:
+    case 5:
       sortKey = 'noOfPoliciesGenderGreenNexus';
+      break;
+    case 6:
+      sortKey = 'noOfEnvironmetallyPositivePoliciesAddressingVAWG';
+      break;
+    case 7:
+      sortKey = 'noOfEnvironmetallyPositivePoliciesSupportingUnpaidCare';
+      break;
+    case 8:
+      sortKey = 'noOfEnvironmetallyPositivePoliciesTargetingWomenEcoSecurity';
       break;
     default:
       sortKey = 'countryName';
@@ -194,74 +194,74 @@ export const CountryTable = (props: Props) => {
       </div>
       <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
         <div className='undp-table-head-small undp-table-head-sticky' style={{ minWidth: '67.5rem' }}>
-          <CellEl width='16%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(1); }}>
+          <CellEl width='16%' style={{ flexGrow: 1 }} className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(1); }}>
             Country/territory (
             {dataSorted.length}
             )
             {' '}
             {sort === 1 ? '↓' : null}
           </CellEl>
-          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(2); }}>
+          <CellEl width='12%' style={{ maxWidth: '20rem' }} className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(2); }}>
             Total
             {' '}
             {sort === 2 ? '↓' : null}
           </CellEl>
-          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(3); }}>
+          <CellEl width='12%' style={{ maxWidth: '20rem' }} className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(3); }}>
             Gender-sensitive
             {' '}
             {sort === 3 ? '↓' : null}
           </CellEl>
-          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(7); }}>
+          <CellEl width='12%' style={{ maxWidth: '20rem' }} className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(4); }}>
             Green
-            {' '}
-            {sort === 7 ? '↓' : null}
-          </CellEl>
-          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(8); }}>
-            Green and gender-sensitive
-            {' '}
-            {sort === 8 ? '↓' : null}
-          </CellEl>
-          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(4); }}>
-            Green policies for violence against women
             {' '}
             {sort === 4 ? '↓' : null}
           </CellEl>
-          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(5); }}>
-            Green policies for unpaid care
+          <CellEl width='12%' style={{ maxWidth: '20rem' }} className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(5); }}>
+            Green and gender-sensitive
             {' '}
             {sort === 5 ? '↓' : null}
           </CellEl>
-          <CellEl width='12%' className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(6); }}>
-            Green policies for women&apos;s economic security
+          <CellEl width='12%' style={{ maxWidth: '20rem' }} className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(6); }}>
+            Green policies for violence against women
             {' '}
             {sort === 6 ? '↓' : null}
+          </CellEl>
+          <CellEl width='12%' style={{ maxWidth: '20rem' }} className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(7); }}>
+            Green policies for unpaid care
+            {' '}
+            {sort === 7 ? '↓' : null}
+          </CellEl>
+          <CellEl width='12%' style={{ maxWidth: '20rem' }} className='undp-table-head-cell' cursor='pointer' onClick={() => { setSort(8); }}>
+            Green policies for women&apos;s economic security
+            {' '}
+            {sort === 8 ? '↓' : null}
           </CellEl>
         </div>
         {
           dataSorted.map((d, i) => (
             <div key={i} className='undp-table-row' style={{ minWidth: '67.5rem' }}>
-              <CellEl width='16%' className='undp-table-row-cell'>
+              <CellEl width='16%' style={{ flexGrow: 1 }} className='undp-table-row-cell'>
                 {d.countryName}
               </CellEl>
-              <CellEl width='12%' style={{ backgroundColor: 'var(--light-azure)' }} className='undp-table-row-cell'>
+              <CellEl width='12%' style={{ backgroundColor: 'var(--light-azure)', maxWidth: '20rem' }} className='undp-table-row-cell'>
                 <SVGBar value={d.noOfPolicies} />
               </CellEl>
-              <CellEl width='12%' style={{ backgroundColor: '#E4D4E8' }} className='undp-table-row-cell'>
+              <CellEl width='12%' style={{ backgroundColor: '#E4D4E8', maxWidth: '20rem' }} className='undp-table-row-cell'>
                 <SVGBar value={d.noOfGenderPolicies} />
               </CellEl>
-              <CellEl width='12%' style={{ backgroundColor: 'var(--light-green)' }} className='undp-table-row-cell'>
+              <CellEl width='12%' style={{ backgroundColor: 'var(--light-green)', maxWidth: '20rem' }} className='undp-table-row-cell'>
                 <SVGBar value={d.noOfPoliciesPositiveForEnvironment} />
               </CellEl>
-              <CellEl width='12%' className='undp-table-row-cell'>
+              <CellEl width='12%' style={{ maxWidth: '20rem' }} className='undp-table-row-cell'>
                 <SVGBar bgBar value={d.noOfPoliciesGenderGreenNexus} />
               </CellEl>
-              <CellEl width='12%' className='undp-table-row-cell'>
+              <CellEl width='12%' style={{ maxWidth: '20rem' }} className='undp-table-row-cell'>
                 <SVGBar bgBar value={d.noOfEnvironmetallyPositivePoliciesAddressingVAWG} />
               </CellEl>
-              <CellEl width='12%' className='undp-table-row-cell'>
+              <CellEl width='12%' style={{ maxWidth: '20rem' }} className='undp-table-row-cell'>
                 <SVGBar bgBar value={d.noOfEnvironmetallyPositivePoliciesSupportingUnpaidCare} />
               </CellEl>
-              <CellEl width='12%' className='undp-table-row-cell'>
+              <CellEl width='12%' style={{ maxWidth: '20rem' }} className='undp-table-row-cell'>
                 <SVGBar bgBar value={d.noOfEnvironmetallyPositivePoliciesTargetingWomenEcoSecurity} />
               </CellEl>
             </div>

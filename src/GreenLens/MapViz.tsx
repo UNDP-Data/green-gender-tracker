@@ -339,10 +339,10 @@ export const MapViz = (props: Props) => {
         <p className='margin-bottom-03 small-font'>
           {
             variable === 'noOfGenderPolicies'
-              ? 'Gender-sensitive policies'
+              ? 'Gender-sensitive measures'
               : variable === 'noOfPoliciesPositiveForEnvironment'
-                ? 'Environmentally positive policies'
-                : 'Policies with gender-green nexus'
+                ? 'Green measures'
+                : 'Green and gender-sensitive measures'
           }
         </p>
         <svg width='100%' viewBox={`0 0 ${335} ${30}`}>

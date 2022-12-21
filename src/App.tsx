@@ -20,14 +20,14 @@ import { Policies } from './Policies';
 
 const items = [
   {
-    label: 'Gender-Green Lens',
+    label: 'Gender Response Tracker',
     key: '1',
-    children: <GreenLens />,
+    children: <GenderResponse />,
   },
   {
-    label: 'Gender Response Tracker',
+    label: 'Gender-Green Lens',
     key: '2',
-    children: <GenderResponse />,
+    children: <GreenLens />,
   },
   {
     label: 'COVID-19 Task Forces',

@@ -341,14 +341,14 @@ export const MapViz = (props: Props) => {
         <p className='margin-bottom-03 small-font'>
           {
             variable === 'noOfPolicies'
-              ? 'All policies'
+              ? 'All measures'
               : variable === 'noOfGenderPolicies'
-                ? 'Gender-sensitive policies'
+                ? 'Gender-sensitive measures'
                 : variable === 'noOfPoliciesAddressingVAWG'
-                  ? 'Policies addressing violence against women'
+                  ? 'Violence against women measures'
                   : variable === 'noOfPoliciesSupportingUnpaidCare'
-                    ? 'Policies supporting unpaid care'
-                    : "Policies targeting women's economic security"
+                    ? 'Unpaid care measures'
+                    : "Women's economic security measures"
           }
         </p>
         <svg width='100%' viewBox={`0 0 ${335} ${30}`}>

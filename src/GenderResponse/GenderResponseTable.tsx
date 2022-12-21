@@ -125,11 +125,11 @@ export const GenderResponseTable = (props: Props) => {
             value={selectedType}
             onChange={(e) => { setSelectedType(e); }}
           >
-            <Select.Option className='undp-select-option' value='All'>“All measures</Select.Option>
+            <Select.Option className='undp-select-option' value='All'>All measures</Select.Option>
             <Select.Option className='undp-select-option' value='genderRelated'>Gender-sensitive</Select.Option>
             <Select.Option className='undp-select-option' value='vawg'>Violence against women</Select.Option>
             <Select.Option className='undp-select-option' value='unpaidCare'>Unpaid care</Select.Option>
-            <Select.Option className='undp-select-option' value='ecoSecurity'>women&apos;s economic security</Select.Option>
+            <Select.Option className='undp-select-option' value='ecoSecurity'>Women&apos;s economic security</Select.Option>
           </Select>
         </SelectionEl>
         <SelectionEl>
@@ -151,7 +151,7 @@ export const GenderResponseTable = (props: Props) => {
         </SelectionEl>
       </div>
       <div className='margin-bottom-07'>
-        <p className='label'>Measure description – key word searchy</p>
+        <p className='label'>Measure description – key word search</p>
         <Input className='undp-input' placeholder='Search policies' onChange={(d) => { setSearchValue(d.target.value); }} />
       </div>
       {
