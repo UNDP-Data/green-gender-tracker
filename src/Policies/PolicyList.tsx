@@ -39,9 +39,9 @@ export const PolicyList = (props: Props) => {
     searchText,
   } = props;
   const dataFilteredBySearch = searchText === '' || searchText === undefined ? data : data.filter((d) => d['Policy measure title'].toLowerCase().includes(searchText.toLowerCase()) || d['Policy measure description'].toLowerCase().includes(searchText.toLowerCase()));
-  const dataFilteredByVAWG = showVAWG ? dataFilteredBySearch : dataFilteredBySearch.filter((d) => d['Gender-sensitive dimension'] !== 'Violence against women and girls');
+  const dataFilteredByVAWG = showVAWG ? dataFilteredBySearch : dataFilteredBySearch.filter((d) => d['Gender-sensitive dimension'] !== 'Violence against women');
   const dataFilteredByWEC = showWEC ? dataFilteredByVAWG : dataFilteredByVAWG.filter((d) => d['Gender-sensitive dimension'] !== "Women's economic security");
-  const dataFilteredByUCW = showUCW ? dataFilteredByWEC : dataFilteredByWEC.filter((d) => d['Gender-sensitive dimension'] !== 'Unpaid care');
+  const dataFilteredByUCW = showUCW ? dataFilteredByWEC : dataFilteredByWEC.filter((d) => d['Gender-sensitive dimension'] !== 'Unpaid care work');
   const dataFilteredByRegion = selectedRegion === 'All' ? dataFilteredByUCW : dataFilteredByUCW.filter((d) => d.Region === selectedRegion);
   const dataFilteredByCountry = selectedCountry === 'All' ? dataFilteredByRegion : dataFilteredByRegion.filter((d) => d.Country === selectedCountry);
   const [selectedData, setSelectedData] = useState<PromisingPoliciesDataType | undefined>(undefined);
@@ -60,56 +60,53 @@ export const PolicyList = (props: Props) => {
           {' '}
           {dataFilteredByCountry.length}
           {' '}
-          promising policies for gender equality catalogue
+          promising policies for gender equality
         </h5>
       </div>
       <div className='flex-div flex-space-between margin-top-07 margin-bottom-05 flex-wrap' style={{ gap: '2rem' }}>
         {
           dataFilteredByCountry.map((d, i) => (
             <CardEl key={i} onClick={() => { setSelectedData(d); }}>
-              <div
-                className='margin-bottom-09 flex-div flex-wrap'
-                style={{ gap: '0.5rem' }}
-              >
-                <div
-                  className='undp-chip'
+              <div className='flex-div flex-vert-align-center margin-bottom-05 margint-top-00' style={{ gap: '0.5rem' }}>
+                <img
+                  src={d['Gender-sensitive dimension'] === 'Violence against women'
+                    ? '/img/Icon_VAWG.png'
+                    : d['Gender-sensitive dimension'] === 'Unpaid care work'
+                      ? '/img/Icon_UCW.png'
+                      : '/img/Icon_WES.png'}
+                  alt={d['Gender-sensitive dimension'] === 'Violence against women'
+                    ? 'Violence against women icon'
+                    : d['Gender-sensitive dimension'] === 'Unpaid care work'
+                      ? 'Unpaid care work icon'
+                      : 'Women economic security icon'}
+                  height='64'
+                />
+                <h6
+                  className='undp-typography margin-bottom-00'
                   style={{
-                    backgroundColor: d['Gender-sensitive dimension'] === 'Violence against women and girls'
-                      ? '#C49FC4'
-                      : d['Gender-sensitive dimension'] === 'Unpaid care'
-                        ? '#85CDEB'
-                        : '#C7D3A5',
+                    color: d['Gender-sensitive dimension'] === 'Violence against women'
+                      ? '#590F6B'
+                      : d['Gender-sensitive dimension'] === 'Unpaid care work'
+                        ? '#0C9CD8'
+                        : '#8CA645',
                   }}
                 >
                   {d['Gender-sensitive dimension']}
-                </div>
-                {
-                  d['Policy measure sub-type'] !== 'Not specific' ? (
-                    <div
-                      className='undp-chip'
-                      style={{
-                        backgroundColor: d['Gender-sensitive dimension'] === 'Violence against women and girls'
-                          ? '#C49FC4'
-                          : d['Gender-sensitive dimension'] === 'Unpaid care'
-                            ? '#85CDEB'
-                            : '#C7D3A5',
-                      }}
-                    >
-                      {d['Policy measure sub-type']}
-                    </div>
-                  ) : null
-                }
+                </h6>
               </div>
               <h5 className='undp-typography'>{d['Policy measure title']}</h5>
-              <div className='undp-chip margin-bottom-07'>
-                {d.Country}
+              <div className='undp-chip margin-bottom-05' style={{ borderRadius: '5rem' }}>
+                <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem', margin: '0.5rem' }}>
+                  <img src={d['Flag link']} alt={`${d.Country} flag icon`} height='24' />
+                  {d.Country}
+                </div>
               </div>
-              <p className='undp-typography'>
-                {
-                  d['Policy measure description'].length > 500 ? `${d['Policy measure description'].substring(0, 500)}...` : d['Policy measure description']
-                }
+              <hr className='undp-style' style={{ opacity: 0.15 }} />
+              <h6 className='undp-typography margin-top-07 margin-bottom-02'>Problem addressed</h6>
+              <p className='undp-typography large-font'>
+                {d['Problem addressed']}
               </p>
-              <button type='button' className='undp-button button-tertiary button-arrow margin-top-09' style={{ padding: 0 }}>Learn More</button>
+              <button type='button' className='undp-button button-tertiary button-arrow margin-top-07' style={{ padding: 0 }}>Learn More</button>
             </CardEl>
           ))
         }
@@ -123,49 +120,58 @@ export const PolicyList = (props: Props) => {
         width='80%'
         style={{ maxWidth: '60rem' }}
       >
-
-        <div
-          className='margin-bottom-09 flex-div flex-wrap'
-          style={{ gap: '0.5rem' }}
-        >
-          <div
-            className='undp-chip'
-            style={{
-              backgroundColor: selectedData?.['Gender-sensitive dimension'] === 'Violence against women and girls'
-                ? '#C49FC4'
-                : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care'
-                  ? '#85CDEB'
-                  : '#C7D3A5',
-            }}
-          >
-            {selectedData?.['Gender-sensitive dimension']}
+        <div className='flex-div flex-vert-align-center margin-bottom-05 margint-top-00'>
+          <div className='flex-div flex-vert-align-center margin-bottom-00 margint-top-00' style={{ gap: '0.5rem' }}>
+            <img
+              src={selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
+                ? '/img/Icon_VAWG.png'
+                : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care work'
+                  ? '/img/Icon_UCW.png'
+                  : '/img/Icon_WES.png'}
+              alt={selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
+                ? 'Violence against women icon'
+                : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care work'
+                  ? 'Unpaid care work icon'
+                  : 'Women economic security icon'}
+              height='64'
+            />
+            <h6
+              className='undp-typography margin-bottom-00'
+              style={{
+                color: selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
+                  ? '#590F6B'
+                  : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care work'
+                    ? '#0C9CD8'
+                    : '#8CA645',
+              }}
+            >
+              {selectedData?.['Gender-sensitive dimension']}
+            </h6>
           </div>
-          {
-            selectedData?.['Policy measure sub-type'] !== 'Not specific' ? (
-              <div
-                className='undp-chip'
-                style={{
-                  backgroundColor: selectedData?.['Gender-sensitive dimension'] === 'Violence against women and girls'
-                    ? '#C49FC4'
-                    : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care'
-                      ? '#85CDEB'
-                      : '#C7D3A5',
-                }}
-              >
-                {selectedData?.['Policy measure sub-type']}
-              </div>
-            ) : null
-          }
+          <div className='undp-chip margin-bottom-00' style={{ borderRadius: '5rem' }}>
+            <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem', margin: '0.5rem' }}>
+              <img src={selectedData?.['Flag link']} alt={`${selectedData?.Country} flag icon`} height='24' />
+              {selectedData?.Country}
+            </div>
+          </div>
         </div>
+        <hr className='undp-style' style={{ opacity: 0.25 }} />
+        <h5 className='undp-typography margin-top-09'>
+          Description
+        </h5>
         {
           selectedData?.['Policy measure description'].split('~~').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)
         }
         <h5 className='undp-typography margin-top-09'>
-          Who is Implementing the Policy?
+          Problem addressed
+        </h5>
+        <p className='undp-typography'>{selectedData?.['Problem addressed']}</p>
+        <h5 className='undp-typography margin-top-09'>
+          Who is implementing the policy?
         </h5>
         <p className='undp-typography'>{selectedData?.Who}</p>
         <h5 className='undp-typography margin-top-09'>
-          Why is it Promising?
+          Why is it promising?
         </h5>
         <ul style={{ paddingLeft: '1rem' }}>
           {
@@ -173,7 +179,7 @@ export const PolicyList = (props: Props) => {
           }
         </ul>
         <h5 className='undp-typography margin-top-09'>
-          Potential Challenges
+          Potential challenges
         </h5>
         <ul style={{ paddingLeft: '1rem' }}>
           {
@@ -181,7 +187,7 @@ export const PolicyList = (props: Props) => {
           }
         </ul>
         <h5 className='undp-typography margin-top-09'>
-          Further Reading
+          Learn more
         </h5>
         <ul style={{ paddingLeft: '1rem' }}>
           {

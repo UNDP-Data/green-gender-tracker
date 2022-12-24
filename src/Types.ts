@@ -156,7 +156,7 @@ export interface PromisingPoliciesDataType{
   Country: string;
   Region: string;
   Subregion: string;
-  'Gender-sensitive dimension': 'Violence against women and girls' | 'Unpaid care' | "Women's economic security";
+  'Gender-sensitive dimension': 'Violence against women' | "Women's economic security" | 'Unpaid care work';
   'Policy measure category': string;
   'Policy measure type': string;
   'Policy measure sub-type': string;

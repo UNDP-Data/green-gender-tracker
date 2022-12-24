@@ -1,4 +1,4 @@
-import { Checkbox, Input, Select } from 'antd';
+import { Input, Select } from 'antd';
 import { csv } from 'd3-request';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
@@ -6,12 +6,12 @@ import { PromisingPoliciesDataType } from '../Types';
 import { PolicyList } from './PolicyList';
 
 const SelectionEl = styled.div`
-  width: calc(33.33% - 1.334rem);
+  width: calc(50% - 1rem);
   min-width: 20rem;
   flex-grow: 1;
 `;
 
-const countryList = ['Argentina', 'Bahrain', 'Belgium', 'Belize', 'Cuba', 'Dominican Republic', 'Guyana', 'Lithuania', 'Norway', 'Peru', 'Togo'];
+const countryList = ['Argentina', 'Australia', 'Bahrain', 'Belgium', 'Belize', 'Cabo Verde', 'Canade', 'Cuba', 'Dominican Republic', 'Guatemala', 'Guyana', 'Indonesia', "Lao People's Democratic Republic", 'Liberia', 'Lithuania', 'Netherlands', 'Norway', 'Peru', 'Saint Lucia', 'Senegal', 'Somalia', 'Sri Lanka', 'South Africa', 'Togo', 'United States of America'];
 
 export const Policies = () => {
   const [searchText, updateSearchText] = useState('');
@@ -28,14 +28,20 @@ export const Policies = () => {
   }, []);
   return (
     <>
-      <h3 className='bold undp-typography'>Promising Policies for Gender Equality Catalogue</h3>
+      <div className='flex-div flex-space-between flex-vert-align-bottom flex-wrap margin-bottom-05'>
+        <h2 className='bold undp-typography margin-bottom-00'>Promising Policies for Gender Equality Catalogue</h2>
+        <div className='flex-div flex-vert-align-center' style={{ gap: '2rem' }}>
+          <img src='/img/UNDP-Logo-Blue-Medium.png' alt='UNDP logo' height='56' />
+          <img src='/img/un-women-blue.png' alt='UN Women logo' width='128' />
+        </div>
+      </div>
       <div className='flex-div flex-space-between margin-top-07 margin-bottom-05 flex-wrap'>
         <div style={{ width: '100%' }}>
-          <p className='label'>Search a policy</p>
-          <Input value={searchText} onChange={(value) => { updateSearchText(value.target.value); }} className='undp-input' placeholder='Search a policy' />
+          <p className='label'>Measure description – key word search</p>
+          <Input value={searchText} onChange={(value) => { updateSearchText(value.target.value); }} className='undp-input' placeholder='Measure description – key word search' />
         </div>
         <SelectionEl>
-          <p className='label'>Filter by countries</p>
+          <p className='label'>Filter by countries/territories</p>
           <Select
             className='undp-select'
             value={selectedCountry}
@@ -70,10 +76,90 @@ export const Policies = () => {
         </SelectionEl>
         <SelectionEl>
           <div className='flex-wrap margin-bottom-07'>
-            <p className='label margin-bottom-05'>Policy category and type</p>
-            <Checkbox className='undp-checkbox' checked={showVAWG} onChange={() => { setShowVAWG(!showVAWG); }}>Violence against women and girls</Checkbox>
-            <Checkbox className='undp-checkbox' checked={showWEC} onChange={() => { setShowWEC(!showWEC); }}>Women’s economic security</Checkbox>
-            <Checkbox className='undp-checkbox' checked={showUCW} onChange={() => { setShowUCW(!showUCW); }}>Unpaid care</Checkbox>
+            <p className='label margin-bottom-05'>Gender-sensitive dimension</p>
+            <div className='flex-div flex-wrap'>
+              <button
+                type='button'
+                className='flex-div flex-vert-align-center'
+                style={{
+                  backgroundColor: !showVAWG ? 'transparent' : '#590F6B',
+                  border: '2px solid #590F6B',
+                  padding: '0 1rem',
+                  borderRadius: '4rem',
+                  gap: '0.5rem',
+                  cursor: 'pointer',
+                }}
+                onClick={() => { setShowVAWG(!showVAWG); }}
+              >
+                <img
+                  src={showVAWG ? '/img/Icon_VAWG_White.png' : '/img/Icon_VAWG.png'}
+                  alt='Violence against women and girls icon'
+                  height='64'
+                />
+                <h6
+                  className='undp-typography margin-bottom-00'
+                  style={{
+                    color: showVAWG ? 'var(--white)' : '#590F6B',
+                  }}
+                >
+                  Violence against women and girls
+                </h6>
+              </button>
+              <button
+                type='button'
+                className='flex-div flex-vert-align-center'
+                style={{
+                  backgroundColor: !showWEC ? 'transparent' : '#8CA645',
+                  border: '2px solid #8CA645',
+                  padding: '0 1rem',
+                  borderRadius: '4rem',
+                  gap: '0.5rem',
+                  cursor: 'pointer',
+                }}
+                onClick={() => { setShowWEC(!showWEC); }}
+              >
+                <img
+                  src={showWEC ? '/img/Icon_WES_White.png' : '/img/Icon_WES.png'}
+                  alt='Women’s economic security icon'
+                  height='64'
+                />
+                <h6
+                  className='undp-typography margin-bottom-00'
+                  style={{
+                    color: showWEC ? 'var(--white)' : '#8CA645',
+                  }}
+                >
+                  Women’s economic security
+                </h6>
+              </button>
+              <button
+                type='button'
+                className='flex-div flex-vert-align-center'
+                style={{
+                  backgroundColor: !showUCW ? 'transparent' : '#0C9CD8',
+                  border: '2px solid #0C9CD8',
+                  padding: '0 1rem',
+                  borderRadius: '4rem',
+                  gap: '0.5rem',
+                  cursor: 'pointer',
+                }}
+                onClick={() => { setShowUCW(!showUCW); }}
+              >
+                <img
+                  src={showUCW ? '/img/Icon_UCW_White.png' : '/img/Icon_UCW.png'}
+                  alt='Unpaid care icon'
+                  height='64'
+                />
+                <h6
+                  className='undp-typography margin-bottom-00'
+                  style={{
+                    color: showUCW ? 'var(--white)' : '#0C9CD8',
+                  }}
+                >
+                  Unpaid care
+                </h6>
+              </button>
+            </div>
           </div>
         </SelectionEl>
       </div>

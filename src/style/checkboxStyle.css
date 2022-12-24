@@ -9,6 +9,10 @@
   width: 16px !important;
 }
 
+.ant-checkbox-wrapper{
+  margin-left: 0 !important;
+}
+
 .undp-checkbox .ant-checkbox-checked .ant-checkbox-inner{
   background-color: transparent !important;
 }
