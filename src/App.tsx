@@ -58,7 +58,7 @@ const items = [
 
 const App = () => (
   <>
-    <div className='margin-top-07 undp-container'>
+    <div className='margin-top-07 undp-container max-width'>
       <Tabs
         defaultActiveKey='1'
         className='undp-tabs'

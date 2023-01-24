@@ -33,7 +33,7 @@ export const CountryPolicyDashboard = (props: Props) => {
         {' '}
         {selectedCountry.name}
       </h5>
-      <div className='flex-div margin-bottom-02 flex-space-between flex-wrap'>
+      <div className='stat-card-container margin-bottom-02 flex-space-between'>
         <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
           <h2 className='margin-bottom-00 undp-typography'>{countryPoliciesList.length}</h2>
           <p className='margin-top-05 margin-bottom-00 undp-typography'>Policies for COVID-19 response</p>

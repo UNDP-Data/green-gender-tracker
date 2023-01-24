@@ -46,16 +46,16 @@ export const PolicyDashboard = (props: Props) => {
   const filteredCenderGreenNexusPolicies = GetFilteredGreenLenseData(genderGreenNexusPolicies, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup, selectedPolicyMeasureCat);
   return (
     <div className='margin-top-09'>
-      <div className='flex-div margin-bottom-07 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+      <div className='stat-card-container margin-bottom-07 flex-space-between'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 4.667rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredGenderedPolicies.length)}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>COVID-19 measures are gender sensitive</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 4.667rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredEnvironmentPositivePolicies.length)}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>COVID-19 measures are green</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 4.667rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredCenderGreenNexusPolicies.length)}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>COVID-19 measures are both green and gender-sensitive</p>
         </StatCardsDiv>

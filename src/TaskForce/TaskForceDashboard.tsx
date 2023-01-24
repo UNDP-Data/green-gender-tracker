@@ -20,7 +20,6 @@ interface WidthProps {
 const StatCardsDiv = styled.div<WidthProps>`
   width: ${(props) => props.width};
   min-width: 20rem;
-  flex-grow: 1;
 `;
 
 export const TaskForceDashboard = (props: Props) => {
@@ -37,15 +36,15 @@ export const TaskForceDashboard = (props: Props) => {
   const tfMemberAvgPercent = sumBy(tfCountryData.filter((el) => el.percentOfTFMembersWomen !== -1), (el) => el.percentOfTFMembersWomen) / tfCountryData.filter((el) => el.percentOfTFMembersWomen !== -1).length;
   return (
     <div className='margin-top-09'>
-      <div className='flex-div margin-bottom-05 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
+      <div className='stat-card-container margin-bottom-05 flex-space-between'>
+        <StatCardsDiv className='stat-card' width='calc(50% - 4.5rem)'>
           <h3 className='margin-bottom-00 undp-typography'>
             {Math.round(tfMemberAvgPercent)}
             %
           </h3>
           <p className='margin-top-05 margin-bottom-00 undp-typography'>Average share of women on COVID-19 task forces</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
+        <StatCardsDiv className='stat-card' width='calc(50% - 4.5rem)'>
           <h3 className='margin-bottom-00 undp-typography'>
             {Math.round((tfsByRegionWomenLeader.length * 100) / filteredTFs.length)}
             %
@@ -53,16 +52,16 @@ export const TaskForceDashboard = (props: Props) => {
           <p className='margin-top-05 margin-bottom-00 undp-typography'>COVID-19 task forces with women leads or co-leads</p>
         </StatCardsDiv>
       </div>
-      <div className='flex-div margin-top-07 margin-bottom-07 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+      <div className='flex-div margin-bottom-07 flex-space-between flex-wrap'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 4.667rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{filteredTFs.length}</h3>
           <p className='margin-top-05 margin-bottom-00 undp-typography'>COVID-19 task forces</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 4.667rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{filteredTFs.filter((d) => d['Composition Data'] === 'Yes').length}</h3>
           <p className='margin-top-05 margin-bottom-00 undp-typography'>COVID-19 task forces with membership data</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 4.667rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{filteredTFs.filter((d) => d['Leader Gender'] !== 'NA').length}</h3>
           <p className='margin-top-05 margin-bottom-00 undp-typography'>COVID-19 task forces with leadership data</p>
         </StatCardsDiv>

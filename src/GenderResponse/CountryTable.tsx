@@ -176,12 +176,12 @@ export const CountryTable = (props: Props) => {
             </div>
           )
       }
-      <div className='flex-div margin-bottom-07 margin-top-07 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
+      <div className='stat-card-container margin-bottom-07 margin-top-07 flex-space-between'>
+        <StatCardsDiv className='stat-card' width='calc(50% - 4.5rem)'>
           <h3 className='undp-typography margin-bottom-00'>{format(',')(filteredData.filter((d) => d.noOfPolicies > 0).length)}</h3>
           <p className='margin-top-05 margin-bottom-00'>Countries/territories with COVID-19 response measures</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
+        <StatCardsDiv className='stat-card' width='calc(50% - 4.5rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredData.filter((d) => d.noOfGenderPolicies > 0).length)}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>Countries/territories with gender-sensitive COVID-19 response measures</p>
         </StatCardsDiv>
