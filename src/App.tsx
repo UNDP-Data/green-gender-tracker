@@ -1,18 +1,6 @@
 import {
   Tabs,
 } from 'antd';
-import './style/antd.css';
-import './style/style.css';
-import './style/buttonStyle.css';
-import './style/statCardStyle.css';
-import './style/tabStyle.css';
-import './style/checkboxStyle.css';
-import './style/radioStyle.css';
-import './style/selectStyle.css';
-import './style/inputStyle.css';
-import './style/modalStyle.css';
-import './style/tableStyle.css';
-import './style/chipStyle.css';
 import { GenderResponse } from './GenderResponse';
 import { TaskForce } from './TaskForce';
 import { GreenLens } from './GreenLens';
@@ -20,30 +8,57 @@ import { Policies } from './Policies';
 
 const items = [
   {
-    label: 'Gender Response Tracker',
+    label: (
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ color: 'var(--blue-600)', marginRight: '0.5rem' }}>
+          Gender Response Tracker
+        </div>
+        <div
+          className='undp-chip-small undp-chip-blue'
+          style={{
+            fontWeight: 'normal', padding: '0.25rem 0.75rem', backgroundColor: 'var(--blue-100)', border: '1px solid var(--blue-600)', borderRadius: '2rem',
+          }}
+        >
+          Primary
+        </div>
+      </div>
+    ),
     key: '1',
+    class: 'tab-primary',
     children: <GenderResponse />,
   },
   {
-    label: 'Gender-Green Lens',
+    label: (
+      <div style={{ padding: '0.25rem 0' }}>
+        Promising Policies for Gender Equality Catalogue
+      </div>
+    ),
+    key: '4',
+    children: <Policies />,
+  },
+  {
+    label: (
+      <div style={{ padding: '0.25rem 0' }}>
+        Gender-Green Lens
+      </div>
+    ),
     key: '2',
     children: <GreenLens />,
   },
   {
-    label: 'COVID-19 Task Forces',
+    label: (
+      <div style={{ padding: '0.25rem 0' }}>
+        COVID-19 Task Forces
+      </div>
+    ),
     key: '3',
     children: <TaskForce />,
-  },
-  {
-    label: 'Promising Policies for Gender Equality Catalogue',
-    key: '4',
-    children: <Policies />,
   },
 ];
 
 const App = () => (
   <>
-    <div className='container margin-top-07 undp-container'>
+    <div className='margin-top-07 undp-container'>
       <Tabs
         defaultActiveKey='1'
         className='undp-tabs'

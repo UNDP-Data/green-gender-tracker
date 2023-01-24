@@ -6,8 +6,6 @@ import Context from './Context/Context';
 import { PolicyGreenLenseDataType, PolicyGreenLenseDataWithCountryData } from '../Types';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 
-import '../style/segmentedStyle.css';
-
 export const GreenLens = () => {
   const [policyData, setPolicyData] = useState<PolicyGreenLenseDataWithCountryData[] | null>(null);
   const initialState = {

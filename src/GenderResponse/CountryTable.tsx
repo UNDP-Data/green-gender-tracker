@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import { format } from 'd3-format';
 import { CountrySummaryDataType, CtxDataType } from '../Types';
 import { GetFilteredCountrySummaryData } from '../utils/getFilteredData';
-
-import '../style/chipStyle.css';
 import Context from './Context/Context';
 
 interface Props {

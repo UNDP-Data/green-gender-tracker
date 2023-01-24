@@ -8,8 +8,6 @@ import Context from './Context/Context';
 import { CountryTFSummaryDataType, TFDataType } from '../Types';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 
-import '../style/segmentedStyle.css';
-
 export const TaskForce = () => {
   const [tfData, setTFData] = useState<TFDataType[] | null>(null);
   const [tfCountryData, setTFCountryData] = useState<CountryTFSummaryDataType[] | null>(null);

@@ -6,8 +6,6 @@ import Context from './Context/Context';
 import { PolicyDataType, PolicyDataWithCountryData } from '../Types';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
 
-import '../style/segmentedStyle.css';
-
 export const GenderResponse = () => {
   const [policyData, setPolicyData] = useState<PolicyDataWithCountryData[] | null>(null);
   const initialState = {

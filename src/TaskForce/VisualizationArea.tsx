@@ -5,8 +5,6 @@ import { CountryTFSummaryDataType, CtxDataType, TFDataType } from '../Types';
 import Context from './Context/Context';
 import { TaskForceDashboard } from './TaskForceDashboard';
 
-import '../style/segmentedStyle.css';
-
 interface Props {
   tfData: TFDataType[];
   tfCountryData: CountryTFSummaryDataType[];
@@ -79,7 +77,7 @@ export const VizArea = (props: Props) => {
         <SegmentedEl>
           <p className='label'>Filter by fragility level</p>
           <Segmented
-            className='undp-segmented'
+            className='undp-segmented-small'
             value={selectedFragilityGroup}
             onChange={(value) => { updateSelectedFragilityGroup(value as 'All' | 'Extremely Fragile' | 'Fragile' | 'Not Fragile'); }}
             options={
@@ -102,12 +100,14 @@ export const VizArea = (props: Props) => {
                 },
               ]
             }
+            onResize={() => {}}
+            onResizeCapture={() => {}}
           />
         </SegmentedEl>
         <SegmentedEl>
           <p className='label'>Filter by human development index</p>
           <Segmented
-            className='undp-segmented'
+            className='undp-segmented-small'
             value={selectedHDI}
             onChange={(value) => { updateSelectedHDI(value as 'All' | 'Very High' | 'High' | 'Medium' | 'Low'); }}
             options={
@@ -134,12 +134,14 @@ export const VizArea = (props: Props) => {
                 },
               ]
             }
+            onResize={() => {}}
+            onResizeCapture={() => {}}
           />
         </SegmentedEl>
         <SegmentedEl>
           <p className='label'>Filter by development</p>
           <Segmented
-            className='undp-segmented'
+            className='undp-segmented-small'
             value={selectedDevelopmentGroup}
             onChange={(value) => { updateSelectedDevelopmentGroup(value as 'All' | 'Least Developed Countries (LDC)'); }}
             options={
@@ -154,6 +156,8 @@ export const VizArea = (props: Props) => {
                 },
               ]
             }
+            onResize={() => {}}
+            onResizeCapture={() => {}}
           />
         </SegmentedEl>
       </div>

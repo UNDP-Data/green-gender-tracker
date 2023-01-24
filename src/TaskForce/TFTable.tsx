@@ -6,8 +6,6 @@ import styled from 'styled-components';
 import { CtxDataType, TFDataType } from '../Types';
 import Context from './Context/Context';
 
-import '../style/inputStyle.css';
-
 interface Props {
   data: TFDataType[];
 }

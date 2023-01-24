@@ -6,8 +6,6 @@ import styled from 'styled-components';
 import { CtxDataType, PolicyGreenLenseDataType } from '../Types';
 import Context from './Context/Context';
 
-import '../style/switchStyle.css';
-
 interface Props {
   data: PolicyGreenLenseDataType[];
 }

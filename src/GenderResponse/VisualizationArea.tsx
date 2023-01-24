@@ -5,8 +5,6 @@ import uniqBy from 'lodash.uniqby';
 import { PolicyDataWithCountryData, CtxDataType, CountrySummaryDataType } from '../Types';
 import { PolicyDashboard } from './PolicyDashboard';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
-
-import '../style/segmentedStyle.css';
 import Context from './Context/Context';
 
 interface Props {
@@ -121,7 +119,7 @@ export const VizArea = (props: Props) => {
         <SegmentedEl>
           <p className='label'>Filter by fragility level</p>
           <Segmented
-            className='undp-segmented'
+            className='undp-segmented-small'
             value={selectedFragilityGroup}
             onChange={(value) => { updateSelectedFragilityGroup(value as 'All' | 'Extremely Fragile' | 'Fragile' | 'Not Fragile'); }}
             options={
@@ -144,12 +142,14 @@ export const VizArea = (props: Props) => {
                 },
               ]
             }
+            onResize={() => {}}
+            onResizeCapture={() => {}}
           />
         </SegmentedEl>
         <SegmentedEl>
           <p className='label'>Filter by human development index</p>
           <Segmented
-            className='undp-segmented'
+            className='undp-segmented-small'
             value={selectedHDI}
             onChange={(value) => { updateSelectedHDI(value as 'All' | 'Very High' | 'High' | 'Medium' | 'Low'); }}
             options={
@@ -176,12 +176,14 @@ export const VizArea = (props: Props) => {
                 },
               ]
             }
+            onResize={() => {}}
+            onResizeCapture={() => {}}
           />
         </SegmentedEl>
         <SegmentedEl>
           <p className='label'>Filter by development</p>
           <Segmented
-            className='undp-segmented'
+            className='undp-segmented-small'
             value={selectedDevelopmentGroup}
             onChange={(value) => { updateSelectedDevelopmentGroup(value as 'All' | 'Least Developed Countries (LDC)'); }}
             options={
@@ -196,6 +198,8 @@ export const VizArea = (props: Props) => {
                 },
               ]
             }
+            onResize={() => {}}
+            onResizeCapture={() => {}}
           />
         </SegmentedEl>
       </div>

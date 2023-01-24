@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import { Modal } from 'antd';
+import domtoimage from 'dom-to-image';
 import { PromisingPoliciesDataType } from '../Types';
-
-import '../style/buttonStyle.css';
-import '../style/modalStyle.css';
 
 interface Props {
   searchText: string;
@@ -115,82 +113,85 @@ export const PolicyList = (props: Props) => {
         className='undp-modal'
         onCancel={() => { setSelectedData(undefined); }}
         onOk={() => { setSelectedData(undefined); }}
-        title={selectedData ? selectedData['Policy measure title'] : null}
+        title={null}
         open={selectedData !== undefined}
         width='80%'
         style={{ maxWidth: '60rem' }}
       >
-        <div className='flex-div flex-vert-align-center margin-bottom-05 margint-top-00'>
-          <div className='flex-div flex-vert-align-center margin-bottom-00 margint-top-00' style={{ gap: '0.5rem' }}>
-            <img
-              src={selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
-                ? '/img/Icon_VAWG.png'
-                : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care work'
-                  ? '/img/Icon_UCW.png'
-                  : '/img/Icon_WES.png'}
-              alt={selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
-                ? 'Violence against women icon'
-                : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care work'
-                  ? 'Unpaid care work icon'
-                  : 'Women economic security icon'}
-              height='64'
-            />
-            <h6
-              className='undp-typography margin-bottom-00'
-              style={{
-                color: selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
-                  ? '#590F6B'
+        <div id='policy-node' style={{ backgroundColor: 'var(--white)', padding: 'var(--spacing-07)' }}>
+          <h4 className='undp-typography'>
+            {selectedData?.['Policy measure title']}
+          </h4>
+          <div className='flex-div flex-vert-align-center margin-bottom-05 margint-top-00'>
+            <div className='flex-div flex-vert-align-center margin-bottom-00 margint-top-00' style={{ gap: '0.5rem' }}>
+              <img
+                src={selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
+                  ? '/img/Icon_VAWG.png'
                   : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care work'
-                    ? '#0C9CD8'
-                    : '#8CA645',
-              }}
-            >
-              {selectedData?.['Gender-sensitive dimension']}
-            </h6>
-          </div>
-          <div className='undp-chip margin-bottom-00' style={{ borderRadius: '5rem' }}>
-            <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem', margin: '0.5rem' }}>
-              <img src={selectedData?.['Flag link']} alt={`${selectedData?.Country} flag icon`} height='24' />
-              {selectedData?.Country}
+                    ? '/img/Icon_UCW.png'
+                    : '/img/Icon_WES.png'}
+                alt={selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
+                  ? 'Violence against women icon'
+                  : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care work'
+                    ? 'Unpaid care work icon'
+                    : 'Women economic security icon'}
+                height='64'
+              />
+              <h6
+                className='undp-typography margin-bottom-00'
+                style={{
+                  color: selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
+                    ? '#590F6B'
+                    : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care work'
+                      ? '#0C9CD8'
+                      : '#8CA645',
+                }}
+              >
+                {selectedData?.['Gender-sensitive dimension']}
+              </h6>
+            </div>
+            <div className='undp-chip margin-bottom-00' style={{ borderRadius: '5rem' }}>
+              <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem', margin: '0.5rem' }}>
+                {selectedData?.Country}
+              </div>
             </div>
           </div>
-        </div>
-        <hr className='undp-style' style={{ opacity: 0.25 }} />
-        <h5 className='undp-typography margin-top-09'>
-          Description
-        </h5>
-        {
+          <hr className='undp-style' style={{ opacity: 0.25 }} />
+          <h5 className='undp-typography margin-top-09'>
+            Description
+          </h5>
+          {
           selectedData?.['Policy measure description'].split('~~').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)
         }
-        <h5 className='undp-typography margin-top-09'>
-          Problem addressed
-        </h5>
-        <p className='undp-typography'>{selectedData?.['Problem addressed']}</p>
-        <h5 className='undp-typography margin-top-09'>
-          Who is implementing the policy?
-        </h5>
-        <p className='undp-typography'>{selectedData?.Who}</p>
-        <h5 className='undp-typography margin-top-09'>
-          Why is it promising?
-        </h5>
-        <ul style={{ paddingLeft: '1rem' }}>
-          {
+          <h5 className='undp-typography margin-top-09'>
+            Problem addressed
+          </h5>
+          <p className='undp-typography'>{selectedData?.['Problem addressed']}</p>
+          <h5 className='undp-typography margin-top-09'>
+            Who is implementing the policy?
+          </h5>
+          <p className='undp-typography'>{selectedData?.Who}</p>
+          <h5 className='undp-typography margin-top-09'>
+            Why is it promising?
+          </h5>
+          <ul style={{ paddingLeft: '1rem' }}>
+            {
             selectedData?.['Why promising'].split('~~').map((d, i) => <li key={i}>{d}</li>)
           }
-        </ul>
-        <h5 className='undp-typography margin-top-09'>
-          Potential challenges
-        </h5>
-        <ul style={{ paddingLeft: '1rem' }}>
-          {
+          </ul>
+          <h5 className='undp-typography margin-top-09'>
+            Potential challenges
+          </h5>
+          <ul style={{ paddingLeft: '1rem' }}>
+            {
             selectedData?.['Potential challenges'].split('~~').map((d, i) => <li key={i}>{d}</li>)
           }
-        </ul>
-        <h5 className='undp-typography margin-top-09'>
-          Learn more
-        </h5>
-        <ul style={{ paddingLeft: '1rem' }}>
-          {
+          </ul>
+          <h5 className='undp-typography margin-top-09'>
+            Learn more
+          </h5>
+          <ul style={{ paddingLeft: '1rem' }}>
+            {
             selectedData?.['Further reading'].split('~~').map((d, i) => (
               <li key={i}>
                 {
@@ -201,7 +202,27 @@ export const PolicyList = (props: Props) => {
               </li>
             ))
           }
-        </ul>
+          </ul>
+        </div>
+        <div className='margin-top-07'>
+          <button
+            type='button'
+            className='undp-button button-secondary button-arrow'
+            onClick={() => {
+              const node = document.getElementById('policy-node') as HTMLElement;
+              domtoimage
+                .toJpeg(node, { height: node.scrollHeight })
+                .then((dataUrl: any) => {
+                  const link = document.createElement('a');
+                  link.download = 'policy.jpg';
+                  link.href = dataUrl;
+                  link.click();
+                });
+            }}
+          >
+            Download Policy
+          </button>
+        </div>
       </Modal>
     </>
   );
