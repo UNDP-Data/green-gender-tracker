@@ -32,7 +32,7 @@ padding: 1rem 1rem 0 1rem;
 background-color:rgba(255,255,255,0.7);
 position: relative;
 margin-bottom: var(--spacing-13);
-z-index: 1000;
+z-index: 5;
 @media (min-width: 961px) {
   max-width: 25rem;
   margin-left: 1rem;
