@@ -7,6 +7,9 @@ import Reducer from './Context/Reducer';
 import Context from './Context/Context';
 import { CountryTFSummaryDataType, TFDataType } from '../Types';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
+import UNWomenLogo from '../images/un-women-blue.png';
+import UNDPLogo from '../images/UNDP-Logo-Blue-Medium.png';
+import UPLogo from '../images/University_of_Pittsburgh_Logo.png';
 
 export const TaskForce = () => {
   const [tfData, setTFData] = useState<TFDataType[] | null>(null);
@@ -52,7 +55,7 @@ export const TaskForce = () => {
   };
 
   useEffect(() => {
-    csv('https://raw.githubusercontent.com/UNDP-Data/green-gender-tracker/main/public/data/Taskforce.csv', (data: any) => {
+    csv('https://raw.githubusercontent.com/UNDP-Data/green-gender-tracker/add-promising-policies/public/data/Taskforce.csv', (data: any) => {
       const dataFormated: TFDataType[] = data.map((d: any) => {
         const countryTaxonomyIndx = CountryTaxonomy.findIndex((el1) => el1['Country Code'] === d['Country Code']);
         return {
@@ -107,9 +110,9 @@ export const TaskForce = () => {
       <div className='flex-div flex-space-between flex-vert-align-bottom flex-wrap margin-bottom-05'>
         <h2 className='bold undp-typography margin-bottom-00'>Women’s Participation in COVID-19 Task Forces</h2>
         <div className='flex-div flex-vert-align-center' style={{ gap: '2rem' }}>
-          <img src='/img/UNDP-Logo-Blue-Medium.png' alt='UNDP logo' height='56' />
-          <img src='/img/un-women-blue.png' alt='UN Women logo' width='128' />
-          <img src='/img/University_of_Pittsburgh_Logo.png' alt='UN Women logo' width='128' />
+          <img src={UNDPLogo} alt='UNDP logo' height='56' />
+          <img src={UNWomenLogo} alt='UN Women logo' width='128' />
+          <img src={UPLogo} alt='UN Women logo' width='128' />
         </div>
       </div>
       {

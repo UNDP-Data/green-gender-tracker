@@ -3,6 +3,9 @@ import { useState } from 'react';
 import { Modal } from 'antd';
 import domtoimage from 'dom-to-image';
 import { PromisingPoliciesDataType } from '../Types';
+import VAWGIcon from '../images/Icon_VAWG.png';
+import WESIcon from '../images/Icon_WES.png';
+import UCWIcon from '../images/Icon_UCW.png';
 
 interface Props {
   searchText: string;
@@ -68,10 +71,10 @@ export const PolicyList = (props: Props) => {
               <div className='flex-div flex-vert-align-center margin-bottom-05 margint-top-00' style={{ gap: '0.5rem' }}>
                 <img
                   src={d['Gender-sensitive dimension'] === 'Violence against women'
-                    ? '/img/Icon_VAWG.png'
+                    ? VAWGIcon
                     : d['Gender-sensitive dimension'] === 'Unpaid care work'
-                      ? '/img/Icon_UCW.png'
-                      : '/img/Icon_WES.png'}
+                      ? UCWIcon
+                      : WESIcon}
                   alt={d['Gender-sensitive dimension'] === 'Violence against women'
                     ? 'Violence against women icon'
                     : d['Gender-sensitive dimension'] === 'Unpaid care work'
@@ -126,10 +129,10 @@ export const PolicyList = (props: Props) => {
             <div className='flex-div flex-vert-align-center margin-bottom-00 margint-top-00' style={{ gap: '0.5rem' }}>
               <img
                 src={selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
-                  ? '/img/Icon_VAWG.png'
+                  ? VAWGIcon
                   : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care work'
-                    ? '/img/Icon_UCW.png'
-                    : '/img/Icon_WES.png'}
+                    ? UCWIcon
+                    : WESIcon}
                 alt={selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
                   ? 'Violence against women icon'
                   : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care work'
@@ -161,7 +164,7 @@ export const PolicyList = (props: Props) => {
             Description
           </h5>
           {
-          selectedData?.['Policy measure description'].split('~~').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)
+          selectedData?.['Policy measure description'].split('~').map((d, i) => <p className='undp-typography' key={i}>{d}</p>)
         }
           <h5 className='undp-typography margin-top-09'>
             Problem addressed
@@ -176,7 +179,7 @@ export const PolicyList = (props: Props) => {
           </h5>
           <ul style={{ paddingLeft: '1rem' }}>
             {
-            selectedData?.['Why promising'].split('~~').map((d, i) => <li key={i}>{d}</li>)
+            selectedData?.['Why promising'].split('~').map((d, i) => <li key={i}>{d}</li>)
           }
           </ul>
           <h5 className='undp-typography margin-top-09'>
@@ -184,7 +187,7 @@ export const PolicyList = (props: Props) => {
           </h5>
           <ul style={{ paddingLeft: '1rem' }}>
             {
-            selectedData?.['Potential challenges'].split('~~').map((d, i) => <li key={i}>{d}</li>)
+            selectedData?.['Potential challenges'].split('~').map((d, i) => <li key={i}>{d}</li>)
           }
           </ul>
           <h5 className='undp-typography margin-top-09'>
@@ -192,7 +195,7 @@ export const PolicyList = (props: Props) => {
           </h5>
           <ul style={{ paddingLeft: '1rem' }}>
             {
-            selectedData?.['Further reading'].split('~~').map((d, i) => (
+            selectedData?.['Further reading'].split('~').map((d, i) => (
               <li key={i}>
                 {
                   d.split('http').length === 1

@@ -5,6 +5,8 @@ import Reducer from './Context/Reducer';
 import Context from './Context/Context';
 import { PolicyDataType, PolicyDataWithCountryData } from '../Types';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
+import UNWomenLogo from '../images/un-women-blue.png';
+import UNDPLogo from '../images/UNDP-Logo-Blue-Medium.png';
 
 export const GenderResponse = () => {
   const [policyData, setPolicyData] = useState<PolicyDataWithCountryData[] | null>(null);
@@ -56,7 +58,7 @@ export const GenderResponse = () => {
   };
 
   useEffect(() => {
-    csv('https://raw.githubusercontent.com/UNDP-Data/green-gender-tracker/main/public/data/gender-policies.csv', (d: PolicyDataType[]) => {
+    csv('https://raw.githubusercontent.com/UNDP-Data/green-gender-tracker/add-promising-policies/public/data/gender-policies.csv', (d: PolicyDataType[]) => {
       const pData: PolicyDataWithCountryData[] = d.map((el) => {
         const countryTaxonomyIndx = CountryTaxonomy.findIndex((el1) => el1['Country Code'] === el['Country Code']);
         return {
@@ -76,8 +78,8 @@ export const GenderResponse = () => {
       <div className='flex-div flex-space-between flex-vert-align-bottom flex-wrap margin-bottom-05'>
         <h2 className='bold undp-typography margin-bottom-00'>Gender Response Tracker</h2>
         <div className='flex-div flex-vert-align-center' style={{ gap: '2rem' }}>
-          <img src='/img/UNDP-Logo-Blue-Medium.png' alt='UNDP logo' height='56' />
-          <img src='/img/un-women-blue.png' alt='UN Women logo' width='128' />
+          <img src={UNDPLogo} alt='UNDP logo' height='56' />
+          <img src={UNWomenLogo} alt='UN Women logo' width='128' />
         </div>
       </div>
       {
