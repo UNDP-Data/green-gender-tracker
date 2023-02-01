@@ -52,7 +52,6 @@ export const PolicyList = (props: Props) => {
         backgroundColor: 'var(--gray-300)',
         textAlign: 'center',
         padding: 'var(--spacing-07) var(--spacing-05)',
-        width: '100%',
         borderRadius: '0.25rem',
       }}
       >
