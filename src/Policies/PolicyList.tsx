@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Modal } from 'antd';
 import domtoimage from 'dom-to-image';
 import { PromisingPoliciesDataType } from '../Types';
+import { UCWIcon, VAWGIcon, WESIcon } from './Icons';
 
 interface Props {
   searchText: string;
@@ -65,19 +66,13 @@ export const PolicyList = (props: Props) => {
           dataFilteredByCountry.map((d, i) => (
             <CardEl key={i} onClick={() => { setSelectedData(d); }}>
               <div className='flex-div flex-vert-align-center margin-bottom-05 margint-top-00' style={{ gap: '0.5rem' }}>
-                <img
-                  src={d['Gender-sensitive dimension'] === 'Violence against women'
-                    ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_VAWG.png'
+                {
+                  d['Gender-sensitive dimension'] === 'Violence against women'
+                    ? <VAWGIcon size={64} />
                     : d['Gender-sensitive dimension'] === 'Unpaid care work'
-                      ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_UCW.png'
-                      : 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_WES.png'}
-                  alt={d['Gender-sensitive dimension'] === 'Violence against women'
-                    ? 'Violence against women icon'
-                    : d['Gender-sensitive dimension'] === 'Unpaid care work'
-                      ? 'Unpaid care work icon'
-                      : 'Women economic security icon'}
-                  height='64'
-                />
+                      ? <UCWIcon size={64} />
+                      : <WESIcon size={64} />
+                }
                 <h6
                   className='undp-typography margin-bottom-00'
                   style={{
@@ -121,21 +116,15 @@ export const PolicyList = (props: Props) => {
           <h4 className='undp-typography'>
             {selectedData?.['Policy measure title']}
           </h4>
-          <div className='flex-div flex-vert-align-center margin-bottom-05 margint-top-00'>
-            <div className='flex-div flex-vert-align-center margin-bottom-00 margint-top-00' style={{ gap: '0.5rem' }}>
-              <img
-                src={selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
-                  ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_VAWG.png'
+          <div className='flex-div flex-vert-align-center margin-bottom-05 margint-top-00 gap-07'>
+            <div className='flex-div flex-vert-align-center margin-bottom-00 margint-top-00' style={{ gap: '0' }}>
+              {
+                selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
+                  ? <VAWGIcon size={64} />
                   : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care work'
-                    ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_UCW.png'
-                    : 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_WES.png'}
-                alt={selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
-                  ? 'Violence against women icon'
-                  : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care work'
-                    ? 'Unpaid care work icon'
-                    : 'Women economic security icon'}
-                height='64'
-              />
+                    ? <UCWIcon size={64} />
+                    : <WESIcon size={64} />
+              }
               <h6
                 className='undp-typography margin-bottom-00'
                 style={{
