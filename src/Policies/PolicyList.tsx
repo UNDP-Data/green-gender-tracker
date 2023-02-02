@@ -3,9 +3,6 @@ import { useState } from 'react';
 import { Modal } from 'antd';
 import domtoimage from 'dom-to-image';
 import { PromisingPoliciesDataType } from '../Types';
-import VAWGIcon from '../images/Icon_VAWG.png';
-import WESIcon from '../images/Icon_WES.png';
-import UCWIcon from '../images/Icon_UCW.png';
 
 interface Props {
   searchText: string;
@@ -70,10 +67,10 @@ export const PolicyList = (props: Props) => {
               <div className='flex-div flex-vert-align-center margin-bottom-05 margint-top-00' style={{ gap: '0.5rem' }}>
                 <img
                   src={d['Gender-sensitive dimension'] === 'Violence against women'
-                    ? VAWGIcon
+                    ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_VAWG.png'
                     : d['Gender-sensitive dimension'] === 'Unpaid care work'
-                      ? UCWIcon
-                      : WESIcon}
+                      ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_UCW.png'
+                      : 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_WES.png'}
                   alt={d['Gender-sensitive dimension'] === 'Violence against women'
                     ? 'Violence against women icon'
                     : d['Gender-sensitive dimension'] === 'Unpaid care work'
@@ -128,10 +125,10 @@ export const PolicyList = (props: Props) => {
             <div className='flex-div flex-vert-align-center margin-bottom-00 margint-top-00' style={{ gap: '0.5rem' }}>
               <img
                 src={selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
-                  ? VAWGIcon
+                  ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_VAWG.png'
                   : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care work'
-                    ? UCWIcon
-                    : WESIcon}
+                    ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_UCW.png'
+                    : 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_WES.png'}
                 alt={selectedData?.['Gender-sensitive dimension'] === 'Violence against women'
                   ? 'Violence against women icon'
                   : selectedData?.['Gender-sensitive dimension'] === 'Unpaid care work'

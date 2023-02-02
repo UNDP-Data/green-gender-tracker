@@ -4,14 +4,6 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { PromisingPoliciesDataType } from '../Types';
 import { PolicyList } from './PolicyList';
-import UNDPLogo from '../images/UNDP-Logo-Blue-Medium.png';
-import UNWomenLogo from '../images/un-women-blue.png';
-import VAWGIconWhite from '../images/Icon_VAWG_White.png';
-import VAWGIcon from '../images/Icon_VAWG.png';
-import WESIconWhite from '../images/Icon_WES_White.png';
-import WESIcon from '../images/Icon_WES.png';
-import UCWIconWhite from '../images/Icon_UCW_White.png';
-import UCWIcon from '../images/Icon_UCW.png';
 
 const SelectionEl = styled.div`
   width: calc(50% - 1rem);
@@ -39,8 +31,8 @@ export const Policies = () => {
       <div className='flex-div flex-space-between flex-vert-align-bottom flex-wrap margin-bottom-05'>
         <h2 className='bold undp-typography margin-bottom-00'>Promising Policies for Gender Equality Catalogue</h2>
         <div className='flex-div flex-vert-align-center' style={{ gap: '2rem' }}>
-          <img src={UNDPLogo} alt='UNDP logo' height='56' />
-          <img src={UNWomenLogo} alt='UN Women logo' width='128' />
+          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/UNDP-Logo-Blue-Medium.png' alt='UNDP logo' height='56' />
+          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/un-women-blue.png' alt='UN Women logo' width='128' />
         </div>
       </div>
       <div className='flex-div flex-space-between margin-top-07 margin-bottom-05 flex-wrap'>
@@ -100,7 +92,7 @@ export const Policies = () => {
                 onClick={() => { setShowVAWG(!showVAWG); }}
               >
                 <img
-                  src={showVAWG ? VAWGIconWhite : VAWGIcon}
+                  src={showVAWG ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_VAWG_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_VAWG.png'}
                   alt='Violence against women and girls icon'
                   height='64'
                 />
@@ -127,7 +119,7 @@ export const Policies = () => {
                 onClick={() => { setShowWEC(!showWEC); }}
               >
                 <img
-                  src={showWEC ? WESIconWhite : WESIcon}
+                  src={showWEC ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_WES_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_WES.png'}
                   alt='Women’s economic security icon'
                   height='64'
                 />
@@ -154,7 +146,7 @@ export const Policies = () => {
                 onClick={() => { setShowUCW(!showUCW); }}
               >
                 <img
-                  src={showUCW ? UCWIconWhite : UCWIcon}
+                  src={showUCW ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_UCW_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_UCW.png'}
                   alt='Unpaid care icon'
                   height='64'
                 />

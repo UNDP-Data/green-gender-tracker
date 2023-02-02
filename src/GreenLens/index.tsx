@@ -5,9 +5,6 @@ import Reducer from './Context/Reducer';
 import Context from './Context/Context';
 import { PolicyGreenLenseDataType, PolicyGreenLenseDataWithCountryData } from '../Types';
 import CountryTaxonomy from '../Data/countryTaxonomy.json';
-import UNWomenLogo from '../images/un-women-blue.png';
-import UNDPLogo from '../images/UNDP-Logo-Blue-Medium.png';
-import OECDLogo from '../images/OECD_20cm.jpg';
 
 export const GreenLens = () => {
   const [policyData, setPolicyData] = useState<PolicyGreenLenseDataWithCountryData[] | null>(null);
@@ -79,9 +76,9 @@ export const GreenLens = () => {
       <div className='flex-div flex-space-between flex-vert-align-bottom flex-wrap margin-bottom-05'>
         <h2 className='bold undp-typography margin-bottom-00'>Gender Response Tracker with a Green Lens</h2>
         <div className='flex-div flex-vert-align-center' style={{ gap: '2rem' }}>
-          <img src={UNDPLogo} alt='UNDP logo' height='56' />
-          <img src={UNWomenLogo} alt='UN Women logo' width='128' />
-          <img src={OECDLogo} alt='OECD logo' width='128' />
+          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/UNDP-Logo-Blue-Medium.png' alt='UNDP logo' height='56' />
+          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/un-women-blue.png' alt='UN Women logo' width='128' />
+          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/OECD_20cm.jpg' alt='OECD logo' width='128' />
         </div>
       </div>
       {
