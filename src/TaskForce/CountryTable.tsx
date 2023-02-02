@@ -29,11 +29,6 @@ export const CountryTable = (props: Props) => {
     selectedFragilityGroup,
     selectedHDI,
     selectedDevelopmentGroup,
-    updateSelectedRegion,
-    updateSelectedIncomeGroup,
-    updateSelectedFragilityGroup,
-    updateSelectedHDI,
-    updateSelectedDevelopmentGroup,
   } = useContext(Context) as CtxDataType;
   const [sort, setSort] = useState(1);
   const filteredData = GetFilteredCountryTFSummaryData(data, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup);
@@ -70,45 +65,6 @@ export const CountryTable = (props: Props) => {
       <h5 className='bold margin-bottom-05 undp-typography'>
         COVID-19 task forces, by country/territory
       </h5>
-      {
-        selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' ? null
-          : (
-            <div className='flex-div flex-wrap margin-bottom-07 margin-top-00 flex-vert-align-center' style={{ gap: 'var(--spacing-05)' }}>
-              <>
-                <p className='undp-typography margin-bottom-00 bold'>Filters:</p>
-                {
-                  selectedRegion === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedRegion}</div>
-                }
-                {
-                  selectedIncomeGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedIncomeGroup}</div>
-                }
-                {
-                  selectedFragilityGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedFragilityGroup}</div>
-                }
-                {
-                  selectedHDI === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedHDI}</div>
-                }
-                {
-                  selectedDevelopmentGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedDevelopmentGroup}</div>
-                }
-                <button
-                  className='undp-chip undp-chip-red undp-chip-small'
-                  type='button'
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => {
-                    updateSelectedRegion('All');
-                    updateSelectedIncomeGroup('All');
-                    updateSelectedFragilityGroup('All');
-                    updateSelectedHDI('All');
-                    updateSelectedDevelopmentGroup('All');
-                  }}
-                >
-                  Reset Filters
-                </button>
-              </>
-            </div>
-          )
-      }
       <div style={{ maxHeight: '40rem', borderBottom: '1px solid var(--gray-400)' }} className='undp-scrollbar'>
         <div style={{ width: '100%' }}>
           <div className='undp-table-head-small undp-table-head-sticky' style={{ minWidth: '80rem' }}>

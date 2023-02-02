@@ -19,7 +19,7 @@ interface WidthProps {
 
 const StatCardsDiv = styled.div<WidthProps>`
   width: ${(props) => props.width};
-  min-width: 20rem;
+  min-width: 15rem;
   flex-grow: 1;
   cursor: auto;
 `;
@@ -45,8 +45,8 @@ export const PolicyDashboard = (props: Props) => {
   const filteredEnvironmentPositivePolicies = GetFilteredGreenLenseData(environmentPositivePolicies, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup, selectedPolicyMeasureCat);
   const filteredCenderGreenNexusPolicies = GetFilteredGreenLenseData(genderGreenNexusPolicies, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup, selectedPolicyMeasureCat);
   return (
-    <div className='margin-top-09'>
-      <div className='stat-card-container margin-bottom-07 flex-space-between'>
+    <div>
+      <div className='stat-card-container margin-top-05 margin-bottom-05 flex-space-between'>
         <StatCardsDiv className='stat-card' width='calc(33.33% - 4.667rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredGenderedPolicies.length)}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>COVID-19 measures are gender sensitive</p>

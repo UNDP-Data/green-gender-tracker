@@ -26,7 +26,7 @@ interface WidthProps {
 
 const StatCardsDiv = styled.div<WidthProps>`
   width: ${(props) => props.width};
-  min-width: 20rem;
+  min-width: 15rem;
   flex-grow: 1;
   cursor: auto;
 `;
@@ -87,13 +87,6 @@ export const CountryTable = (props: Props) => {
     selectedFragilityGroup,
     selectedHDI,
     selectedDevelopmentGroup,
-    selectedPolicyMeasureCat,
-    updateSelectedRegion,
-    updateSelectedIncomeGroup,
-    updateSelectedFragilityGroup,
-    updateSelectedHDI,
-    updateSelectedDevelopmentGroup,
-    updateSelectedPolicyMeasureCat,
   } = useContext(Context) as CtxDataType;
   const [sort, setSort] = useState(1);
   const filteredData: CountryGreenLenseSummaryDataType[] = GetFilteredCountryGreenLensSummaryData(data, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup);
@@ -133,49 +126,6 @@ export const CountryTable = (props: Props) => {
       <h5 className='bold margin-bottom-05 undp-typography'>
         Measures by country/territory
       </h5>
-      {
-        selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' && selectedPolicyMeasureCat === 'All' ? null
-          : (
-            <div className='flex-div flex-wrap margin-bottom-07 margin-top-00 flex-vert-align-center' style={{ gap: 'var(--spacing-05)' }}>
-              <>
-                <p className='undp-typography margin-bottom-00 bold'>Filters:</p>
-                {
-                  selectedRegion === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedRegion}</div>
-                }
-                {
-                  selectedIncomeGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedIncomeGroup}</div>
-                }
-                {
-                  selectedFragilityGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedFragilityGroup}</div>
-                }
-                {
-                  selectedHDI === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedHDI}</div>
-                }
-                {
-                  selectedDevelopmentGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedDevelopmentGroup}</div>
-                }
-                {
-                  selectedPolicyMeasureCat === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedPolicyMeasureCat}</div>
-                }
-                <button
-                  className='undp-chip undp-chip-red undp-chip-small'
-                  type='button'
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => {
-                    updateSelectedRegion('All');
-                    updateSelectedIncomeGroup('All');
-                    updateSelectedFragilityGroup('All');
-                    updateSelectedHDI('All');
-                    updateSelectedDevelopmentGroup('All');
-                    updateSelectedPolicyMeasureCat('All');
-                  }}
-                >
-                  Reset Filters
-                </button>
-              </>
-            </div>
-          )
-      }
       <div className='stat-card-container margin-bottom-07 margin-top-07 flex-space-between'>
         <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredData.filter((d) => d.noOfGenderPolicies > 0).length)}</h3>

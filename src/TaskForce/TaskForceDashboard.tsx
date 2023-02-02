@@ -19,7 +19,7 @@ interface WidthProps {
 
 const StatCardsDiv = styled.div<WidthProps>`
   width: ${(props) => props.width};
-  min-width: 20rem;
+  min-width: 15rem;
 `;
 
 export const TaskForceDashboard = (props: Props) => {
@@ -35,8 +35,8 @@ export const TaskForceDashboard = (props: Props) => {
   const tfsByRegionWomenLeader = filteredTFs.filter((d) => d['Leader Gender'] === 'Woman' || d['Leader Gender'] === 'Man and Woman (co-chairs)');
   const tfMemberAvgPercent = sumBy(tfCountryData.filter((el) => el.percentOfTFMembersWomen !== -1), (el) => el.percentOfTFMembersWomen) / tfCountryData.filter((el) => el.percentOfTFMembersWomen !== -1).length;
   return (
-    <div className='margin-top-09'>
-      <div className='stat-card-container margin-bottom-05 flex-space-between'>
+    <div>
+      <div className='stat-card-container margin-bottom-05 margin-top-05 flex-space-between'>
         <StatCardsDiv className='stat-card' width='calc(50% - 4.5rem)'>
           <h3 className='margin-bottom-00 undp-typography'>
             {Math.round(tfMemberAvgPercent)}

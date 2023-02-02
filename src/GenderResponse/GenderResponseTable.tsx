@@ -34,13 +34,6 @@ export const GenderResponseTable = (props: Props) => {
     selectedFragilityGroup,
     selectedHDI,
     selectedDevelopmentGroup,
-    selectedPolicyMeasureCat,
-    updateSelectedRegion,
-    updateSelectedIncomeGroup,
-    updateSelectedFragilityGroup,
-    updateSelectedHDI,
-    updateSelectedDevelopmentGroup,
-    updateSelectedPolicyMeasureCat,
   } = useContext(Context) as CtxDataType;
 
   const [selectedType, setSelectedType] = useState('All');
@@ -74,49 +67,6 @@ export const GenderResponseTable = (props: Props) => {
       <h5 className='bold margin-bottom-05 undp-typography'>
         View policy measure details
       </h5>
-      {
-        selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' && selectedPolicyMeasureCat === 'All' ? null
-          : (
-            <div className='flex-div flex-wrap margin-bottom-07 margin-top-00 flex-vert-align-center' style={{ gap: 'var(--spacing-05)' }}>
-              <>
-                <p className='undp-typography margin-bottom-00 bold'>Filters:</p>
-                {
-                  selectedRegion === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedRegion}</div>
-                }
-                {
-                  selectedIncomeGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedIncomeGroup}</div>
-                }
-                {
-                  selectedFragilityGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedFragilityGroup}</div>
-                }
-                {
-                  selectedHDI === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedHDI}</div>
-                }
-                {
-                  selectedDevelopmentGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedDevelopmentGroup}</div>
-                }
-                {
-                  selectedPolicyMeasureCat === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedPolicyMeasureCat}</div>
-                }
-                <button
-                  className='undp-chip undp-chip-red undp-chip-small'
-                  type='button'
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => {
-                    updateSelectedRegion('All');
-                    updateSelectedIncomeGroup('All');
-                    updateSelectedFragilityGroup('All');
-                    updateSelectedHDI('All');
-                    updateSelectedDevelopmentGroup('All');
-                    updateSelectedPolicyMeasureCat('All');
-                  }}
-                >
-                  Reset Filters
-                </button>
-              </>
-            </div>
-          )
-      }
       <div className='margin-top-04 margin-bottom-05 flex-div flex-space-between'>
         <SelectionEl>
           <p className='label'>Filter by policy type</p>

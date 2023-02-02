@@ -104,8 +104,8 @@ export const TaskForce = () => {
   }, []);
   return (
     <>
-      <div className='flex-div flex-space-between flex-vert-align-bottom flex-wrap margin-bottom-05'>
-        <h2 className='bold undp-typography margin-bottom-00'>Women’s Participation in COVID-19 Task Forces</h2>
+      <div className='flex-div flex-space-between flex-vert-align-center flex-wrap margin-bottom-05 margin-top-05'>
+        <h2 className='bold undp-typography margin-bottom-00' style={{ width: '30rem', flexGrow: 1 }}>Women’s Participation in COVID-19 Task Forces</h2>
         <div className='flex-div flex-vert-align-center' style={{ gap: '2rem' }}>
           <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/UNDP-Logo-Blue-Medium.png' alt='UNDP logo' style={{ height: '56px' }} />
           <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/un-women-blue.png' alt='UN Women logo' style={{ height: '56px' }} />

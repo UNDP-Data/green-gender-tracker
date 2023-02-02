@@ -6,7 +6,7 @@ import { PromisingPoliciesDataType } from '../Types';
 import { PolicyList } from './PolicyList';
 
 const SelectionEl = styled.div`
-  width: calc(50% - 1rem);
+  width: calc(33.33% - 1.334rem);
   min-width: 20rem;
   flex-grow: 1;
 `;
@@ -28,18 +28,18 @@ export const Policies = () => {
   }, []);
   return (
     <>
-      <div className='flex-div flex-space-between flex-vert-align-bottom flex-wrap margin-bottom-05'>
-        <h2 className='bold undp-typography margin-bottom-00'>Promising Policies for Gender Equality Catalogue</h2>
+      <div className='flex-div flex-space-between flex-vert-align-center flex-wrap margin-bottom-05 margin-top-05'>
+        <h2 className='bold undp-typography margin-bottom-00' style={{ width: '30rem', flexGrow: 1 }}>Promising Policies for Gender Equality Catalogue</h2>
         <div className='flex-div flex-vert-align-center' style={{ gap: '2rem' }}>
           <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/UNDP-Logo-Blue-Medium.png' alt='UNDP logo' style={{ height: '56px' }} />
           <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/un-women-blue.png' alt='UN Women logo' style={{ width: '128px' }} />
         </div>
       </div>
-      <div className='flex-div flex-space-between margin-top-07 margin-bottom-05 flex-wrap'>
-        <div style={{ width: '100%' }}>
+      <div className='flex-div flex-space-between padding-top-05 padding-bottom-05 flex-wrap undp-table-head-sticky' style={{ backgroundColor: 'var(--white)', zIndex: 9 }}>
+        <SelectionEl>
           <p className='label'>Measure description – key word search</p>
           <Input value={searchText} onChange={(value) => { updateSearchText(value.target.value); }} className='undp-input' placeholder='Measure description – key word search' />
-        </div>
+        </SelectionEl>
         <SelectionEl>
           <p className='label'>Filter by countries/territories</p>
           <Select
@@ -75,7 +75,7 @@ export const Policies = () => {
           </Select>
         </SelectionEl>
         <SelectionEl>
-          <div className='flex-wrap margin-bottom-07'>
+          <div className='flex-wrap margin-bottom-00'>
             <p className='label margin-bottom-05'>Gender-sensitive dimension</p>
             <div className='flex-div flex-wrap'>
               <button

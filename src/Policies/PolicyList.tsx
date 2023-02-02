@@ -16,7 +16,7 @@ interface Props {
 }
 
 const CardEl = styled.div`
-  width: calc(33.33% - 1.334rem);
+  width: calc(33.33% - 7.334rem);
   min-width: 20rem;
   flex-grow: 1;
   background-color: var(--gray-100);
@@ -61,7 +61,7 @@ export const PolicyList = (props: Props) => {
           promising policies for gender equality
         </h5>
       </div>
-      <div className='flex-div flex-space-between margin-top-07 margin-bottom-05 flex-wrap' style={{ gap: '2rem' }}>
+      <div className='flex-div flex-space-between margin-top-05 margin-bottom-05 flex-wrap' style={{ gap: '2rem' }}>
         {
           dataFilteredByCountry.map((d, i) => (
             <CardEl key={i} onClick={() => { setSelectedData(d); }}>

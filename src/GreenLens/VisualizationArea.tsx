@@ -19,7 +19,7 @@ const SelectionEl = styled.div`
 
 const SegmentedEl = styled.div`
   width: calc(33.33% - 1.334rem);
-  min-width: 25rem;
+  min-width: 20rem;
   flex-grow: 1;
 `;
 
@@ -65,7 +65,7 @@ export const VizArea = (props: Props) => {
   }, [policyData, selectedPolicyMeasureCat]);
   return (
     <>
-      <div className='flex-div flex-space-between margin-top-07 margin-bottom-05 flex-wrap'>
+      <div className='flex-div flex-space-between padding-top-05 padding-bottom-05 flex-wrap undp-table-head-sticky' style={{ backgroundColor: 'var(--white)', zIndex: 9 }}>
         <SelectionEl>
           <p className='label'>Filter by policy measure category</p>
           <Select
@@ -204,31 +204,31 @@ export const VizArea = (props: Props) => {
             onResizeCapture={() => {}}
           />
         </SegmentedEl>
+        {
+          selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' && selectedPolicyMeasureCat === 'All' ? null
+            : (
+              <div>
+                <>
+                  <button
+                    className='undp-chip undp-chip-red'
+                    type='button'
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => {
+                      updateSelectedRegion('All');
+                      updateSelectedIncomeGroup('All');
+                      updateSelectedFragilityGroup('All');
+                      updateSelectedHDI('All');
+                      updateSelectedDevelopmentGroup('All');
+                      updateSelectedPolicyMeasureCat('All');
+                    }}
+                  >
+                    Reset Filters
+                  </button>
+                </>
+              </div>
+            )
+        }
       </div>
-      {
-        selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' && selectedPolicyMeasureCat === 'All' ? null
-          : (
-            <div className='flex-div flex-wrap margin-bottom-07 margin-top-00 flex-vert-align-center'>
-              <>
-                <button
-                  className='undp-chip undp-chip-red'
-                  type='button'
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => {
-                    updateSelectedRegion('All');
-                    updateSelectedIncomeGroup('All');
-                    updateSelectedFragilityGroup('All');
-                    updateSelectedHDI('All');
-                    updateSelectedDevelopmentGroup('All');
-                    updateSelectedPolicyMeasureCat('All');
-                  }}
-                >
-                  Reset Filters
-                </button>
-              </>
-            </div>
-          )
-      }
       {
         countryData
           ? (
