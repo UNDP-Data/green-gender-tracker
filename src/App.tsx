@@ -10,7 +10,7 @@ const items = [
   {
     label: (
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <div style={{ color: 'var(--blue-600)', marginRight: '0.5rem' }}>
+        <div style={{ color: 'var(--blue-600)', marginRight: '0.5rem', fontSize: '1rem' }}>
           Gender Response Tracker
         </div>
         <div
