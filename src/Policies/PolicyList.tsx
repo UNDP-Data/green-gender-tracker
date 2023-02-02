@@ -112,7 +112,7 @@ export const PolicyList = (props: Props) => {
         width='80%'
         style={{ maxWidth: '60rem' }}
       >
-        <div id='policy-node' style={{ backgroundColor: 'var(--white)', padding: 'var(--spacing-07)' }}>
+        <div id='policy-node' style={{ backgroundColor: 'var(--white)', padding: 'var(--spacing-07) var(--spacing-05)' }}>
           <h4 className='undp-typography'>
             {selectedData?.['Policy measure title']}
           </h4>
@@ -162,30 +162,30 @@ export const PolicyList = (props: Props) => {
           <h5 className='undp-typography margin-top-09'>
             Why is it promising?
           </h5>
-          <ul style={{ paddingLeft: '1rem' }}>
+          <ul style={{ listStyle: 'outside', paddingLeft: '1rem' }}>
             {
-            selectedData?.['Why promising'].split('~').map((d, i) => <li key={i}>{d}</li>)
+            selectedData?.['Why promising'].split('~').map((d, i) => <li key={i} style={{ marginBottom: 0, paddingLeft: 0 }}>{d}</li>)
           }
           </ul>
           <h5 className='undp-typography margin-top-09'>
             Potential challenges
           </h5>
-          <ul style={{ paddingLeft: '1rem' }}>
+          <ul style={{ listStyle: 'outside', paddingLeft: '1rem' }}>
             {
-            selectedData?.['Potential challenges'].split('~').map((d, i) => <li key={i}>{d}</li>)
+            selectedData?.['Potential challenges'].split('~').map((d, i) => <li key={i} style={{ marginBottom: 0, paddingLeft: 0 }}>{d}</li>)
           }
           </ul>
           <h5 className='undp-typography margin-top-09'>
             Learn more
           </h5>
-          <ul style={{ paddingLeft: '1rem' }}>
+          <ul style={{ listStyle: 'outside', paddingLeft: '1rem' }}>
             {
             selectedData?.['Further reading'].split('~').map((d, i) => (
-              <li key={i}>
+              <li key={i} style={{ marginBottom: 0, paddingLeft: 0 }}>
                 {
                   d.split('http').length === 1
                     ? d
-                    : <a className='undp-style' href={`http${d.split('http')[1]}`} target='_blank' rel='noreferrer'>{d.split('http')[0]}</a>
+                    : <a style={{ fontSize: '1rem' }} className='undp-style' href={`http${d.split('http')[1]}`} target='_blank' rel='noreferrer'>{d.split('http')[0]}</a>
                 }
               </li>
             ))
