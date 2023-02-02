@@ -89,7 +89,7 @@ export const PolicyList = (props: Props) => {
               <h5 className='undp-typography'>{d['Policy measure title']}</h5>
               <div className='undp-chip margin-bottom-05' style={{ borderRadius: '5rem' }}>
                 <div className='flex-div flex-vert-align-center' style={{ gap: '0.5rem', margin: '0.5rem' }}>
-                  <img src={d['Flag link']} alt={`${d.Country} flag icon`} height='24' />
+                  <img src={d['Flag link']} alt={`${d.Country} flag icon`} style={{ height: '24px' }} />
                   {d.Country}
                 </div>
               </div>

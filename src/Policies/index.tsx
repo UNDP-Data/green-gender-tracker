@@ -31,8 +31,8 @@ export const Policies = () => {
       <div className='flex-div flex-space-between flex-vert-align-bottom flex-wrap margin-bottom-05'>
         <h2 className='bold undp-typography margin-bottom-00'>Promising Policies for Gender Equality Catalogue</h2>
         <div className='flex-div flex-vert-align-center' style={{ gap: '2rem' }}>
-          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/UNDP-Logo-Blue-Medium.png' alt='UNDP logo' height='56' />
-          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/un-women-blue.png' alt='UN Women logo' width='128' />
+          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/UNDP-Logo-Blue-Medium.png' alt='UNDP logo' style={{ height: '56px' }} />
+          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/un-women-blue.png' alt='UN Women logo' style={{ width: '128px' }} />
         </div>
       </div>
       <div className='flex-div flex-space-between margin-top-07 margin-bottom-05 flex-wrap'>
@@ -94,7 +94,7 @@ export const Policies = () => {
                 <img
                   src={showVAWG ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_VAWG_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_VAWG.png'}
                   alt='Violence against women and girls icon'
-                  height='64'
+                  style={{ height: '64px' }}
                 />
                 <h6
                   className='undp-typography margin-bottom-00'
@@ -121,7 +121,7 @@ export const Policies = () => {
                 <img
                   src={showWEC ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_WES_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_WES.png'}
                   alt='Women’s economic security icon'
-                  height='64'
+                  style={{ height: '64px' }}
                 />
                 <h6
                   className='undp-typography margin-bottom-00'
@@ -148,7 +148,7 @@ export const Policies = () => {
                 <img
                   src={showUCW ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_UCW_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_UCW.png'}
                   alt='Unpaid care icon'
-                  height='64'
+                  style={{ height: '64px' }}
                 />
                 <h6
                   className='undp-typography margin-bottom-00'
