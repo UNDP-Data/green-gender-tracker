@@ -22,7 +22,7 @@ export const Policies = () => {
   const [showWEC, setShowWEC] = useState(true);
   const [showUCW, setShowUCW] = useState(true);
   useEffect(() => {
-    csv('https://raw.githubusercontent.com/UNDP-Data/green-gender-tracker/add-promising-policies/public/data/promising-policies.csv', (d: PromisingPoliciesDataType[]) => {
+    csv('https://raw.githubusercontent.com/UNDP-Data/green-gender-tracker/Redesign/public/data/promising-policies.csv', (d: PromisingPoliciesDataType[]) => {
       setData(d);
     });
   }, []);
@@ -31,8 +31,9 @@ export const Policies = () => {
       <div className='flex-div flex-space-between flex-vert-align-center flex-wrap margin-bottom-05 margin-top-05'>
         <h2 className='bold undp-typography margin-bottom-00' style={{ width: '30rem', flexGrow: 1 }}>Promising Policies for Gender Equality Catalogue</h2>
         <div className='flex-div flex-vert-align-center' style={{ gap: '2rem' }}>
-          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/UNDP-Logo-Blue-Medium.png' alt='UNDP logo' style={{ height: '56px' }} />
-          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/un-women-blue.png' alt='UN Women logo' style={{ width: '128px' }} />
+          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/UNDP-Logo-Blue-Medium.png' alt='UNDP logo' style={{ height: '56px' }} />
+          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/un-women-blue.png' alt='UN Women logo' style={{ width: '128px' }} />
+          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/ROK_Logo_PNG.png' alt='ROK logo' style={{ width: '200px' }} />
         </div>
       </div>
       <div className='flex-div flex-space-between padding-top-05 padding-bottom-05 flex-wrap undp-table-head-sticky' style={{ backgroundColor: 'var(--white)', zIndex: 9 }}>
@@ -92,7 +93,7 @@ export const Policies = () => {
                 onClick={() => { setShowVAWG(!showVAWG); }}
               >
                 <img
-                  src={showVAWG ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_VAWG_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_VAWG.png'}
+                  src={showVAWG ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_VAWG_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_VAWG.png'}
                   alt='Violence against women and girls icon'
                   style={{ height: '64px' }}
                 />
@@ -119,7 +120,7 @@ export const Policies = () => {
                 onClick={() => { setShowWEC(!showWEC); }}
               >
                 <img
-                  src={showWEC ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_WES_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_WES.png'}
+                  src={showWEC ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_WES_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_WES.png'}
                   alt='Women’s economic security icon'
                   style={{ height: '64px' }}
                 />
@@ -146,7 +147,7 @@ export const Policies = () => {
                 onClick={() => { setShowUCW(!showUCW); }}
               >
                 <img
-                  src={showUCW ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_UCW_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/add-promising-policies/public/img/Icon_UCW.png'}
+                  src={showUCW ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_UCW_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_UCW.png'}
                   alt='Unpaid care icon'
                   style={{ height: '64px' }}
                 />

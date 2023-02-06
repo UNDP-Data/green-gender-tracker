@@ -73,16 +73,16 @@ const App = () => {
               }}
               onClick={() => { setSelectedTab('GenderResponse'); }}
             >
-              Gender Response Tracker
+              COVID-19 Global Gender Response Tracker
             </NavButton>
             <NavButton className='undp-typography margin-bottom-00 margin-top-00' style={{ padding: 'var(--spacing-05) var(--spacing-05) var(--spacing-05) var(--spacing-08)', color: selectedTab === 'Policies' ? 'var(--blue-600)' : 'var(--gray-700)', backgroundColor: selectedTab === 'Policies' ? 'var(--white)' : 'var(--gray-300)' }} onClick={() => { setSelectedTab('Policies'); }}>
               Promising Policies for Gender Equality Catalogue
             </NavButton>
             <NavButton className='undp-typography margin-bottom-00 margin-top-00' style={{ padding: 'var(--spacing-05) var(--spacing-05) var(--spacing-05) var(--spacing-08)', color: selectedTab === 'GreenLens' ? 'var(--blue-600)' : 'var(--gray-700)', backgroundColor: selectedTab === 'GreenLens' ? 'var(--white)' : 'var(--gray-300)' }} onClick={() => { setSelectedTab('GreenLens'); }}>
-              Gender-Green Lens
+              Gender Response Tracker with a Green Lens
             </NavButton>
             <NavButton className='undp-typography margin-bottom-00 margin-top-00' style={{ padding: 'var(--spacing-05) var(--spacing-05) var(--spacing-05) var(--spacing-08)', color: selectedTab === 'TaskForce' ? 'var(--blue-600)' : 'var(--gray-700)', backgroundColor: selectedTab === 'TaskForce' ? 'var(--white)' : 'var(--gray-300)' }} onClick={() => { setSelectedTab('TaskForce'); }}>
-              COVID-19 Task Forces
+              Women’s Participation in Task Forces
             </NavButton>
           </El>
           <GarphEl className='undp-scrollbar'>
