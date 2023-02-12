@@ -1,6 +1,7 @@
 import { Input, Select } from 'antd';
 import { csv } from 'd3-request';
 import { useEffect, useState } from 'react';
+import uniqBy from 'lodash.uniqby';
 import styled from 'styled-components';
 import { PromisingPoliciesDataType } from '../Types';
 import { PolicyList } from './PolicyList';
@@ -11,11 +12,10 @@ const SelectionEl = styled.div`
   flex-grow: 1;
 `;
 
-const countryList = ['Argentina', 'Australia', 'Bahrain', 'Belgium', 'Belize', 'Cabo Verde', 'Canade', 'Cuba', 'Dominican Republic', 'Guatemala', 'Guyana', 'Indonesia', "Lao People's Democratic Republic", 'Liberia', 'Lithuania', 'Netherlands', 'Norway', 'Peru', 'Saint Lucia', 'Senegal', 'Somalia', 'Sri Lanka', 'South Africa', 'Togo', 'United States of America'];
-
 export const Policies = () => {
   const [searchText, updateSearchText] = useState('');
   const [data, setData] = useState<PromisingPoliciesDataType[] | undefined>(undefined);
+  const [countryOptions, setCountryOptions] = useState<string[] | undefined>(undefined);
   const [selectedCountry, updateSelectedCountry] = useState<string>('All');
   const [selectedRegion, updateSelectedRegion] = useState<string>('All');
   const [showVAWG, setShowVAWG] = useState(true);
@@ -23,6 +23,7 @@ export const Policies = () => {
   const [showUCW, setShowUCW] = useState(true);
   useEffect(() => {
     csv('https://raw.githubusercontent.com/UNDP-Data/green-gender-tracker/Redesign/public/data/promising-policies.csv', (d: PromisingPoliciesDataType[]) => {
+      setCountryOptions(uniqBy(d, 'Country').map((el) => el.Country));
       setData(d);
     });
   }, []);
@@ -36,145 +37,147 @@ export const Policies = () => {
           <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/ROK_Logo_PNG.png' alt='ROK logo' style={{ width: '200px' }} />
         </div>
       </div>
-      <div className='flex-div flex-space-between padding-top-05 padding-bottom-05 flex-wrap undp-table-head-sticky' style={{ backgroundColor: 'var(--white)', zIndex: 9 }}>
-        <SelectionEl>
-          <p className='label'>Measure description – key word search</p>
-          <Input value={searchText} onChange={(value) => { updateSearchText(value.target.value); }} className='undp-input' placeholder='Measure description – key word search' />
-        </SelectionEl>
-        <SelectionEl>
-          <p className='label'>Filter by countries/territories</p>
-          <Select
-            className='undp-select'
-            value={selectedCountry}
-            placeholder='All Regions Selected'
-            onChange={(e) => { updateSelectedCountry(e || 'All'); }}
-            allowClear
-            clearIcon={<div className='clearIcon' />}
-          >
-            <Select.Option className='undp-select-option' value='All'>All Countries</Select.Option>
-            {
-              countryList.map((d, i) => <Select.Option className='undp-select-option' key={i} value={d}>{d}</Select.Option>)
-            }
-          </Select>
-        </SelectionEl>
-        <SelectionEl>
-          <p className='label'>Filter by regions</p>
-          <Select
-            className='undp-select'
-            value={selectedRegion}
-            placeholder='All Regions Selected'
-            onChange={(e) => { updateSelectedRegion(e || 'All'); }}
-            allowClear
-            clearIcon={<div className='clearIcon' />}
-          >
-            <Select.Option className='undp-select-option' value='All'>All regions</Select.Option>
-            <Select.Option className='undp-select-option' value='Africa'>Africa</Select.Option>
-            <Select.Option className='undp-select-option' value='Americas'>Americas</Select.Option>
-            <Select.Option className='undp-select-option' value='Asia'>Asia</Select.Option>
-            <Select.Option className='undp-select-option' value='Europe'>Europe</Select.Option>
-            <Select.Option className='undp-select-option' value='Oceania'>Oceania</Select.Option>
-          </Select>
-        </SelectionEl>
-        <SelectionEl>
-          <div className='flex-wrap margin-bottom-00'>
-            <p className='label margin-bottom-05'>Gender-sensitive dimension</p>
-            <div className='flex-div flex-wrap'>
-              <button
-                type='button'
-                className='flex-div flex-vert-align-center'
-                style={{
-                  backgroundColor: !showVAWG ? 'transparent' : '#590F6B',
-                  border: '2px solid #590F6B',
-                  padding: '0 1rem',
-                  borderRadius: '4rem',
-                  gap: '0.5rem',
-                  cursor: 'pointer',
-                }}
-                onClick={() => { setShowVAWG(!showVAWG); }}
-              >
-                <img
-                  src={showVAWG ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_VAWG_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_VAWG.png'}
-                  alt='Violence against women and girls icon'
-                  style={{ height: '64px' }}
-                />
-                <h6
-                  className='undp-typography margin-bottom-00'
-                  style={{
-                    color: showVAWG ? 'var(--white)' : '#590F6B',
-                  }}
-                >
-                  Violence against women and girls
-                </h6>
-              </button>
-              <button
-                type='button'
-                className='flex-div flex-vert-align-center'
-                style={{
-                  backgroundColor: !showWEC ? 'transparent' : '#8CA645',
-                  border: '2px solid #8CA645',
-                  padding: '0 1rem',
-                  borderRadius: '4rem',
-                  gap: '0.5rem',
-                  cursor: 'pointer',
-                }}
-                onClick={() => { setShowWEC(!showWEC); }}
-              >
-                <img
-                  src={showWEC ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_WES_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_WES.png'}
-                  alt='Women’s economic security icon'
-                  style={{ height: '64px' }}
-                />
-                <h6
-                  className='undp-typography margin-bottom-00'
-                  style={{
-                    color: showWEC ? 'var(--white)' : '#8CA645',
-                  }}
-                >
-                  Women’s economic security
-                </h6>
-              </button>
-              <button
-                type='button'
-                className='flex-div flex-vert-align-center'
-                style={{
-                  backgroundColor: !showUCW ? 'transparent' : '#0C9CD8',
-                  border: '2px solid #0C9CD8',
-                  padding: '0 1rem',
-                  borderRadius: '4rem',
-                  gap: '0.5rem',
-                  cursor: 'pointer',
-                }}
-                onClick={() => { setShowUCW(!showUCW); }}
-              >
-                <img
-                  src={showUCW ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_UCW_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_UCW.png'}
-                  alt='Unpaid care icon'
-                  style={{ height: '64px' }}
-                />
-                <h6
-                  className='undp-typography margin-bottom-00'
-                  style={{
-                    color: showUCW ? 'var(--white)' : '#0C9CD8',
-                  }}
-                >
-                  Unpaid care
-                </h6>
-              </button>
-            </div>
-          </div>
-        </SelectionEl>
-      </div>
       {
-        data ? (
-          <PolicyList
-            data={data}
-            searchText={searchText}
-            showVAWG={showVAWG}
-            showWEC={showWEC}
-            showUCW={showUCW}
-            selectedRegion={selectedRegion}
-            selectedCountry={selectedCountry}
-          />
+        data && countryOptions ? (
+          <>
+            <div className='flex-div flex-space-between padding-top-05 padding-bottom-05 flex-wrap undp-table-head-sticky' style={{ backgroundColor: 'var(--white)', zIndex: 9 }}>
+              <SelectionEl>
+                <p className='label'>Measure description – key word search</p>
+                <Input value={searchText} onChange={(value) => { updateSearchText(value.target.value); }} className='undp-input' placeholder='Measure description – key word search' />
+              </SelectionEl>
+              <SelectionEl>
+                <p className='label'>Filter by countries/territories</p>
+                <Select
+                  className='undp-select'
+                  value={selectedCountry}
+                  placeholder='All Regions Selected'
+                  onChange={(e) => { updateSelectedCountry(e || 'All'); }}
+                  allowClear
+                  clearIcon={<div className='clearIcon' />}
+                >
+                  <Select.Option className='undp-select-option' value='All'>All Countries</Select.Option>
+                  {
+                    countryOptions.map((d, i) => <Select.Option className='undp-select-option' key={i} value={d}>{d}</Select.Option>)
+                  }
+                </Select>
+              </SelectionEl>
+              <SelectionEl>
+                <p className='label'>Filter by regions</p>
+                <Select
+                  className='undp-select'
+                  value={selectedRegion}
+                  placeholder='All Regions Selected'
+                  onChange={(e) => { updateSelectedRegion(e || 'All'); }}
+                  allowClear
+                  clearIcon={<div className='clearIcon' />}
+                >
+                  <Select.Option className='undp-select-option' value='All'>All regions</Select.Option>
+                  <Select.Option className='undp-select-option' value='Africa'>Africa</Select.Option>
+                  <Select.Option className='undp-select-option' value='Americas'>Americas</Select.Option>
+                  <Select.Option className='undp-select-option' value='Asia'>Asia</Select.Option>
+                  <Select.Option className='undp-select-option' value='Europe'>Europe</Select.Option>
+                  <Select.Option className='undp-select-option' value='Oceania'>Oceania</Select.Option>
+                </Select>
+              </SelectionEl>
+              <SelectionEl>
+                <div className='flex-wrap margin-bottom-00'>
+                  <p className='label margin-bottom-05'>Gender-sensitive dimension</p>
+                  <div className='flex-div flex-wrap'>
+                    <button
+                      type='button'
+                      className='flex-div flex-vert-align-center'
+                      style={{
+                        backgroundColor: !showVAWG ? 'transparent' : '#590F6B',
+                        border: '2px solid #590F6B',
+                        padding: '0 1rem',
+                        borderRadius: '4rem',
+                        gap: '0.5rem',
+                        cursor: 'pointer',
+                      }}
+                      onClick={() => { setShowVAWG(!showVAWG); }}
+                    >
+                      <img
+                        src={showVAWG ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_VAWG_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_VAWG.png'}
+                        alt='Violence against women and girls icon'
+                        style={{ height: '64px' }}
+                      />
+                      <h6
+                        className='undp-typography margin-bottom-00'
+                        style={{
+                          color: showVAWG ? 'var(--white)' : '#590F6B',
+                        }}
+                      >
+                        Violence against women and girls
+                      </h6>
+                    </button>
+                    <button
+                      type='button'
+                      className='flex-div flex-vert-align-center'
+                      style={{
+                        backgroundColor: !showWEC ? 'transparent' : '#8CA645',
+                        border: '2px solid #8CA645',
+                        padding: '0 1rem',
+                        borderRadius: '4rem',
+                        gap: '0.5rem',
+                        cursor: 'pointer',
+                      }}
+                      onClick={() => { setShowWEC(!showWEC); }}
+                    >
+                      <img
+                        src={showWEC ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_WES_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_WES.png'}
+                        alt='Women’s economic security icon'
+                        style={{ height: '64px' }}
+                      />
+                      <h6
+                        className='undp-typography margin-bottom-00'
+                        style={{
+                          color: showWEC ? 'var(--white)' : '#8CA645',
+                        }}
+                      >
+                        Women’s economic security
+                      </h6>
+                    </button>
+                    <button
+                      type='button'
+                      className='flex-div flex-vert-align-center'
+                      style={{
+                        backgroundColor: !showUCW ? 'transparent' : '#0C9CD8',
+                        border: '2px solid #0C9CD8',
+                        padding: '0 1rem',
+                        borderRadius: '4rem',
+                        gap: '0.5rem',
+                        cursor: 'pointer',
+                      }}
+                      onClick={() => { setShowUCW(!showUCW); }}
+                    >
+                      <img
+                        src={showUCW ? 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_UCW_White.png' : 'https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/Icon_UCW.png'}
+                        alt='Unpaid care icon'
+                        style={{ height: '64px' }}
+                      />
+                      <h6
+                        className='undp-typography margin-bottom-00'
+                        style={{
+                          color: showUCW ? 'var(--white)' : '#0C9CD8',
+                        }}
+                      >
+                        Unpaid care
+                      </h6>
+                    </button>
+                  </div>
+                </div>
+              </SelectionEl>
+            </div>
+            <PolicyList
+              data={data}
+              searchText={searchText}
+              showVAWG={showVAWG}
+              showWEC={showWEC}
+              showUCW={showUCW}
+              selectedRegion={selectedRegion}
+              selectedCountry={selectedCountry}
+            />
+          </>
         ) : <div className='undp-loader' />
       }
     </>

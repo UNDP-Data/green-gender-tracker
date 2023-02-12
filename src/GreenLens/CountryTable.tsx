@@ -102,7 +102,7 @@ export const CountryTable = (props: Props) => {
       sortKey = 'noOfGenderPolicies';
       break;
     case 4:
-      sortKey = 'noOfPoliciesThatAreEnvironmentalRelevance';
+      sortKey = 'noOfPoliciesPositiveForEnvironment';
       break;
     case 5:
       sortKey = 'noOfPoliciesGenderGreenNexus';

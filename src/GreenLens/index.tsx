@@ -78,8 +78,8 @@ export const GreenLens = () => {
         <div className='flex-div flex-vert-align-center' style={{ gap: '2rem' }}>
           <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/UNDP-Logo-Blue-Medium.png' alt='UNDP logo' style={{ height: '56px' }} />
           <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/un-women-blue.png' alt='UN Women logo' style={{ width: '128px' }} />
-          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/ROK_Logo_PNG.png' alt='ROK logo' style={{ width: '200px' }} />
           <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/OECD_20cm.jpg' alt='OECD logo' style={{ width: '128px' }} />
+          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/ROK_Logo_PNG.png' alt='ROK logo' style={{ width: '200px' }} />
         </div>
       </div>
       {

@@ -42,7 +42,7 @@ export const TaskForceDashboard = (props: Props) => {
             {Math.round(tfMemberAvgPercent)}
             %
           </h3>
-          <p className='margin-top-05 margin-bottom-00 undp-typography'>Average share of women on COVID-19 task forces</p>
+          <p className='margin-top-05 margin-bottom-00 undp-typography'>Global average share of women on COVID-19 task forces</p>
         </StatCardsDiv>
         <StatCardsDiv className='stat-card' width='calc(50% - 4.5rem)'>
           <h3 className='margin-bottom-00 undp-typography'>

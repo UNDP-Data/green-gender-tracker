@@ -235,9 +235,10 @@ export const MapViz = (props: Props) => {
           }
           {
             hoverData
-              ? (World as any).features.filter((d: any) => d.properties.ISO3 === hoverData.data.countryCode).map((d: any) => (
+              ? (World as any).features.filter((d: any) => d.properties.ISO3 === hoverData.data.countryCode).map((d: any, i: number) => (
                 <G
                   opacity={!selectedColor ? 1 : 0.3}
+                  key={i}
                 >
                   {
                     d.geometry.type === 'MultiPolygon' ? d.geometry.coordinates.map((el:any, j: any) => {
