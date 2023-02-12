@@ -148,3 +148,41 @@ export interface CtxTFDataType {
   updateSelectedHDI: (_d: string) => void;
   updateSelectedDevelopmentGroup: (_d: string) => void;
 }
+
+export interface PromisingPoliciesDataType{
+  'Measure ID 2': string;
+  'Country code': string;
+  'Flag link': string;
+  Country: string;
+  Region: string;
+  Subregion: string;
+  'Gender-sensitive dimension': 'Violence against women' | "Women's economic security" | 'Unpaid care work';
+  'Policy measure category': string;
+  'Policy measure type': string;
+  'Policy measure sub-type': string;
+  'Policy measure title': string;
+  'Policy measure description': string;
+  'Problem addressed': string;
+  'Why promising': string;
+  Who: string;
+  Budget: string;
+  'Potential challenges': string;
+  'Further reading': string;
+}
+
+export interface CountryTaxonomyDataType {
+  'Alpha-3 code-1':string;
+  'Country or Area':string;
+  'Alpha-2 code':string;
+  'Numeric code':string;
+  'Latitude (average)':string;
+  'Longitude (average)':string;
+  'Group 1':string;
+  'Group 2':string;
+  'Group 3':string;
+  'LDC':boolean;
+  'LLDC':boolean;
+  'SIDS':boolean;
+  'Development classification':string;
+  'Income group':string;
+}

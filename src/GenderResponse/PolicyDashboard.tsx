@@ -19,7 +19,7 @@ interface WidthProps {
 
 const StatCardsDiv = styled.div<WidthProps>`
   width: ${(props) => props.width};
-  min-width: 20rem;
+  min-width: 15rem;
   flex-grow: 1;
   cursor: auto;
 `;
@@ -42,27 +42,27 @@ export const PolicyDashboard = (props: Props) => {
   const filteredGenderedPolicies = GetFilteredData(genderRelatedPolicies, selectedRegion, selectedIncomeGroup, selectedFragilityGroup, selectedHDI, selectedDevelopmentGroup, selectedPolicyMeasureCat);
 
   return (
-    <div className='margin-top-09'>
-      <div className='flex-div margin-bottom-07 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
+    <div>
+      <div className='stat-card-container margin-bottom-05 margin-top-05 flex-space-between'>
+        <StatCardsDiv className='stat-card' width='calc(50% - 4.5rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(allFilteredPolicies.length)}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>Total COVID-19 response measures</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
+        <StatCardsDiv className='stat-card' width='calc(50% - 4.5rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(filteredGenderedPolicies.length)}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>COVID-19 response measures are gender-sensitive</p>
         </StatCardsDiv>
       </div>
-      <div className='flex-div margin-top-07 margin-bottom-07 flex-space-between flex-wrap'>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+      <div className='flex-div margin-bottom-07 flex-space-between flex-wrap'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 4.667rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(allFilteredPolicies.filter((d) => d['Addresses VAWG'] === 'YES').length)}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>Measures address violence against women</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 4.667rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(allFilteredPolicies.filter((d) => d['Directly supports unpaid care'] === 'YES').length)}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>Measures support unpaid care</p>
         </StatCardsDiv>
-        <StatCardsDiv className='stat-card' width='calc(33.33% - 1.334rem)'>
+        <StatCardsDiv className='stat-card' width='calc(33.33% - 4.667rem)'>
           <h3 className='margin-bottom-00 undp-typography'>{format(',')(allFilteredPolicies.filter((d) => d["Targets Women's Economic Security"] === 'YES').length)}</h3>
           <p className='undp-typography margin-top-05 margin-bottom-00'>Measures target women&apos;s economic security</p>
         </StatCardsDiv>

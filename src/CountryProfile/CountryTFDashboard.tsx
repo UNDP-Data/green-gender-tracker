@@ -83,7 +83,7 @@ export const CountryTFDashboard = (props: Props) => {
         allTFsByCountry.length > 0
           ? (
             <div>
-              <div className='flex-div margin-bottom-05 flex-space-between flex-wrap'>
+              <div className='stat-card-container margin-bottom-05 flex-space-between'>
                 <StatCardsDiv className='stat-card' width='calc(25% - 1.5rem)'>
                   <h2 className='margin-bottom-00 undp-typography'>{data.noOfTF}</h2>
                   <p className='margin-top-05 margin-bottom-00 undp-typography'>No. of task forces</p>
@@ -104,7 +104,7 @@ export const CountryTFDashboard = (props: Props) => {
                 </StatCardsDiv>
               </div>
               <div className='flex-div margin-top-07 margin-bottom-07 flex-space-between flex-wrap'>
-                <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
+                <StatCardsDiv className='stat-card' width='calc(50% - 4.5rem)'>
                   <h6 className='undp-typography'>Proportion of women member by task force type</h6>
                   <div className='flex-div flex-space-between'>
                     <StatCardsDiv width='calc(50% - 1rem)'>
@@ -121,7 +121,7 @@ export const CountryTFDashboard = (props: Props) => {
                     </StatCardsDiv>
                   </div>
                 </StatCardsDiv>
-                <StatCardsDiv className='stat-card' width='calc(50% - 1rem)'>
+                <StatCardsDiv className='stat-card' width='calc(50% - 4.5rem)'>
                   <h6 className='undp-typography'>Proportion of women member by sectoral focus</h6>
                   <div className='flex-div flex-space-between'>
                     <StatCardsDiv width='calc(50% - 1rem)'>

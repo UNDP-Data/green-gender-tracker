@@ -6,15 +6,13 @@ import styled from 'styled-components';
 import { CtxDataType, TFDataType } from '../Types';
 import Context from './Context/Context';
 
-import '../style/inputStyle.css';
-
 interface Props {
   data: TFDataType[];
 }
 
 const SelectionEl = styled.div`
-  width: calc(25% - 0.75rem);
-  min-width: 20rem;
+  width: calc(33.33% - 1.334rem);
+  min-width: 15rem;
   flex-grow: 1;
 `;
 
@@ -39,11 +37,6 @@ export const TFTable = (props: Props) => {
     selectedFragilityGroup,
     selectedHDI,
     selectedDevelopmentGroup,
-    updateSelectedRegion,
-    updateSelectedIncomeGroup,
-    updateSelectedFragilityGroup,
-    updateSelectedHDI,
-    updateSelectedDevelopmentGroup,
   } = useContext(Context) as CtxDataType;
 
   const [selectedType, setSelectedType] = useState('All');
@@ -80,45 +73,6 @@ export const TFTable = (props: Props) => {
       <h5 className='bold margin-bottom-05 undp-typography'>
         COVID-19 task force details
       </h5>
-      {
-        selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' ? null
-          : (
-            <div className='flex-div flex-wrap margin-bottom-07 margin-top-00 flex-vert-align-center' style={{ gap: 'var(--spacing-05)' }}>
-              <>
-                <p className='undp-typography margin-bottom-00 bold'>Filters:</p>
-                {
-                  selectedRegion === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedRegion}</div>
-                }
-                {
-                  selectedIncomeGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedIncomeGroup}</div>
-                }
-                {
-                  selectedFragilityGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedFragilityGroup}</div>
-                }
-                {
-                  selectedHDI === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedHDI}</div>
-                }
-                {
-                  selectedDevelopmentGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedDevelopmentGroup}</div>
-                }
-                <button
-                  className='undp-chip undp-chip-red undp-chip-small'
-                  type='button'
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => {
-                    updateSelectedRegion('All');
-                    updateSelectedIncomeGroup('All');
-                    updateSelectedFragilityGroup('All');
-                    updateSelectedHDI('All');
-                    updateSelectedDevelopmentGroup('All');
-                  }}
-                >
-                  Reset Filters
-                </button>
-              </>
-            </div>
-          )
-      }
       <div className='margin-top-04 margin-bottom-07 flex-div flex-wrap'>
         <SelectionEl>
           <p className='label'>Filter by composition</p>
@@ -187,10 +141,10 @@ export const TFTable = (props: Props) => {
             }
           </Select>
         </SelectionEl>
-      </div>
-      <div className='margin-bottom-07'>
-        <p className='label'>Task force description – key word search</p>
-        <Input className='undp-input' placeholder='Search Task Force' onChange={(d) => { setSearchValue(d.target.value); }} />
+        <SelectionEl>
+          <p className='label'>Task force description – key word search</p>
+          <Input className='undp-input' placeholder='Search Task Force' onChange={(d) => { setSearchValue(d.target.value); }} />
+        </SelectionEl>
       </div>
       {
         tableData

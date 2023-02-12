@@ -32,7 +32,7 @@ const LegendEl = styled.div`
   background-color:rgba(255,255,255,0.7);
   position: relative;
   margin-bottom: var(--spacing-13);
-  z-index: 1000;
+  z-index: 5;
   @media (min-width: 961px) {
     max-width: 25rem;
     margin-left: 1rem;
@@ -55,13 +55,6 @@ export const MapViz = (props: Props) => {
     selectedFragilityGroup,
     selectedHDI,
     selectedDevelopmentGroup,
-    selectedPolicyMeasureCat,
-    updateSelectedDevelopmentGroup,
-    updateSelectedFragilityGroup,
-    updateSelectedHDI,
-    updateSelectedIncomeGroup,
-    updateSelectedPolicyMeasureCat,
-    updateSelectedRegion,
   } = useContext(Context) as CtxDataType;
   const svgHeight = window.innerWidth > 960 ? 678 : 500;
   const svgWidth = window.innerWidth > 960 ? 1280 : 960;
@@ -107,49 +100,6 @@ export const MapViz = (props: Props) => {
           </Select>
         </div>
       </div>
-      {
-        selectedRegion === 'All' && selectedIncomeGroup === 'All' && selectedFragilityGroup === 'All' && selectedHDI === 'All' && selectedDevelopmentGroup === 'All' && selectedPolicyMeasureCat === 'All' ? null
-          : (
-            <div className='flex-div flex-wrap margin-bottom-07 margin-top-00 flex-vert-align-center' style={{ gap: 'var(--spacing-05)' }}>
-              <>
-                <p className='undp-typography margin-bottom-00 bold'>Filters:</p>
-                {
-                  selectedRegion === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedRegion}</div>
-                }
-                {
-                  selectedIncomeGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedIncomeGroup}</div>
-                }
-                {
-                  selectedFragilityGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedFragilityGroup}</div>
-                }
-                {
-                  selectedHDI === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedHDI}</div>
-                }
-                {
-                  selectedDevelopmentGroup === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedDevelopmentGroup}</div>
-                }
-                {
-                  selectedPolicyMeasureCat === 'All' ? null : <div className='undp-chip undp-chip-small'>{selectedPolicyMeasureCat}</div>
-                }
-                <button
-                  className='undp-chip undp-chip-red undp-chip-small'
-                  type='button'
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => {
-                    updateSelectedRegion('All');
-                    updateSelectedIncomeGroup('All');
-                    updateSelectedFragilityGroup('All');
-                    updateSelectedHDI('All');
-                    updateSelectedDevelopmentGroup('All');
-                    updateSelectedPolicyMeasureCat('All');
-                  }}
-                >
-                  Reset Filters
-                </button>
-              </>
-            </div>
-          )
-      }
       <svg width='100%' height='100%' viewBox={`0 0 ${svgWidth} ${svgHeight}`} ref={mapSvg} style={{ backgroundColor: 'var(--gray-100)' }}>
         <g ref={mapG}>
           {
@@ -285,9 +235,10 @@ export const MapViz = (props: Props) => {
           }
           {
             hoverData
-              ? (World as any).features.filter((d: any) => d.properties.ISO3 === hoverData.data.countryCode).map((d: any) => (
+              ? (World as any).features.filter((d: any) => d.properties.ISO3 === hoverData.data.countryCode).map((d: any, i: number) => (
                 <G
                   opacity={!selectedColor ? 1 : 0.3}
+                  key={i}
                 >
                   {
                     d.geometry.type === 'MultiPolygon' ? d.geometry.coordinates.map((el:any, j: any) => {
@@ -341,14 +292,14 @@ export const MapViz = (props: Props) => {
         <p className='margin-bottom-03 small-font'>
           {
             variable === 'noOfPolicies'
-              ? 'All policies'
+              ? 'All measures'
               : variable === 'noOfGenderPolicies'
-                ? 'Gender-sensitive policies'
+                ? 'Gender-sensitive measures'
                 : variable === 'noOfPoliciesAddressingVAWG'
-                  ? 'Policies addressing violence against women'
+                  ? 'Violence against women measures'
                   : variable === 'noOfPoliciesSupportingUnpaidCare'
-                    ? 'Policies supporting unpaid care'
-                    : "Policies targeting women's economic security"
+                    ? 'Unpaid care measures'
+                    : "Women's economic security measures"
           }
         </p>
         <svg width='100%' viewBox={`0 0 ${335} ${30}`}>

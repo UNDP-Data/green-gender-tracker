@@ -17,7 +17,7 @@ interface TooltipElProps {
 const TooltipEl = styled.div<TooltipElProps>`
   display: block;
   position: fixed;
-  z-index: 1000;
+  z-index: 8;
   word-wrap: break-word;
   top: ${(props) => (props.verticalAlignment === 'bottom' ? props.y - 40 : props.y + 40)}px;
   left: ${(props) => (props.horizontalAlignment === 'left' ? props.x - 20 : props.x + 20)}px;
@@ -33,7 +33,7 @@ export const Tooltip = (props: Props) => {
   } = props;
   return (
     <TooltipEl className='tooltip' x={xPos} y={yPos} verticalAlignment={yPos > window.innerHeight / 2 ? 'top' : 'bottom'} horizontalAlignment={xPos > window.innerWidth / 2 ? 'left' : 'right'}>
-      <h4 className='margin-bottom-07 undp-typography'>{data.countryName}</h4>
+      <h5 className='bold margin-bottom-05 undp-typography'>{data.countryName}</h5>
       <div className='flex-div flex-space-between margin-bottom-05'>
         <div>
           No. of policies
