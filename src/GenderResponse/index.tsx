@@ -56,7 +56,7 @@ export const GenderResponse = () => {
   };
 
   useEffect(() => {
-    csv('https://raw.githubusercontent.com/UNDP-Data/green-gender-tracker/Redesign/public/data/gender-policies.csv', (d: PolicyDataType[]) => {
+    csv('https://raw.githubusercontent.com/UNDP-Data/green-gender-tracker/main/public/data/gender-policies.csv', (d: PolicyDataType[]) => {
       const pData: PolicyDataWithCountryData[] = d.map((el) => {
         const countryTaxonomyIndx = CountryTaxonomy.findIndex((el1) => el1['Country Code'] === el['Country Code']);
         return {
@@ -76,9 +76,9 @@ export const GenderResponse = () => {
       <div className='flex-div flex-space-between flex-vert-align-center flex-wrap margin-bottom-05 margin-top-05'>
         <h2 className='bold undp-typography margin-bottom-00' style={{ width: '30rem', flexGrow: 1 }}>Gender Response Tracker</h2>
         <div className='flex-div flex-vert-align-center' style={{ gap: '2rem' }}>
-          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/UNDP-Logo-Blue-Medium.png' alt='UNDP logo' style={{ height: '56px' }} />
-          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/un-women-blue.png' alt='UN Women logo' style={{ width: '128px' }} />
-          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/Redesign/public/img/ROK_Logo_PNG.png' alt='ROK logo' style={{ width: '200px' }} />
+          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/main/public/img/UNDP-Logo-Blue-Medium.png' alt='UNDP logo' style={{ height: '56px' }} />
+          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/main/public/img/un-women-blue.png' alt='UN Women logo' style={{ width: '128px' }} />
+          <img src='https://github.com/UNDP-Data/green-gender-tracker/raw/main/public/img/ROK_Logo_PNG.png' alt='ROK logo' style={{ width: '200px' }} />
         </div>
       </div>
       {
